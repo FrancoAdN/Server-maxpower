@@ -1,0 +1,42 @@
+.main-chat {
+    margin-top: 30px;
+    height: 600px;
+}
+
+.toprow {
+    height: 50px;
+    border: 1px solid black;
+}
+.mainrow {
+    height: 550px;
+    border-bottom: 1px solid black;
+    border-right: 1px solid black;
+    border-left: 1px solid black;
+}
+
+.content {
+    height: 500px;
+}
+
+.send-div {
+    height: 50px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+}
+
+.in-msg {
+    margin-top: 10px;
+    border-radius: 30px;
+    border: 1px solid lightgray;
+    width: 90%;
+    margin-left: 5%;
+    height: 30px;
+}
+
+.in-msg input{
+    border: none;
+    width: 80%;
+    outline: none;
+    /* margin-left: 5%; */
+}

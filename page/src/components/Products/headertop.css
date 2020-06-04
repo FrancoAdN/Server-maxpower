@@ -1,0 +1,26 @@
+.head-items:hover {
+    color: #c2000a;
+}
+
+.let-sp-10 {
+    letter-spacing: 10px;
+}
+
+.let-sp-3 {
+    letter-spacing: 3px;
+}
+.grey-color {
+    color: #9f9f9f;
+}
+
+.red-color {
+    color: #c2000a;
+}
+.mg-5 {
+    margin: 5px;
+}
+
+.btn-cot {
+    color: #fff;
+    background-color: #c2000a;
+}
