@@ -1,9 +1,11 @@
+require('dotenv').config()
 const db = require('mysql2-promise')()
+
 const config = {
     host: 'localhost',
-    user: 'root',
-    password: '',
-    database: 'maxpower_page'
+    user: process.env.DB_USER,
+    password: process.env.DB_PWD,
+    database: process.env.DB
 }
 
 db.configure(config)
