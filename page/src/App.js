@@ -6,6 +6,7 @@ import Chat from './components/Chat/Chat';
 import Product from './components/Products/Product'
 import Electrics from './components/Products/Electrics'
 import ChatProv from './_useChat'
+import Home from './components/Home/Home'
 
 const client = new ApolloClient({
   uri: "http://api.maxpower-ar.com/graphql"
@@ -20,31 +21,25 @@ function App() {
     // </ApolloProvider>
 
 
-
-    <BrowserRouter>
-      <Switch>
-        <Route component={Index} path="/" exact />
-        <ApolloProvider client={client}>
+    <ApolloProvider client={client}>
+      <BrowserRouter>
+        <Switch>
+          <Route component={Home} path="/" exact />
           <Route component={Product} path="/productos-electronicos" exact />
           <Route component={Electrics} path="/productos-electricos" exact />
-        </ApolloProvider>
 
-        <ChatProv>
-          <Route component={Chat} path="/chat" exact />
-        </ChatProv>
+          <ChatProv>
+            <Route component={Chat} path="/chat" exact />
+          </ChatProv>
 
-      </Switch>
-    </BrowserRouter>
+        </Switch>
+      </BrowserRouter>
+    </ApolloProvider>
+
+
 
   );
 }
 
 export default App;
 
-function Index() {
-  return (
-    <div>
-      INDEX PAGE
-    </div>
-  )
-}

@@ -33,7 +33,6 @@ export default function Chat() {
                 </div>
 
                 <div className="col h-100">
-
                     <ClientContent client={currentChat} emitMsg={sendMessageServer} />
                 </div>
 
@@ -46,14 +45,28 @@ export default function Chat() {
 
 
 function ChatClient({ client, change }) {
-    return (
-        <div className="d-flex flex-column w-100"
-            style={{ height: '60px', borderBottom: '1px solid black' }}
-            onClick={() => change(client)}>
-            <span className="mx-auto" style={{ fontSize: '20px' }}>{client.name}</span>
-            <span className="mx-auto" style={{ fontSize: '12px' }}>{client.messages[client.messages.length - 1].msg}</span>
-        </div>
-    )
+    if (client.messages.length > 0) {
+        return (
+            <div className="d-flex flex-column w-100"
+                style={{ height: '60px', borderBottom: '1px solid black' }}
+                onClick={() => change(client)}>
+                <span className="mx-auto" style={{ fontSize: '20px' }}>{client.name}</span>
+                <span className="mx-auto" style={{ fontSize: '12px' }}>{client.messages[client.messages.length - 1].msg}</span>
+            </div>
+        )
+    } else if (client) {
+        return (
+            <div className="d-flex flex-column w-100"
+                style={{ height: '60px', borderBottom: '1px solid black' }}
+                onClick={() => change(client)}>
+                <span className="mx-auto" style={{ fontSize: '20px' }}>{client.name}</span>
+
+            </div>
+        )
+    } else {
+        return (<div></div>)
+    }
+
 }
 
 function ClientContent({ client, emitMsg }) {
@@ -82,7 +95,7 @@ function ClientContent({ client, emitMsg }) {
                         {/* MESSAGES HERE */
 
                             client.messages.map((message, i) => (
-                                <p key={i}>{message.msg}</p>
+                                <PrintMessage key={i} message={message} />
                             ))
                         }
                     </div>
@@ -131,5 +144,27 @@ function ClientContent({ client, emitMsg }) {
 
         </div>
     )
+
+}
+
+
+function PrintMessage({ message }) {
+    if (message.from) {
+        // Message from client
+        return (<div className="mw-75" style={{ margin: '15px', maxWidth: '70%' }}>
+            <span className="mw-75" style={{ background: '#e3e3e3', padding: '10px', paddingLeft: '20px', paddingRight: '20px', borderRadius: '30px' }}>
+                {message.msg}
+            </span>
+        </div >)
+    }
+
+    // Message from server
+    return (<div style={{ margin: '10px' }}>
+        <span className="d-inline float-right" style={{ background: '#e2130b', padding: '10px', paddingLeft: '20px', paddingRight: '20px', borderRadius: '30px', maxWidth: '70%', color: '#fff' }}>
+            {message.msg}
+        </span>
+    </div>)
+
+
 
 }
