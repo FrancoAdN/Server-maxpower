@@ -35,26 +35,26 @@ export default function Prods() {
 					<div class="benefit_item d-flex flex-row align-items-center">
 						<div class="benefit_icon"><i class="fa fa-truck" aria-hidden="true"></i></div>
 						<div class="benefit_content">
-							<h6>free shipping</h6>
-							<p>Suffered Alteration in Some Form</p>
+							<h6> CORTOS PLAZOS DE ENTREGA </h6>
+							<p> Sumando la entrega a domicilio sin cargo en un radio de 100km en CABA. </p>
 						</div>
 					</div>
 				</div>
 				<div class="col-lg-3 benefit_col">
 					<div class="benefit_item d-flex flex-row align-items-center">
-						<div class="benefit_icon"><i class="fa fa-money" aria-hidden="true"></i></div>
+						<div class="benefit_icon"><i class="fa fa-handshake-o" aria-hidden="true"></i></div>
 						<div class="benefit_content">
-							<h6>cach on delivery</h6>
-							<p>The Internet Tend To Repeat</p>
+							<h6> Confiabilidad </h6>
+							<p> Brindamos el mejor servicio y atencion a nuestros clientes. </p>
 						</div>
 					</div>
 				</div>
 				<div class="col-lg-3 benefit_col">
 					<div class="benefit_item d-flex flex-row align-items-center">
-						<div class="benefit_icon"><i class="fa fa-undo" aria-hidden="true"></i></div>
+						<div class="benefit_icon"><i class="fa fa-check" aria-hidden="true"></i></div>
 						<div class="benefit_content">
-							<h6>45 days return</h6>
-							<p>Making it Look Like Readable</p>
+							<h6> Garantia y calidad </h6>
+							<p> Garantizamos el arreglo y correcto funcionamiento de sus productos. </p>
 						</div>
 					</div>
 				</div>
@@ -63,7 +63,7 @@ export default function Prods() {
 						<div class="benefit_icon"><i class="fa fa-clock-o" aria-hidden="true"></i></div>
 						<div class="benefit_content">
 							<h6>LUNES A VIERNES</h6>
-							<p> DE 9AM - 17:00PM</p>
+							<p> Nuestro horario de atencion al cliente es de  9:00AM HASTA LAS 17:00PM. </p>
 						</div>
 					</div>
 				</div>
