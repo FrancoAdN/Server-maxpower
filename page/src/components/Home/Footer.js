@@ -15,7 +15,7 @@ export default function Footer() {
                             {/* <!-- logo --> */}
                             <h2>
                                 <a className="logo text-wh" href="index.html">
-                                    <img src={onepng} alt="" className="img-fluid" />
+                                    <img src={onepng} alt="" className="img-fluid-2" />
                                 </a>
                             </h2>
                             {/* <!-- //logo --> */}
@@ -69,28 +69,15 @@ export default function Footer() {
                         </div>
                         <div className="col-lg-4 footer-grid_section_1its">
                             <div className="footer-title">
-                                <h3> Contactanos </h3>
+                                <h3> Newsletter </h3>
                             </div>
                             <br />
                             <div className="info-form-right mt-4 p-0">
                                 <form action="#" method="post">
-                                    <div className="row">
-                                        <div className="col-lg-6 form-group mb-2 pr-lg-1">
-                                            <input type="text" className="form-control" name="Name" placeholder="Nombre" required="" />
-                                        </div>
-                                        <div className="col-lg-6 form-group mb-2 pl-lg-1">
-                                            <input type="text" className="form-control" name="Phone" placeholder="Telefono"
-                                                required="" />
-                                        </div>
-                                    </div>
                                     <div className="form-group mb-2">
                                         <input type="email" className="form-control" name="Email" placeholder="Email" required="" />
                                     </div>
-                                    <div className="form-group mb-2">
-                                        <textarea name="Comment" className="form-control" placeholder="Descripcion"
-                                            required=""></textarea>
-                                    </div>
-                                    <button type="submit" className="btn submit-contact ml-auto">Enviar</button>
+                                    <button type="submit" className="btn submit-contact ml-auto"> Suscribirse </button>
                                 </form>
                             </div>
                         </div>

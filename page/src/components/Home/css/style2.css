@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,900');
+
 .work-grid .w-icon {
 	width: 95px;
 	height: 95px;
@@ -911,6 +913,18 @@ h3.title-w3-3:before {
 	.contact-top1 button {
 		font-size: 15px;
 	}
+	.pos-w3pvt {
+		left: 35px;
+		top: 10px;
+		position: absolute;
+		bottom: 30%;
+	}
+	
+	h4.text-w3pvt {
+		font-size: 2em;
+		color: #fff;
+		font-weight: 300;
+	}
 }
 
 @media (max-width: 320px) {
@@ -975,6 +989,38 @@ h3.title-w3-3:before {
 	.main_grid_contact textarea {
 		padding: 10px 12px;
 		font-size: 13px;
+	}
+	
+	.bottom-w3pvt-left {
+		position: relative;
+	}
+	
+	h4.text-wthree {
+		font-size: 1em;
+		color: #fff;
+		font-weight: 300;
+	}
+	
+	.pos-wthree  {
+		position: absolute;
+		top: 10px;
+		margin-left: -13px;
+	}
+
+	.pos-w3pvt {
+		top: -10px;
+		margin-left: -13px;
+		position: absolute;
+	}
+	
+	h4.text-w3pvt {
+		font-size: 2em;
+		color: #fff;
+		font-weight: 300;
+	}
+	.img-fluid-2 {
+		margin-top: 20px;
+		margin-left: 125px;
 	}
 }
 
@@ -1159,6 +1205,12 @@ button.submit-contact:hover {
 /* //form */
 
 /*--/mid--*/
+.mid-section .img-fluid {
+	width: 100%;
+}
+
+
+
 .bottom-w3pvt-left {
 	position: relative;
 }
@@ -1173,18 +1225,21 @@ h4.text-wthree {
 	position: absolute;
 	bottom: 20%;
 	left: 10%;
+
 }
 
 .pos-w3pvt {
 	right: 10%;
 	position: absolute;
 	bottom: 20%;
+
 }
 
 h4.text-w3pvt {
 	font-size: 2em;
 	color: #fff;
 	font-weight: 300;
+
 }
 
 /*--//mid--*/
@@ -1271,3 +1326,59 @@ h4.text-w3pvt {
 
 /* //map */
 /* //contact */
+
+/*********************************
+8. Benefit
+*********************************/
+
+.benefit
+{
+	font-family: 'Poppins';
+	margin-top: 74px;
+}
+.benefit_row
+{
+	padding-left: 15px;
+	padding-right: 15px;
+}
+.benefit_col
+{
+	padding-left: 0px;
+	padding-right: 0px;
+}
+.benefit_item
+{
+	height: 100px;
+	background: #f3f3f3;
+	border-right: solid 1px #FFFFFF;
+	padding-left: 25px;
+}
+.benefit_col:last-child .benefit_item
+{
+	border-right: none;
+}
+.benefit_icon i
+{
+	font-size: 30px;
+	color: #fe4c50;
+}
+.benefit_content
+{
+	padding-left: 22px;
+}
+.benefit_content h6
+{
+	font-family: 'Poppins';
+	text-transform: uppercase;
+	line-height: 18px;
+	font-weight: 500;
+	margin-bottom: 0px;
+}
+.benefit_content p
+{
+	font-family: 'Poppins';
+	font-size: 12px;
+	line-height: 18px;
+	margin-bottom: 0px;
+	color: #51545f;
+}

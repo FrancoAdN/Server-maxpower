@@ -29,7 +29,7 @@ export default function MainContent() {
                                         {/* <!-- social icons --> */}
                                         <ul className="col-md-6 top-right-info text-md-right text-center">
                                             <li>
-                                                <p style={{ color: 'white' }}>Seguinos en:</p>
+                                                <p class="" style={{ color: 'white' }}>Seguinos en:</p>
                                             </li>
                                             <li className="ml-3 mr-1">
                                                 <a href="#">
@@ -143,6 +143,7 @@ export default function MainContent() {
                                                         <a href="single.html" className="btn mr-2 animate__animated animate__fadeInUp">Leer más</a>
                                                         <a href="contact.html" className="btn animate__animated animate__fadeInUp">Contactanos</a>
                                                     </div>
+                                                    
                                                 </div>
                                             </div>
                                         </div>
@@ -161,10 +162,9 @@ export default function MainContent() {
                                                         Integer sit amet mattis quam, sit amet ultricies velit. Praesent
                                                         ullamcorper dui turpis.
                                                     </p>
-                                                    <div className="test-info text-left mt-lg-5 mt-4">
-                                                        <a href="single.html" className="btn mr-2">Read More</a>
-                                                        <a href="contact.html" className="btn">Contact Us</a>
-                                                    </div>
+
+
+
                                                 </div>
                                             </div>
                                         </div>
@@ -183,10 +183,9 @@ export default function MainContent() {
                                                         Integer sit amet mattis quam, sit amet ultricies velit. Praesent
                                                         ullamcorper dui turpis.
                                                     </p>
-                                                    <div className="test-info text-left mt-lg-5 mt-4">
-                                                        <a href="single.html" className="btn mr-2">Read More</a>
-                                                        <a href="contact.html" className="btn">Contact Us</a>
-                                                    </div>
+                                                    
+
+
                                                 </div>
                                             </div>
                                         </div>
