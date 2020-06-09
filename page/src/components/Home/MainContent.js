@@ -80,23 +80,23 @@ export default function MainContent() {
                                         <ul className="menu">
                                             <li className="active"><a href="index.html">Inicio</a></li>
                                             <li><a href="#nosotros">Nosotros</a></li>
-                                            <li><a href="blog.html">Servicios</a></li>
+                                            <li><a href="#features">Servicios</a></li>
                                             <li>
                                                 {/* <!-- First Tier Drop Down --> */}
                                                 <label for="drop-2" className="toggle toogle-2"
                                                 >Productos <span className="fa fa-angle-down" aria-hidden="true"></span>
                                                 </label>
-                                                <a href="#"
+                                                <a href="#mid-section"
                                                 >Productos <span className="fa fa-angle-down" aria-hidden="true"></span
                                                 ></a>
                                                 <input type="checkbox" id="drop-2" />
                                                 <ul>
-                                                    <li><a href="#process" className="drop-text">Process</a></li>
+                                                    <li><a href="#process" className="drop-text"></a></li>
 
-                                                    <li><a href="#stats" className="drop-text">Statistics</a></li>
-                                                    <li><a href="#services" className="drop-text">Services</a></li>
-                                                    <li><a href="about.html" className="drop-text">Our Team</a></li>
-                                                    <li><a href="#test" className="drop-text">Clients</a></li>
+                                                    <li><a href="#stats" className="drop-text"></a></li>
+                                                    <li><a href="#services" className="drop-text"></a></li>
+                                                    <li><a href="about.html" className="drop-text"></a></li>
+                                                    <li><a href="#test" className="drop-text"></a></li>
                                                 </ul>
                                             </li>
                                         </ul>
@@ -106,7 +106,7 @@ export default function MainContent() {
                                 <div className="justify-content-center">
                                     {/* <!-- search --> */}
                                     <div className="apply-w3-pvt ml-lg-3">
-                                        <a className="btn read" href="contact.html" role="button">Contacto</a>
+                                        <a className="btn read" href="#contact" role="button">Contacto</a>
                                     </div>
                                     {/* <!-- //search --> */}
                                 </div>
@@ -140,8 +140,8 @@ export default function MainContent() {
                                                     </p>
 
                                                     <div className="test-info text-left mt-lg-5 mt-4">
-                                                        <a href="single.html" className="btn mr-2 animate__animated animate__fadeInUp">Leer más</a>
-                                                        <a href="contact.html" className="btn animate__animated animate__fadeInUp">Contactanos</a>
+                                                        <a href="#handcrafted" className="btn mr-2 animate__animated animate__fadeInUp">Leer más</a>
+                                                        <a href="#contact" className="btn animate__animated animate__fadeInUp">Contactanos</a>
                                                     </div>
                                                     
                                                 </div>
@@ -157,14 +157,11 @@ export default function MainContent() {
                                             <div className="banner-info">
                                                 <div className="banner-w3ls-inner">
                                                     <h4>EXAMPLE SUBTITLE 1</h4>
-                                                    <h3>EXAMPLE TITE</h3>
+                                                    <h3>EXAMPLE TITLE</h3>
                                                     <p>
                                                         Integer sit amet mattis quam, sit amet ultricies velit. Praesent
                                                         ullamcorper dui turpis.
                                                     </p>
-
-
-
                                                 </div>
                                             </div>
                                         </div>
@@ -183,9 +180,6 @@ export default function MainContent() {
                                                         Integer sit amet mattis quam, sit amet ultricies velit. Praesent
                                                         ullamcorper dui turpis.
                                                     </p>
-                                                    
-
-
                                                 </div>
                                             </div>
                                         </div>

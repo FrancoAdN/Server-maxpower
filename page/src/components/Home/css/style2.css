@@ -1118,19 +1118,19 @@ h3.title-w3-3:before {
 }
 .icon1 span.fa {
 	font-size: 2em;
-	color: #0099e5;
+	color: #034261;
 }
 .icon2 span.fa {
 	font-size: 2em;
-	color: #2c9f45;
+	color: #0b7c07;
 }
 .icon3 span.fa {
 	font-size: 2em;
-	color: #fd5c63;
+	color: #8a8686;
 }
 .icon4 span.fa {
 	font-size: 2em;
-	color: #f48924;
+	color: #f38116;
 }
 .aboutbottom a {
 	padding: 15px 35px;
@@ -1188,7 +1188,7 @@ h2 a.logo {
 }
 
 button.submit-contact {
-	background: #ff3f34;
+	background: #ce110a;
 	color: #fff;
 	letter-spacing: 1px;
 	padding: 8px 26px;
@@ -1200,6 +1200,8 @@ button.submit-contact {
 
 button.submit-contact:hover {
 	opacity: 0.8;
+	background: #ff3f34;
+	color: #FFFFFF;
 }
 
 /* //form */
@@ -1306,11 +1308,12 @@ h4.text-w3pvt {
 	width: 36%;
 	margin-top: 2em;
 	color: #fff;
-	background: #fd5c63;
+	background: #ce110a;
 	border: none;
 	letter-spacing: 1px;
 	cursor: pointer;
 }
+
 
 /* //contact form */
 /* map */
@@ -1360,7 +1363,7 @@ h4.text-w3pvt {
 .benefit_icon i
 {
 	font-size: 30px;
-	color: #fe4c50;
+	color: #ce110a;
 }
 .benefit_content
 {

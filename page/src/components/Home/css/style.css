@@ -70,6 +70,7 @@ ul {
 .banner_w3pvt {
 	position: relative;
 	z-index: 1;
+	background-color: #fff;
 }
 
 .banner-top {
@@ -79,6 +80,8 @@ ul {
 	-moz-background-size: cover;
 	-o-background-size: cover;
 	-moz-background-size: cover;
+	border-bottom-left-radius: 100px;
+	border-bottom-right-radius: 100px;
 }
 
 .banner-top1 {
@@ -122,7 +125,7 @@ ul {
 	letter-spacing: 4px;
 	text-transform: uppercase;
 	font-weight: 700;
-	font-size: 0.9em;
+	font-size: 1.2em;
 	margin-bottom: 1em;
 }
 

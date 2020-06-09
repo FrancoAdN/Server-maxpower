@@ -35,7 +35,7 @@ export default function Prods() {
 					<div class="benefit_item d-flex flex-row align-items-center">
 						<div class="benefit_icon"><i class="fa fa-truck" aria-hidden="true"></i></div>
 						<div class="benefit_content">
-							<h6> CORTOS PLAZOS DE ENTREGA </h6>
+							<h6> ENTREGA RAPIDA </h6>
 							<p> Sumando la entrega a domicilio sin cargo en un radio de 100km en CABA. </p>
 						</div>
 					</div>

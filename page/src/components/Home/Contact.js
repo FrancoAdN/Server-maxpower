@@ -19,7 +19,7 @@ export default function Contact() {
                         {/* <!-- contact form --> */}
                         <div className="col-lg-6 main_grid_contact">
                             <div className="form-w3ls p-md-5 p-4">
-                                <h4 className="mb-4 sec-title-w3 let-spa text-bl"> - </h4>
+                                <h4 className="mb-4 sec-title-w3 let-spa text-bl"> Completa con tus datos: </h4>
                                 <form action="#" method="post">
                                     <div className="row">
                                         <div className="col-sm-6 form-group pr-sm-1">
@@ -41,7 +41,7 @@ export default function Contact() {
                                     <div className="form-group">
                                         <textarea name="message" placeholder="Descripcion" required=""></textarea>
                                     </div>
-                                    <div className="input-group1 text-right">
+                                    <div className="input-group1 text-center">
                                         <button className="btn" type="submit">Enviar</button>
                                     </div>
                                 </form>
