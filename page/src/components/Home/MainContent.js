@@ -1,11 +1,12 @@
 import React from 'react'
 import twopng from './images/2.png'
+import { Link } from 'react-router-dom'
 import './css/slider.css'
 import './css/style.css'
 import './css/style2.css'
 import './css/font-awesome.css'
 
-export default function MainContent() {
+export default function MainContent({ executeScroll, about, services, contact, hand }) {
     return (
         <div>
             <div className="main-w3-pvt-header-sec" id="home">
@@ -32,22 +33,22 @@ export default function MainContent() {
                                                 <p class="" style={{ color: 'white' }}>Seguinos en:</p>
                                             </li>
                                             <li className="ml-3 mr-1">
-                                                <a href="#">
+                                                <a href="https://www.facebook.com/maxpower.industrial/">
                                                     <span className="fa fa-facebook-f animate__animated  animate__fadeInUp"></span>
                                                 </a>
                                             </li>
                                             <li>
-                                                <a href="#">
+                                                <a href="https://www.instagram.com/maxpower.industrial/">
                                                     <span className="fa fa-instagram animate__animated  animate__fadeInUp"></span>
                                                 </a>
                                             </li>
                                             <li className="mx-1">
-                                                <a href="#">
+                                                <a href="https://www.linkedin.com/in/maxpower-industrial-automation-8186903a">
                                                     <span className="fa fa-linkedin animate__animated  animate__fadeInUp"></span>
                                                 </a>
                                             </li>
                                             <li>
-                                                <a href="#">
+                                                <a href="https://www.youtube.com/channel/UCXcFJ1D2XFs2NL_5RulBmJw">
                                                     <span className="fa fa-youtube animate__animated  animate__fadeInUp"></span>
                                                 </a>
                                             </li>
@@ -78,17 +79,16 @@ export default function MainContent() {
                                         <label for="drop" className="toggle">Menu</label>
                                         <input type="checkbox" id="drop" />
                                         <ul className="menu">
-                                            <li className="active"><a href="index.html">Inicio</a></li>
-                                            <li><a href="#nosotros">Nosotros</a></li>
-                                            <li><a href="#features">Servicios</a></li>
+                                            <li className="active"><Link to={'/'}>Inicio</Link></li>
+                                            <li><a onClick={() => executeScroll(about)}>Nosotros</a></li>
+                                            <li><a onClick={() => executeScroll(services)}>Servicios</a></li>
                                             <li>
                                                 {/* <!-- First Tier Drop Down --> */}
                                                 <label for="drop-2" className="toggle toogle-2"
                                                 >Productos <span className="fa fa-angle-down" aria-hidden="true"></span>
                                                 </label>
                                                 <a href="#mid-section"
-                                                >Productos <span className="fa fa-angle-down" aria-hidden="true"></span
-                                                ></a>
+                                                >Productos <span className="fa fa-angle-down" aria-hidden="true"></span></a>
                                                 <input type="checkbox" id="drop-2" />
                                                 <ul>
                                                     <li><a href="#process" className="drop-text"></a></li>
@@ -106,7 +106,7 @@ export default function MainContent() {
                                 <div className="justify-content-center">
                                     {/* <!-- search --> */}
                                     <div className="apply-w3-pvt ml-lg-3">
-                                        <a className="btn read" href="#contact" role="button">Contacto</a>
+                                        <a className="btn read" onClick={() => executeScroll(contact)} role="button">Contacto</a>
                                     </div>
                                     {/* <!-- //search --> */}
                                 </div>
@@ -140,10 +140,10 @@ export default function MainContent() {
                                                     </p>
 
                                                     <div className="test-info text-left mt-lg-5 mt-4">
-                                                        <a href="#handcrafted" className="btn mr-2 animate__animated animate__fadeInUp">Leer más</a>
-                                                        <a href="#contact" className="btn animate__animated animate__fadeInUp">Contactanos</a>
+                                                        <a onClick={() => executeScroll(hand)} className="btn mr-2 animate__animated animate__fadeInUp">Leer más</a>
+                                                        <a onClick={() => executeScroll(contact)} className="btn animate__animated animate__fadeInUp">Contactanos</a>
                                                     </div>
-                                                    
+
                                                 </div>
                                             </div>
                                         </div>

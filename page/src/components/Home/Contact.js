@@ -4,10 +4,10 @@ import './css/style.css'
 import './css/style2.css'
 import './css/font-awesome.css'
 
-export default function Contact() {
+export default function Contact({ contactRef }) {
     return (
         <div>
-            <section className="contact py-5 animate__animated animate__fadeIn" id="contact">
+            <section ref={contactRef} className="contact py-5 animate__animated animate__fadeIn" id="contact">
                 <div className="container">
                     <h3 className="title-w3ls text-center text-bl mb-5">Contacto</h3>
                     <div className="row mx-sm-0 mx-2">
@@ -35,7 +35,7 @@ export default function Contact() {
                                             required="" />
                                     </div>
                                     <div className="form-group">
-                                        <input className="form-control" type="text" name="Phone Number" placeholder="Telefono"
+                                        <input className="form-control" type="text" name="Phone Number" placeholder="Teléfono"
                                             required="" />
                                     </div>
                                     <div className="form-group">

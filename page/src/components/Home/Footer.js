@@ -28,22 +28,22 @@ export default function Footer() {
                                     <p> Seguinos en: </p>
                                 </li>
                                 <li className="facebook-w3">
-                                    <a href="#facebbok">
+                                    <a href="https://www.facebook.com/maxpower.industrial/">
                                         <span className="fa fa-facebook-f"></span>
                                     </a>
                                 </li>
                                 <li className="twitter-w3">
-                                    <a href="#twitter">
+                                    <a href="https://www.instagram.com/maxpower.industrial/">
                                         <span className="fa fa-instagram"></span>
                                     </a>
                                 </li>
                                 <li className="google-w3">
-                                    <a href="#google">
+                                    <a href="https://www.linkedin.com/in/maxpower-industrial-automation-8186903a">
                                         <span className="fa fa-linkedin"></span>
                                     </a>
                                 </li>
                                 <li className="dribble-w3">
-                                    <a href="#dribble">
+                                    <a href="https://www.youtube.com/channel/UCXcFJ1D2XFs2NL_5RulBmJw">
                                         <span className="fa fa-youtube"></span>
                                     </a>
                                 </li>

@@ -5,10 +5,10 @@ import './css/style.css'
 import './css/style2.css'
 import './css/font-awesome.css'
 
-export default function About() {
+export default function About({ aboutRef }) {
     return (
         <div>
-            <section className="about py-5 my-md-5 animate__animated animate__slideInUp" id="nosotros">
+            <section ref={aboutRef} className="about py-5 my-md-5 animate__animated animate__slideInUp" id="nosotros">
                 <div className="container">
                     <div className="row about_grids">
                         <div className="col-lg-5 mb-lg-0 mb-5 left-grid">
@@ -40,8 +40,8 @@ export default function About() {
                                 </div>
                                 <div className="col-sm-6 icon4">
                                     <span className="fa fa-check"></span>
-                                    <h4 className="text-uppercase my-3"> Garantia </h4>
-                                    <p className=""> Garantizamos el arreglo y correcto funcionamiento de sus productos.Brindamos a nuestros clientes productos y servicios con la mejor calidad.</p>
+                                    <h4 className="text-uppercase my-3"> Garantía </h4>
+                                    <p className=""> Garantizamos el arreglo y correcto funcionamiento de sus productos. Brindamos a nuestros clientes productos y servicios con la mejor calidad.</p>
                                 </div>
                             </div>
                         </div>

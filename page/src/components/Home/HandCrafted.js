@@ -4,15 +4,15 @@ import './css/style.css'
 import './css/style2.css'
 import './css/font-awesome.css'
 
-export default function HandCrafted() {
+export default function HandCrafted({ handRef }) {
     return (
         <div>
-            <section className="hand-crafted py-5">
+            <section ref={handRef} className="hand-crafted py-5">
                 <div className="container py-lg-5">
                     <div className="row accord-info">
                         <div className="col-lg-6 pl-md-5">
                             <h3 className="mb-md-5 tittle animate__animated animate__lightSpeedInRight">
-                                Conoce mas sobre nosotros...
+                                Conoce más sobre nosotros...
 							</h3>
 
                             <p className="animate__animated animate__lightSpeedInLeft">
@@ -21,7 +21,7 @@ export default function HandCrafted() {
                                 los distintos campos de acción, ofrecemos asesoramiento especializado en las
                                 diferentes áreas de las empresas, anticipándonos a sus necesidades actuales y futuras,
                                 mejorando el funcionamiento de los procesos continuos a través de la excelencia
-                                y la calidad .Estamos comprometidos a brindar soluciones acorde a cada necesidad.
+                                y la calidad. Estamos comprometidos a brindar soluciones acorde a cada necesidad.
 							</p>
                             <p className="mt-3">
                             </p>
