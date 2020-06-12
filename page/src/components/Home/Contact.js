@@ -1,10 +1,24 @@
-import React from 'react'
+import React, { useState } from 'react'
+import axios from 'axios'
 import './css/slider.css'
 import './css/style.css'
 import './css/style2.css'
 import './css/font-awesome.css'
 
 export default function Contact({ contact }) {
+
+    const [name, setName] = useState('')
+    const [email, setEmail] = useState('')
+    const [subject, setSubject] = useState('')
+    const [tel, setTel] = useState('')
+    const [body, setBody] = useState('')
+
+    const handleOnSubmit = (e) => {
+        e.preventDefault()
+        const contact = { name, email, subject, tel, body }
+        axios.post('http://localhost:5000/cotizacion', contact)
+    }
+
     return (
         <div ref={contact}>
             <section className="contact py-5 animate__animated animate__fadeIn" id="contact">
@@ -20,18 +34,21 @@ export default function Contact({ contact }) {
                         <div className="col-lg-6 main_grid_contact">
                             <div className="form-w3ls p-md-5 p-4">
                                 <h4 className="mb-4 sec-title-w3 let-spa text-bl"> Completa con tus datos: </h4>
-                                <form action="#" method="post">
+                                <form onSubmit={(e) => handleOnSubmit(e)}>
                                     <div className="row">
                                         <div className="col-sm-6 form-group pr-sm-1">
-                                            <input className="form-control" type="text" name="Name" placeholder="Nombre" required="" />
+                                            <input className="form-control" type="text" value={name} name="Name" placeholder="Nombre" required onChange={e => setName(e.target.value)} />
                                         </div>
                                         <div className="col-sm-6 form-group pl-sm-1">
-                                            <input className="form-control" type="email" name="Email" placeholder="Email"
-                                                required="" />
+                                            <input className="form-control" type="email" name="Email" placeholder="Email" value={email} required onChange={e => setEmail(e.target.value)} />
                                         </div>
                                     </div>
                                     <div className="form-group">
-                                        <input className="form-control" type="text" name="Subject" placeholder="Tema"
+                                        <input className="form-control" type="text" name="Subject" placeholder="Asunto"
+                                            required="" />
+                                    </div>
+                                    <div className="form-group">
+                                        <input className="form-control" type="text" name="Phone Number" placeholder="Empresa"
                                             required="" />
                                     </div>
                                     <div className="form-group">
