@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import { ApolloProvider } from 'react-apollo';
 import ApolloClient from 'apollo-boost';
