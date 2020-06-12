@@ -69,10 +69,9 @@ export default function Head() {
                                         <input type="checkbox" id="drop" />
                                         <ul className="menu">
                                             <li><Link to={'/'}>Inicio</Link></li>
-                                            <li className="active"><Link to={'/'}>Nosotros</Link></li>
+                                            <li><Link to={'/'}>Nosotros</Link></li>
                                             <li><Link to={'/'}>Servicios</Link></li>
                                             <li>
-
                                                 <label htmlFor="drop-2" className="toggle toogle-2">
                                                     Productos<span className="fa fa-angle-down" aria-hidden="true"></span>
                                                 </label>
@@ -92,8 +91,6 @@ export default function Head() {
                                     <div className="apply-w3-pvt ml-lg-3">
                                         <a className="btn read" role="button">Contacto</a>
                                     </div>
-
-
                                 </div>
                             </div>
                         </div>
