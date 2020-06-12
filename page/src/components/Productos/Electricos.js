@@ -49,6 +49,7 @@ export default function Electricos() {
         <div>
             <Head />
             <Body />
+            <Popup />
             <Footer />
         </div>
     )
@@ -125,21 +126,21 @@ function Card({ prod, addToCot }) {
     return (
 
         <div className="product-grid">
-        <div className="product-item">
-            <div className="product discount product_filter">
-                <div className="product_image">
-                    <img className="img-prod" src={prod.img} alt="Avatar" />
+            <div className="product-item">
+                <div className="product discount product_filter">
+                    <div className="product_image">
+                        <img className="img-prod" src={prod.img} alt="Avatar" />
+                    </div>
+                    <div className="favorite favorite_left"></div>
+                    <div class="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center"><span>sale</span></div>
+                    <div className="product-info">
+                        <h6 className="product_name">{prod.nombre}</h6>
+                        <div className="product_price">Codigo:<span></span></div>
+                    </div>
                 </div>
-                <div className="favorite favorite_left"></div>
-                <div class="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center"><span>sale</span></div>
-                <div className="product-info">
-                    <h6 className="product_name">{prod.nombre}</h6>
-                    <div className="product_price">Codigo:<span></span></div>
-                </div>
-             </div>
-            <div class="red_button add_to_cart_button"><a href="#">Pedir cotizacion</a></div>
+                <div class="red_button add_to_cart_button"><a href="#login_form">Pedir cotizacion</a></div>
+            </div>
         </div>
-     </div>
 
     )
 
@@ -168,14 +169,32 @@ function ListCat({ name, current, change }) {
     )
 }
 
+function Popup() {
+    return (
+        <div>
+            <a href="#x" class="overlay" id="login_form"></a>
+            <div class="popup">
+                <h2>Welcome Guest!</h2>
+                <p>Please enter your login and password here</p>
+                <div>
+                    <label for="login">Login</label>
+                    <input type="text" id="login" value="" />
+                </div>
+                <div>
+                    <label for="password">Password</label>
+                    <input type="password" id="password" value="" />
+                </div>
+                <input type="button" value="Log In" />
+                <a class="close" href="#close"></a>
+            </div>
+        </div>
+
+    )
+}
+
+
+
 /*
-
-<div class="main">
-    <div class="panel">
-        <a href="#login_form" id="login_pop">Log In</a>
-    </div>
-</div>
-
 <a href="#x" class="overlay" id="login_form"></a>
    <div class="popup">
      <h2>Welcome Guest!</h2>
