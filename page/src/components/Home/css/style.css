@@ -1417,6 +1417,18 @@ ul.courses_list.my-3 li {
 	.single-left2-left ul li a {
 		font-size: 1em;
 	}
+	.serve-grid {
+		max-width: 153px;
+		height: 153px;
+	}
+	.serve-grid span {
+		font-size: 2em;
+		margin-top: 1.2em;
+	}
+	.serve-grid p {
+		font-size: 0.9em;
+		color: #555;
+	}
 }
 
 @media screen and (max-width: 568px) {
@@ -1443,6 +1455,14 @@ ul.courses_list.my-3 li {
 
 	.comments-grid-right ul li {
 		font-size: 13px;
+	}
+	.serve-grid {
+		max-width: 153px;
+		height: 153px;
+		margin:  0 auto;
+	}
+	.serve-gd2 {
+		margin-top: 0em;
 	}
 }
 
