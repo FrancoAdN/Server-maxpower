@@ -4,16 +4,16 @@ import './css/style.css'
 import './css/style2.css'
 import './css/font-awesome.css'
 
-export default function Contact() {
+export default function Contact({ contact }) {
     return (
-        <div>
+        <div ref={contact}>
             <section className="contact py-5 animate__animated animate__fadeIn" id="contact">
                 <div className="container">
                     <h3 className="title-w3ls text-center text-bl mb-5">Contacto</h3>
                     <div className="row mx-sm-0 mx-2">
                         {/* <!-- map --> */}
                         <div className="col-lg-6 map">
-                            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13130.002933335736!2d-58.5668047!3d-34.6420551!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x433c634d34888c11!2sMAXPOWER%20INDUSTRIAL%20AUTOMATION!5e0!3m2!1ses-419!2sar!4v1590715803135!5m2!1ses-419!2sar" width="600" height="450" frameborder="0" style={{ border: '0' }} allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13130.002933335736!2d-58.5668047!3d-34.6420551!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x433c634d34888c11!2sMAXPOWER%20INDUSTRIAL%20AUTOMATION!5e0!3m2!1ses-419!2sar!4v1590715803135!5m2!1ses-419!2sar" width="600" height="450" frameBorder="0" style={{ border: '0' }} allowFullScreen="" aria-hidden="false" tabIndex="0"></iframe>
                         </div>
                         {/* <!-- //map --> */}
                         {/* <!-- contact form --> */}
@@ -35,7 +35,7 @@ export default function Contact() {
                                             required="" />
                                     </div>
                                     <div className="form-group">
-                                        <input className="form-control" type="text" name="Phone Number" placeholder="Telefono"
+                                        <input className="form-control" type="text" name="Phone Number" placeholder="Teléfono"
                                             required="" />
                                     </div>
                                     <div className="form-group">

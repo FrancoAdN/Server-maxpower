@@ -4,14 +4,14 @@ import './css/style.css'
 import './css/style2.css'
 import './css/font-awesome.css'
 
-export default function Features() {
+export default function Features({ feat }) {
     return (
-        <div>
+        <div ref={feat}>
             <div className="welcome py-5 animate__animated animate__slideInUp" id="features">
                 <div className="container py-xl-5 py-lg-3">
                     <div className="row">
                         <div className="col-lg-5 welcome-left">
-                            <p>¿Por que elegirnos?</p>
+                            <p>¿Por qué elegirnos?</p>
                             <h3 className="tittle-wthree mt-2 mb-3">
                                 Nuestros servicios a su comodidad
 							</h3>
@@ -37,7 +37,7 @@ export default function Features() {
                                 <div className="col-sm-4 service-1-w3ls serve-gd3">
                                     <div className="serve-grid mt-4">
                                         <span className="fa fa-tachometer s4"></span>
-                                        <p className="mt-2">Diagnostico</p>
+                                        <p className="mt-2">Diagnóstico</p>
                                     </div>
                                     <div className="serve-grid mt-4">
                                         <span className="fa fa-address-card-o s5"></span>
@@ -45,17 +45,17 @@ export default function Features() {
                                     </div>
                                     <div className="serve-grid mt-4">
                                         <span className="fa fa-spinner s6"></span>
-                                        <p className="mt-2">Armonicos</p>
+                                        <p className="mt-2">Armónicos</p>
                                     </div>
                                 </div>
                                 <div className="col-sm-4 service-1-w3ls serve-gd2">
                                     <div className="serve-grid mt-4">
                                         <span className="fa fa-podcast s1"></span>
-                                        <p className="mt-2">Termografia</p>
+                                        <p className="mt-2">Termografía</p>
                                     </div>
                                     <div className="serve-grid mt-4">
                                         <span className="fa fa-handshake-o s7"></span>
-                                        <p className="mt-2">Atencion</p>
+                                        <p className="mt-2">Atención</p>
                                     </div>
                                 </div>
                             </div>
