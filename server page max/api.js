@@ -64,6 +64,7 @@ let conn_clients = []
 
 io.sockets.on('connection', (socket) => {
 
+    console.log('new connection ' + socket.id)
 
     socket.on('server_conn', () => {
         conn_server.push(socket.id)
@@ -72,15 +73,27 @@ io.sockets.on('connection', (socket) => {
 
     socket.on('client_conn', (data) => {
 
-        const new_client = { socket_id: socket.id, name: data.name, messages: [] }
-        conn_clients.push(socket.id)
-        sendToServer('new_client_conn', new_client)
         console.log(`New client connection ${socket.id}`)
+        data['socket_id'] = socket.id
+        data['messages'] = [{ from: 0, msg: 'Bienvenido al chat!' }]
+        conn_clients.push(socket.id)
+        sendToServer('new_client_conn', data)
 
     })
 
+    socket.on('client_message', ({ msg }) => {
+        const client_msg = { from: socket.id, msg }
+        sendToServer('client_message', client_msg)
+    })
+
+
+    socket.on('server_message', (data) => {
+        const message = { from: 0, msg: data.text }
+        io.to(data.to).emit('server_message', message)
+    })
+
+
     socket.on('disconnect', () => {
-        //console.log(`Server-client disconnected ${socket.id}`)
         let found = false
 
         for (let [i, sock] of conn_clients.entries()) {
@@ -103,14 +116,8 @@ io.sockets.on('connection', (socket) => {
 
     })
 
-    /*socket.on('client_message', (data) => {
-        console.log(data)
-    })
 
-    socket.on('server_message', (data) => {
-        console.log(data)
-        socket.emit('server_resp', data)
-    })*/
+
 
 })
 
@@ -119,3 +126,4 @@ const sendToServer = (event, data) => {
     for (let sock of conn_server)
         io.to(sock).emit(event, data)
 }
+

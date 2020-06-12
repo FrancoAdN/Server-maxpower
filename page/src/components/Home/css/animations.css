@@ -1,0 +1,9 @@
+.animate_animated.animate_fadeInLeft {
+	--animate-duration: 4s;
+	--animation-delay: 20s;
+}
+
+.animate_animated.animate_fadeInUp {
+	--animate-duration: 4s;
+	--animation-delay: 20s;
+}
