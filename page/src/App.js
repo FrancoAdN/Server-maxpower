@@ -3,12 +3,12 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import { ApolloProvider } from 'react-apollo';
 import ApolloClient from 'apollo-boost';
 // import Chat from './components/Chat/Chat';
-import Product from './components/Products/Product'
-import Electrics from './components/Products/Electrics'
+// import Product from './components/Products/Product'
+// import Electrics from './components/Products/Electrics'
 // import ChatProv from './_useChat'
 import Home from './components/Home/Home'
-import Electricos from './components/testproductos/Electricos'
-import Electronicos from './components/testproductos/Electronicos'
+import Electricos from './components/Productos/Electricos'
+import Electronicos from './components/Productos/Electronicos'
 
 
 const client = new ApolloClient({

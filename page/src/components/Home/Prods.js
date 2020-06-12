@@ -31,40 +31,40 @@ export default function Prods() {
 				</div>
 			</section>
 
-			<div class="benefit">
-				<div class="container">
-					<div class="row benefit_row">
-						<div class="col-lg-3 benefit_col">
-							<div class="benefit_item d-flex flex-row align-items-center">
-								<div class="benefit_icon"><i class="fa fa-truck" aria-hidden="true"></i></div>
-								<div class="benefit_content">
+			<div className="benefit">
+				<div className="container">
+					<div className="row benefit_row">
+						<div className="col-lg-3 benefit_col">
+							<div className="benefit_item d-flex flex-row align-items-center">
+								<div className="benefit_icon"><i className="fa fa-truck" aria-hidden="true"></i></div>
+								<div className="benefit_content">
 									<h6> ENTREGA RAPIDA </h6>
 									<p> Sumando la entrega a domicilio sin cargo en un radio de 100km en CABA. </p>
 								</div>
 							</div>
 						</div>
-						<div class="col-lg-3 benefit_col">
-							<div class="benefit_item d-flex flex-row align-items-center">
-								<div class="benefit_icon"><i class="fa fa-handshake-o" aria-hidden="true"></i></div>
-								<div class="benefit_content">
+						<div className="col-lg-3 benefit_col">
+							<div className="benefit_item d-flex flex-row align-items-center">
+								<div className="benefit_icon"><i className="fa fa-handshake-o" aria-hidden="true"></i></div>
+								<div className="benefit_content">
 									<h6> Confiabilidad </h6>
 									<p> Brindamos el mejor servicio y atención a nuestros clientes. </p>
 								</div>
 							</div>
 						</div>
-						<div class="col-lg-3 benefit_col">
-							<div class="benefit_item d-flex flex-row align-items-center">
-								<div class="benefit_icon"><i class="fa fa-check" aria-hidden="true"></i></div>
-								<div class="benefit_content">
+						<div className="col-lg-3 benefit_col">
+							<div className="benefit_item d-flex flex-row align-items-center">
+								<div className="benefit_icon"><i className="fa fa-check" aria-hidden="true"></i></div>
+								<div className="benefit_content">
 									<h6> Garantía y calidad </h6>
 									<p> Garantizamos el arreglo y correcto funcionamiento de sus productos. </p>
 								</div>
 							</div>
 						</div>
-						<div class="col-lg-3 benefit_col">
-							<div class="benefit_item d-flex flex-row align-items-center">
-								<div class="benefit_icon"><i class="fa fa-clock-o" aria-hidden="true"></i></div>
-								<div class="benefit_content">
+						<div className="col-lg-3 benefit_col">
+							<div className="benefit_item d-flex flex-row align-items-center">
+								<div className="benefit_icon"><i className="fa fa-clock-o" aria-hidden="true"></i></div>
+								<div className="benefit_content">
 									<h6>LUNES A VIERNES</h6>
 									<p> Nuestro horario de atención al cliente es de  9:00AM HASTA LAS 17:00PM. </p>
 								</div>

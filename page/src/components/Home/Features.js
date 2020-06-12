@@ -4,10 +4,10 @@ import './css/style.css'
 import './css/style2.css'
 import './css/font-awesome.css'
 
-export default function Features({ servicesRef }) {
+export default function Features({ feat }) {
     return (
-        <div>
-            <div ref={servicesRef} className="welcome py-5 animate__animated animate__slideInUp" id="features">
+        <div ref={feat}>
+            <div className="welcome py-5 animate__animated animate__slideInUp" id="features">
                 <div className="container py-xl-5 py-lg-3">
                     <div className="row">
                         <div className="col-lg-5 welcome-left">

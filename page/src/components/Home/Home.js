@@ -8,23 +8,20 @@ import Contact from './Contact'
 import Footer from './Footer'
 
 export default function Home() {
-    const AboutRef = useRef(null)
-    const ServicesRef = useRef(null)
-    const ContactRef = useRef(null)
-    const HandRef = useRef(null)
+    const ab = useRef(null)
+    const feat = useRef(null)
+    const hand = useRef(null)
+    const contact = useRef(null)
 
-    const executeScroll = (ref) => {
-        window.scrollTo(0, ref.current.offsetTop)
-    }
 
     return (
         <div>
-            <MainContent executeScroll={executeScroll} about={AboutRef} services={ServicesRef} contact={ContactRef} hand={HandRef} />
-            <About aboutRef={AboutRef} />
+            <MainContent about={ab} features={feat} contact={contact} hand={hand} />
+            <About about={ab} />
             <Prods />
-            <Features servicesRef={ServicesRef} /> {/*servicios?*/}
-            <HandCrafted handRef={HandRef} />
-            <Contact contactRef={ContactRef} />
+            <Features feat={feat} /> {/*servicios?*/}
+            <HandCrafted handRef={hand} />
+            <Contact contact={contact} />
             <Footer />
         </div>
     )

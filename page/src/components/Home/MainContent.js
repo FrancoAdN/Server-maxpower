@@ -6,7 +6,10 @@ import './css/style.css'
 import './css/style2.css'
 import './css/font-awesome.css'
 
-export default function MainContent({ executeScroll, about, services, contact, hand }) {
+export default function MainContent({ about, features, contact, hand }) {
+    const executeScroll = (ref) => {
+        window.scrollTo(0, ref.current.offsetTop)
+    }
     return (
         <div>
             <div className="main-w3-pvt-header-sec" id="home">
@@ -30,7 +33,7 @@ export default function MainContent({ executeScroll, about, services, contact, h
                                         {/* <!-- social icons --> */}
                                         <ul className="col-md-6 top-right-info text-md-right text-center">
                                             <li>
-                                                <p class="" style={{ color: 'white' }}>Seguinos en:</p>
+                                                <p className="" style={{ color: 'white' }}>Seguinos en:</p>
                                             </li>
                                             <li className="ml-3 mr-1">
                                                 <a href="https://www.facebook.com/maxpower.industrial/">
@@ -68,7 +71,7 @@ export default function MainContent({ executeScroll, about, services, contact, h
                             <div id="logo">
                                 <h1>
                                     {/* <a href="index.html"><img src="images/2.png"></span></a> */}
-                                    <a href><img src={twopng} /></a>
+                                    <Link to={'/'}><img src={twopng} alt="logo" /></Link>
                                 </h1>
                             </div>
                             {/* <!-- //logo --> */}
@@ -76,27 +79,22 @@ export default function MainContent({ executeScroll, about, services, contact, h
                                 {/* <!-- nav --> */}
                                 <div className="nav_w3pvt">
                                     <nav>
-                                        <label for="drop" className="toggle">Menu</label>
+                                        <label htmlFor="drop" className="toggle">Menu</label>
                                         <input type="checkbox" id="drop" />
                                         <ul className="menu">
                                             <li className="active"><Link to={'/'}>Inicio</Link></li>
                                             <li><a onClick={() => executeScroll(about)}>Nosotros</a></li>
-                                            <li><a onClick={() => executeScroll(services)}>Servicios</a></li>
+                                            <li><a onClick={() => executeScroll(features)}>Servicios</a></li>
                                             <li>
                                                 {/* <!-- First Tier Drop Down --> */}
-                                                <label for="drop-2" className="toggle toogle-2"
+                                                <label htmlFor="drop-2" className="toggle toogle-2"
                                                 >Productos <span className="fa fa-angle-down" aria-hidden="true"></span>
                                                 </label>
-                                                <a href="#mid-section"
-                                                >Productos <span className="fa fa-angle-down" aria-hidden="true"></span></a>
+                                                <a>Productos <span className="fa fa-angle-down" aria-hidden="true"></span></a>
                                                 <input type="checkbox" id="drop-2" />
                                                 <ul>
-                                                    <li><a href="#process" className="drop-text"></a></li>
-
-                                                    <li><a href="#stats" className="drop-text"></a></li>
-                                                    <li><a href="#services" className="drop-text"></a></li>
-                                                    <li><a href="about.html" className="drop-text"></a></li>
-                                                    <li><a href="#test" className="drop-text"></a></li>
+                                                    <li><Link to={'/productos-electricos'} className="drop-text">Productos Eléctricos</Link></li>
+                                                    <li><Link to={'/productos-electronicos'} className="drop-text">Productos Electrónicos</Link></li>
                                                 </ul>
                                             </li>
                                         </ul>
@@ -106,7 +104,7 @@ export default function MainContent({ executeScroll, about, services, contact, h
                                 <div className="justify-content-center">
                                     {/* <!-- search --> */}
                                     <div className="apply-w3-pvt ml-lg-3">
-                                        <a className="btn read" onClick={() => executeScroll(contact)} role="button">Contacto</a>
+                                        <a className="btn read" role="button" onClick={() => executeScroll(contact)}>Contacto</a>
                                     </div>
                                     {/* <!-- //search --> */}
                                 </div>
@@ -119,7 +117,7 @@ export default function MainContent({ executeScroll, about, services, contact, h
                 {/* <!-- banner --> */}
                 <section className="banner_w3pvt">
                     <div className="csslider infinity" id="slider1">
-                        <input type="radio" name="slides" checked="checked" id="slides_1" />
+                        <input type="radio" name="slides" id="slides_1" />
                         <input type="radio" name="slides" id="slides_2" />
                         <input type="radio" name="slides" id="slides_3" />
 
@@ -140,8 +138,8 @@ export default function MainContent({ executeScroll, about, services, contact, h
                                                     </p>
 
                                                     <div className="test-info text-left mt-lg-5 mt-4">
-                                                        <a onClick={() => executeScroll(hand)} className="btn mr-2 animate__animated animate__fadeInUp">Leer más</a>
-                                                        <a onClick={() => executeScroll(contact)} className="btn animate__animated animate__fadeInUp">Contactanos</a>
+                                                        <a className="btn mr-2 animate__animated animate__fadeInUp" onClick={() => executeScroll(hand)}>Leer más</a>
+                                                        <a className="btn animate__animated animate__fadeInUp" onClick={() => executeScroll(contact)}>Contactanos</a>
                                                     </div>
 
                                                 </div>
@@ -188,9 +186,9 @@ export default function MainContent({ executeScroll, about, services, contact, h
                             </li>
                         </ul>
                         <div className="arrows">
-                            <label for="slides_1"></label>
-                            <label for="slides_2"></label>
-                            <label for="slides_3"></label>
+                            <label htmlFor="slides_1"></label>
+                            <label htmlFor="slides_2"></label>
+                            <label htmlFor="slides_3"></label>
                         </div>
                     </div>
                 </section>

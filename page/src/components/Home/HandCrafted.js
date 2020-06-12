@@ -6,8 +6,8 @@ import './css/font-awesome.css'
 
 export default function HandCrafted({ handRef }) {
     return (
-        <div>
-            <section ref={handRef} className="hand-crafted py-5">
+        <div ref={handRef}>
+            <section className="hand-crafted py-5">
                 <div className="container py-lg-5">
                     <div className="row accord-info">
                         <div className="col-lg-6 pl-md-5">

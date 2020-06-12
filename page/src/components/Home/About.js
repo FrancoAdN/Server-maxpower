@@ -5,10 +5,10 @@ import './css/style.css'
 import './css/style2.css'
 import './css/font-awesome.css'
 
-export default function About({ aboutRef }) {
+export default function About({ about }) {
     return (
-        <div>
-            <section ref={aboutRef} className="about py-5 my-md-5 animate__animated animate__slideInUp" id="nosotros">
+        <div ref={about}>
+            <section className="about py-5 my-md-5 animate__animated animate__slideInUp" id="nosotros">
                 <div className="container">
                     <div className="row about_grids">
                         <div className="col-lg-5 mb-lg-0 mb-5 left-grid">
@@ -19,7 +19,7 @@ export default function About({ aboutRef }) {
                             --> */}
                             </div>
                             <p className="mb-4"> MaxPower es una empresa que brinda soluciones integrales a las industrias. Contamos con más de 25 años de experiencia y debido a la formación profesional en los distintos campos de acción, ofrecemos asesoramiento especializado en las diferentes áreas de las empresas, anticipándonos a sus necesidades actuales y futuras, mejorando el funcionamiento de los procesos continuos a través de la excelencia y la calidad </p>
-                            <img src={certificate} className="img-fluid" /> <strong>Certified Company</strong>
+                            <img src={certificate} className="img-fluid" alt="certificate" /> <strong>Certified Company</strong>
                         </div>
                         <div className="col-lg-7 right-grid">
                             <div className="row right_inner_grids">
