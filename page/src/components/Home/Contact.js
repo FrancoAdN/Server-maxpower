@@ -43,9 +43,7 @@ export default function Contact({ contact }) {
                                             <input className="form-control" type="email" name="Email" placeholder="Email" value={email} required onChange={e => setEmail(e.target.value)} />
                                         </div>
                                     </div>
-                                    <div className="form-group">
-                                        <input className="form-control" type="text" name="Subject" placeholder="Asunto" value={subject} required onChange={e => setSubject(e.target.value)} />
-                                    </div>
+
                                     <div className="form-group">
                                         <input className="form-control" type="text" name="Phone Number" placeholder="Empresa"
                                             required onChange={e => setName(e.target.value)} />

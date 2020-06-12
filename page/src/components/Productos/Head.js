@@ -5,6 +5,7 @@ import '../Home/css/style.css'
 import '../Home/css/style2.css'
 import '../Home/css/font-awesome.css'
 import { Link } from 'react-router-dom'
+import '../Productos/images/banner5.jpg'
 
 export default function Head() {
     return (

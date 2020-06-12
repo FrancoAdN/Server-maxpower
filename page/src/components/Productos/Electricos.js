@@ -132,7 +132,6 @@ function Card({ prod, addToCot }) {
                         <img className="img-prod" src={prod.img} alt="Avatar" />
                     </div>
                     <div className="favorite favorite_left"></div>
-                    <div class="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center"><span>sale</span></div>
                     <div className="product-info">
                         <h6 className="product_name">{prod.nombre}</h6>
                         <div className="product_price">Codigo:<span></span></div>
@@ -172,42 +171,37 @@ function ListCat({ name, current, change }) {
 function Popup() {
     return (
         <div>
-            <a href="#x" class="overlay" id="login_form"></a>
-            <div class="popup">
-                <h2>Welcome Guest!</h2>
-                <p>Please enter your login and password here</p>
-                <div>
-                    <label for="login">Login</label>
-                    <input type="text" id="login" value="" />
+            <a href="#x" class="overlay2" id="login_form"></a>
+            <div className="popup">
+            <div className="main_grid_contact">
+            <h4 className="mb-4 sec-title-w3 let-spa text-bl"> SOLICITUD DE COTIZACION: </h4>
+                <p>Los datos ingresados deben ser reales para su posterior contacto.</p>
+                <div className="row">
+                <div className="col-sm-6 form-group pr-sm-1">
+                <input className="form-control" type="text" name="Name" placeholder="Nombre" required/>
                 </div>
-                <div>
-                    <label for="password">Password</label>
-                    <input type="password" id="password" value="" />
+                <div className="col-sm-6 form-group pl-sm-1">
+                <input className="form-control" type="email" name="Email" placeholder="Email"/>
                 </div>
-                <input type="button" value="Log In" />
-                <a class="close" href="#close"></a>
+                </div>
+                <div className="form-group">
+                <input className="form-control" type="text" name="Subject" placeholder="Asunto"/>
+                </div>
+                <div className="form-group">
+                <input className="form-control" type="text" name="Phone Number" placeholder="Teléfono"
+                     required="" />
+                </div>
+                <div className="form-group">
+                <textarea name="message" placeholder="Descripcion" required=""></textarea>
+                </div>
+
+                <div className="input-group1 text-center">
+                <button className="btn" type="submit">Enviar</button>
+                </div>
+                
+            </div>
             </div>
         </div>
-
     )
 }
 
-
-
-/*
-<a href="#x" class="overlay" id="login_form"></a>
-   <div class="popup">
-     <h2>Welcome Guest!</h2>
-     <p>Please enter your login and password here</p>
-   <div>
-   <label for="login">Login</label>
-   <input type="text" id="login" value="" />
-   </div>
-   <div>
-   <label for="password">Password</label>
-   <input type="password" id="password" value="" />
-   </div>
-   <input type="button" value="Log In" />
-   <a class="close" href="#close"></a>
-</div>
-*/
