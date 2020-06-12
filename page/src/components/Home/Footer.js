@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useState } from 'react'
+import axios from 'axios'
 import onepng from './images/1.png'
 import './css/slider.css'
 import './css/style.css'
@@ -6,6 +7,14 @@ import './css/style2.css'
 import './css/font-awesome.css'
 
 export default function Footer() {
+    const [newsletter, setNewsletter] = useState('')
+    const handleOnSubmit = (e) => {
+        e.preventDefault()
+        const news = { newsletter }
+        axios.post('http://localhost:5000/newsletter', news)
+        setNewsletter('')
+    }
+
     return (
         <div>
             <footer className="py-5">
@@ -73,9 +82,9 @@ export default function Footer() {
                             </div>
                             <br />
                             <div className="info-form-right mt-4 p-0">
-                                <form action="#" method="post">
+                                <form onSubmit={(e) => handleOnSubmit(e)}>
                                     <div className="form-group mb-2">
-                                        <input type="email" className="form-control" name="Email" placeholder="Email" required="" />
+                                        <input type="email" className="form-control" name="Email" placeholder="Email" value={newsletter} required onChange={e => setNewsletter(e.target.value)} />
                                     </div>
                                     <button type="submit" className="btn submit-contact ml-auto"> Suscribirse </button>
                                 </form>

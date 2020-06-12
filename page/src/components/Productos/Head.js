@@ -4,10 +4,22 @@ import '../Home/css/slider.css'
 import '../Home/css/style.css'
 import '../Home/css/style2.css'
 import '../Home/css/font-awesome.css'
+<<<<<<< HEAD
 import { Link } from 'react-router-dom'
 import '../Productos/images/banner5.jpg'
+=======
+import { Link, useHistory } from 'react-router-dom'
+>>>>>>> f34f3dc3aacf6f6e56ad32968a4ca53cba033f83
 
 export default function Head() {
+    const history = useHistory()
+
+    // const testRed = () => {
+    //     console.log('click')
+    //     history.push('/')
+    //     window.scrollTo(0, 1200)
+    // }
+
     return (
         <div className="main-w3-pvt-header-sec page-w3pvt-inner">
             <div className="overlay-innerpage">
@@ -60,6 +72,7 @@ export default function Head() {
                             <div id="logo">
                                 <h1>
                                     <Link to={'/'}><img src={twologo} alto="logo" /><span></span></Link>
+
                                 </h1>
                             </div>
 
@@ -70,7 +83,12 @@ export default function Head() {
                                         <input type="checkbox" id="drop" />
                                         <ul className="menu">
                                             <li><Link to={'/'}>Inicio</Link></li>
+<<<<<<< HEAD
                                             <li><Link to={'/'}>Nosotros</Link></li>
+=======
+                                            {/* <li><a onClick={() => testRed()}>Inicio</a></li> */}
+                                            <li className="active"><Link to={'/'}>Nosotros</Link></li>
+>>>>>>> f34f3dc3aacf6f6e56ad32968a4ca53cba033f83
                                             <li><Link to={'/'}>Servicios</Link></li>
                                             <li>
                                                 <label htmlFor="drop-2" className="toggle toogle-2">
