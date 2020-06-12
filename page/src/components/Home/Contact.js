@@ -44,12 +44,11 @@ export default function Contact({ contact }) {
                                         </div>
                                     </div>
                                     <div className="form-group">
-                                        <input className="form-control" type="text" name="Subject" placeholder="Asunto"
-                                            required="" />
+                                        <input className="form-control" type="text" name="Subject" placeholder="Asunto" value={subject} required onChange={e => setSubject(e.target.value)} />
                                     </div>
                                     <div className="form-group">
                                         <input className="form-control" type="text" name="Phone Number" placeholder="Empresa"
-                                            required="" />
+                                            required onChange={e => setName(e.target.value)} />
                                     </div>
                                     <div className="form-group">
                                         <input className="form-control" type="text" name="Phone Number" placeholder="Teléfono"
