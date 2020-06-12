@@ -10,13 +10,20 @@ export default function Contact({ contact }) {
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')
     const [subject, setSubject] = useState('')
+    const [emp, setEmp] = useState('')
     const [tel, setTel] = useState('')
     const [body, setBody] = useState('')
 
     const handleOnSubmit = (e) => {
         e.preventDefault()
-        const contact = { name, email, subject, tel, body }
-        axios.post('http://localhost:5000/cotizacion', contact)
+        const contact = { name, email, subject, tel, body, emp }
+        axios.post('http://localhost:5000/contact', contact)
+        setName('')
+        setEmail('')
+        setSubject('')
+        setTel('')
+        setBody('')
+        setEmp('')
     }
 
     return (
@@ -47,15 +54,13 @@ export default function Contact({ contact }) {
                                         <input className="form-control" type="text" name="Subject" placeholder="Asunto" value={subject} required onChange={e => setSubject(e.target.value)} />
                                     </div>
                                     <div className="form-group">
-                                        <input className="form-control" type="text" name="Phone Number" placeholder="Empresa"
-                                            required onChange={e => setName(e.target.value)} />
+                                        <input className="form-control" type="text" name="Phone Number" placeholder="Empresa" value={emp} required onChange={e => setEmp(e.target.value)} />
                                     </div>
                                     <div className="form-group">
-                                        <input className="form-control" type="text" name="Phone Number" placeholder="Teléfono"
-                                            required="" />
+                                        <input className="form-control" type="text" name="Phone Number" placeholder="Teléfono" value={tel} required onChange={e => setTel(e.target.value)} />
                                     </div>
                                     <div className="form-group">
-                                        <textarea name="message" placeholder="Descripcion" required=""></textarea>
+                                        <textarea name="message" placeholder="Descripcion" required value={body} onChange={e => setBody(e.target.value)}></textarea>
                                     </div>
                                     <div className="input-group1 text-center">
                                         <button className="btn" type="submit">Enviar</button>

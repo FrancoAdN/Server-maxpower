@@ -4,9 +4,17 @@ import '../Home/css/slider.css'
 import '../Home/css/style.css'
 import '../Home/css/style2.css'
 import '../Home/css/font-awesome.css'
-import { Link } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
 
 export default function Head() {
+    const history = useHistory()
+
+    // const testRed = () => {
+    //     console.log('click')
+    //     history.push('/')
+    //     window.scrollTo(0, 1200)
+    // }
+
     return (
         <div className="main-w3-pvt-header-sec page-w3pvt-inner">
             <div className="overlay-innerpage">
@@ -59,6 +67,7 @@ export default function Head() {
                             <div id="logo">
                                 <h1>
                                     <Link to={'/'}><img src={twologo} alto="logo" /><span></span></Link>
+
                                 </h1>
                             </div>
 
@@ -69,6 +78,7 @@ export default function Head() {
                                         <input type="checkbox" id="drop" />
                                         <ul className="menu">
                                             <li><Link to={'/'}>Inicio</Link></li>
+                                            {/* <li><a onClick={() => testRed()}>Inicio</a></li> */}
                                             <li className="active"><Link to={'/'}>Nosotros</Link></li>
                                             <li><Link to={'/'}>Servicios</Link></li>
                                             <li>
