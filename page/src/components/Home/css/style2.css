@@ -919,7 +919,7 @@ h3.title-w3-3:before {
 		position: absolute;
 		bottom: 30%;
 	}
-	
+
 	h4.text-w3pvt {
 		font-size: 2em;
 		color: #fff;
@@ -990,18 +990,18 @@ h3.title-w3-3:before {
 		padding: 10px 12px;
 		font-size: 13px;
 	}
-	
+
 	.bottom-w3pvt-left {
 		position: relative;
 	}
-	
+
 	h4.text-wthree {
 		font-size: 1em;
 		color: #fff;
 		font-weight: 300;
 	}
-	
-	.pos-wthree  {
+
+	.pos-wthree {
 		position: absolute;
 		top: 10px;
 		margin-left: -13px;
@@ -1012,7 +1012,7 @@ h3.title-w3-3:before {
 		margin-left: -13px;
 		position: absolute;
 	}
-	
+
 	h4.text-w3pvt {
 		font-size: 2em;
 		color: #fff;
@@ -1201,7 +1201,7 @@ button.submit-contact {
 button.submit-contact:hover {
 	opacity: 0.8;
 	background: #ff3f34;
-	color: #FFFFFF;
+	color: #ffffff;
 }
 
 /* //form */
@@ -1210,8 +1210,6 @@ button.submit-contact:hover {
 .mid-section .img-fluid {
 	width: 100%;
 }
-
-
 
 .bottom-w3pvt-left {
 	position: relative;
@@ -1227,21 +1225,18 @@ h4.text-wthree {
 	position: absolute;
 	bottom: 20%;
 	left: 10%;
-
 }
 
 .pos-w3pvt {
 	right: 10%;
 	position: absolute;
 	bottom: 20%;
-
 }
 
 h4.text-w3pvt {
 	font-size: 2em;
 	color: #fff;
 	font-weight: 300;
-
 }
 
 /*--//mid--*/
@@ -1314,7 +1309,6 @@ h4.text-w3pvt {
 	cursor: pointer;
 }
 
-
 /* //contact form */
 /* map */
 .map {
@@ -1334,54 +1328,85 @@ h4.text-w3pvt {
 8. Benefit
 *********************************/
 
-.benefit
-{
+.benefit {
 	font-family: 'Poppins';
 	margin-top: 74px;
 }
-.benefit_row
-{
+.benefit_row {
 	padding-left: 15px;
 	padding-right: 15px;
 }
-.benefit_col
-{
+.benefit_col {
 	padding-left: 0px;
 	padding-right: 0px;
 }
-.benefit_item
-{
+.benefit_item {
 	height: 100px;
 	background: #f3f3f3;
-	border-right: solid 1px #FFFFFF;
+	border-right: solid 1px #ffffff;
 	padding-left: 25px;
 }
-.benefit_col:last-child .benefit_item
-{
+.benefit_col:last-child .benefit_item {
 	border-right: none;
 }
-.benefit_icon i
-{
+.benefit_icon i {
 	font-size: 30px;
 	color: #ce110a;
 }
-.benefit_content
-{
+.benefit_content {
 	padding-left: 22px;
 }
-.benefit_content h6
-{
+.benefit_content h6 {
 	font-family: 'Poppins';
 	text-transform: uppercase;
 	line-height: 18px;
 	font-weight: 500;
 	margin-bottom: 0px;
 }
-.benefit_content p
-{
+.benefit_content p {
 	font-family: 'Poppins';
 	font-size: 12px;
 	line-height: 18px;
 	margin-bottom: 0px;
 	color: #51545f;
 }
+
+/*--/shipping-grids--*/
+.shiopping-w3pvt-gd {
+	background: rgb(90, 90, 90);
+	padding: 1em;
+	padding-bottom: 10px;
+}
+
+.shiopping-w3pvt-gd.sec {
+	background: #e61e17;
+}
+
+.shiopping-w3pvt-gd:hover {
+	background: #333;
+	-moz-transition: all 0.25s ease;
+	-o-transition: all 0.25s ease;
+	-webkit-transition: all 0.25s ease;
+	transition: all 0.25s ease;
+}
+
+.shiopping-w3pvt-gd h3 {
+	font-size: 1.2em;
+	color: #fff;
+	margin: 0.5em 0;
+	text-transform: uppercase;
+	font-weight: 600;
+}
+
+.icon-gd span {
+	font-size: 2em;
+	text-align: center;
+	color: rgb(212, 211, 211);
+	margin-bottom: 0.3em;
+}
+
+.shipping-wthree p {
+	color: #fff;
+}
+
+/*--//shipping-grids--*/
