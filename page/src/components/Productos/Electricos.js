@@ -175,7 +175,7 @@ function Popup() {
             <div className="popup">
             <div className="main_grid_contact">
             <h4 className="mb-4 sec-title-w3 let-spa text-bl"> SOLICITUD DE COTIZACION: </h4>
-                <p>Los datos ingresados deben ser reales para su posterior contacto.</p>
+                <p className="one-popup">Los datos ingresados deben ser reales para su posterior contacto.</p>
                 <div className="row">
                 <div className="col-sm-6 form-group pr-sm-1">
                 <input className="form-control" type="text" name="Name" placeholder="Nombre" required/>
@@ -194,11 +194,10 @@ function Popup() {
                 <div className="form-group">
                 <textarea name="message" placeholder="Descripcion" required=""></textarea>
                 </div>
-
+                <p className="desc-popup">Al realizar su pedido de cotizacion, debe tener en cuenta que, <br></br>el monto minimo de compra debe ser igual o superior a 100 usd.</p>
                 <div className="input-group1 text-center">
                 <button className="btn" type="submit">Enviar</button>
                 </div>
-                
             </div>
             </div>
         </div>

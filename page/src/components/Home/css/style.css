@@ -1467,12 +1467,60 @@ ul.courses_list.my-3 li {
 }
 
 @media screen and (max-width: 480px) {
-	.media {
+	#logo {
 		display: block;
+		padding: 0;
+		width: 50%;
+		text-align: center;
+		float: none;
+		margin: 0 auto;
 	}
 
-	.admin p {
-		font-size: 13px;
+	.w3pvt-bg {
+		padding: 1em;
+		display: flex;
+		float: none;
+		width: 100%;
+		justify-content: center;
+	}
+
+	.banner-info {
+		padding-top: 10em;
+	}
+
+	.banner-top,
+	.banner-top1,
+	.banner-top2,
+	.overlay,
+	.overlay.sec {
+		min-height: 30em;
+	}
+
+	.prodct1 {
+		padding: 3em 1em;
+		margin-bottom: 2em;
+	}
+
+	.serve-grid {
+		padding: 2em 1em;
+	}
+
+	.banner-info h3 {
+		font-size: 2.5em;
+	}
+
+	.banner-w3ls-inner {
+		text-align: left;
+		padding: 0em 2em;
+		width: 95%;
+		margin-top: 2em;
+	}
+
+	#logo a {
+		float: left;
+		font-size: 0.9em;
+		padding-top: 0em;
+		margin-bottom: 0.5em;
 	}
 }
 

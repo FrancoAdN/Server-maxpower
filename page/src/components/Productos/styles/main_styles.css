@@ -96,6 +96,7 @@
 .new_arrivals_sorting
 {
 	display: inline-block;
+	width: 100%;
 	border-radius: 3px;
 	margin-top: 59px;
 	overflow: visible;
@@ -103,9 +104,9 @@
 .grid_sorting_button
 {
 	height: 40px;
-	min-width: 102px;
-	padding-left: 25px;
-	padding-right: 25px;
+	min-width: 60px;
+	padding-left: 11px;
+	padding-right: 10.1px;
 	cursor: pointer;
 	border: solid 1px #ebebeb;
 	font-size: 14px;
@@ -485,413 +486,6 @@
 	color: #51545f;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-/* top bar */
-
-.top-bar-w3layouts p {
-	padding: 0 0.5em;
-}
-
-.header-top {
-	padding: 0 0.5em;
-	margin-left: -30px;
-}
-
-.header-top p {
-	display: inline-block;
-	margin-left: 1em;
-	color: #fff;
-}
-
-/* social icons */
-.top-right-info p {
-	margin-left: -160px;
-}
-
-.top-right-info li span {
-	color: #fff;
-	width: 30px;
-	height: 30px;
-	line-height: 2.2;
-	font-size: 14px;
-	text-align: center;
-	border-radius: 50%;
-	transition: 0.5s all;
-	-webkit-transition: 0.5s all;
-	-moz-transition: 0.5s all;
-	-o-transition: 0.5s all;
-	-ms-transition: 0.5s all;
-}
-
-.top-right-info li span.fa-facebook-f {
-	background: #3b5998;
-}
-
-.top-right-info li span.fa-instagram {
-
-	background: linear-gradient(
-		#f9da27,
-		#e66b30,
-		#d6263d,
-		#b73980,
-		#a2429c,
-		#4e48a8
-	);
-}
-
-.top-right-info li span.fa-linkedin {
-	background: #0074af;
-}
-
-.top-right-info li span.fa-youtube {
-	background: #ce110a;
-}
-
-.top-right-info li span:hover,
-.top-lavi p a:hover {
-	opacity: 0.8;
-	transition: 0.5s all;
-	-webkit-transition: 0.5s all;
-	-moz-transition: 0.5s all;
-	-o-transition: 0.5s all;
-	-ms-transition: 0.5s all;
-}
-
-.top-right-info li {
-	display: inline-block;
-}
-
-/* //social icons */
-
-.top-lavi p a:hover,
-.w3l-footer ul li a:hover {
-	opacity: 0.7;
-}
-
-a.login-button-2 {
-	letter-spacing: 1px;
-	font-size: 12px;
-	background: #ce110a;
-	padding: 11px 20px;
-	border-radius: 40px;
-}
-
-/* //top bar */
-
-section.hand-crafted {
-	background: #1e272e;
-}
-
-.hand-crafted h3 {
-	font-size: 2em;
-	margin-top: 10px;
-	margin-bottom: 0;
-	font-weight: 600;
-	color: #fff;
-}
-
-ul.tic-info li {
-	line-height: 2.2em;
-	letter-spacing: 1px;
-}
-
-.progress-tittle {
-	font-size: 1.1em;
-	margin-bottom: 0.5em;
-	color: #888;
-}
-
-ul.tic-info li span {
-	color: #1e272e;
-	margin-right: 1em;
-}
-
-.left-build-main-temps {
-	padding: 0 4em;
-	float: right;
-	width: 40%;
-}
-
-/*-- header --*/
-/* banner style */
-.banner_w3pvt {
-	position: relative;
-	z-index: 1;
-}
-
-.banner-top {
-	/* background: url(../images/banner4.jpg) no-repeat center; */
-	background-size: cover;
-	-webkit-background-size: cover;
-	-moz-background-size: cover;
-	-o-background-size: cover;
-	-moz-background-size: cover;
-}
-
-.banner-top1 {
-	/* background: url(../images/banner7.jpg) no-repeat center; */
-	background-size: cover;
-	-webkit-background-size: cover;
-	-moz-background-size: cover;
-	-o-background-size: cover;
-	-moz-background-size: cover;
-}
-
-.banner-top2 {
-	/* background: url(../images/banner5.jpg) no-repeat 0px 0px; */
-	background-size: cover;
-	-webkit-background-size: cover;
-	-moz-background-size: cover;
-	-o-background-size: cover;
-	-moz-background-size: cover;
-}
-
-.banner-info {
-	padding-top: 19em;
-}
-
-.banner-w3ls-inner {
-	text-align: left;
-	padding: 2em;
-	width: 60%;
-}
-
-.banner-info h3 {
-	text-shadow: 3px 1px 3px rgba(45, 45, 45, 0.38);
-	font-size: 5em;
-	color: #fff;
-	font-weight: 600;
-	line-height: 1em;
-}
-
-.banner-info h4 {
-	color: #ec1c24;
-	letter-spacing: 4px;
-	text-transform: uppercase;
-	font-weight: 700;
-	font-size: 0.9em;
-	margin-bottom: 1em;
-}
-
-.banner-top,
-.banner-top1,
-.banner-top2,
-.banner-top3 {
-	min-height: 50em;
-}
-
-.overlay,
-.overlay.sec {
-	min-height: 50em;
-	background: rgba(0, 0, 0, 0.44);
-}
-
-.overlay.sec {
-	background: rgba(0, 0, 0, 0.62);
-}
-
-.overlay1 {
-	min-height: 750px;
-	background: rgba(0, 0, 0, 0.5);
-}
-
-.read {
-	color: #fff;
-	font-size: 1em;
-	font-weight: 400;
-	letter-spacing: 2px;
-	display: inline-block;
-	border: none;
-	outline: none;
-	background: #ce110a;
-	-o-border-radius: 50%;
-	-ms-border-radius: 50%;
-	-moz-border-radius: 50%;
-	box-shadow: 0 3px 5px rgba(0, 0, 0, 0.34);
-	-webkit-box-shadow: 0 3px 5px rgba(0, 0, 0, 0.34);
-	-moz-box-shadow: 0 3px 5px rgba(0, 0, 0, 0.34);
-	-o-box-shadow: 0 3px 5px rgba(0, 0, 0, 0.34);
-	-webkit-transition: transform 0.2s linear, -webkit-box-shadow 0.2s linear;
-	-moz-transition: transform 0.2s linear, -moz-box-shadow 0.2s linear;
-	transition: transform 0.2s linear, box-shadow 0.2s linear;
-	padding: 0.6em 2em;
-}
-
-.read span {
-	font-size: 3em;
-	line-height: 1.5em;
-	margin-left: 8px;
-}
-
-.read:hover,
-.book-appo {
-	opacity: 0.9;
-}
-
-.book-appo {
-	background: #f54785;
-}
-
-.banner-w3ls-inner p {
-	color: #fff;
-	letter-spacing: 3px;
-	margin: 1em 0;
-}
-
-/*-- //banner style --*/
-
-/* header */
-
-/* CSS Document */
-.w3pvt-bg {
-	background: #fff;
-	padding: 1.5em;
-	display: flex;
-}
-
-#logo a {
-	float: left;
-	font-size: 1em;
-	display: initial;
-	margin: 0;
-	letter-spacing: 1px;
-	color: #fff;
-	padding: 0px 0;
-	border: none;
-	font-weight: 500;
-	text-transform: capitalize;
-}
-
-header {
-	position: absolute;
-	z-index: 9;
-	width: 100%;
-	padding: 1rem 0;
-}
-
-.toggle,
-[id^='drop'] {
-	display: none;
-}
-
-/* Giving a background-color to the nav container. */
-nav {
-	margin: 0;
-	padding: 0;
-}
-
-/* Since we'll have the "ul li" "float:left"
- * we need to add a clear after the container. */
-
-nav:after {
-	content: '';
-	display: table;
-	clear: both;
-}
-
-/* Removing padding, margin and "list-style" from the "ul",
- * and adding "position:reltive" */
-nav ul {
-	float: right;
-	padding: 0;
-	margin: 0;
-	list-style: none;
-	position: relative;
-	margin-top: 0.5em;
-}
-
-/* Positioning the navigation items inline */
-nav ul li {
-	display: inline-block;
-	float: left;
-}
-
-/* Styling the links */
-nav a {
-	font-weight: 400;
-	color: #555;
-	letter-spacing: 2px;
-	font-size: 0.9em;
-	position: relative;
-	padding: 0.5rem;
-	margin: 0px 1.1em;
-}
-
-nav ul li ul li:hover {
-	background: #f8f9fa;
-}
-
-/* Background color change on Hover */
-nav a:hover {
-	color: #ce110a;
-	background: transparent;
-}
-
-.menu li.active a {
-	color: #ce110a;
-}
-
-/* Hide Dropdowns by Default
- * and giving it a position of absolute */
-nav ul ul {
-	display: none;
-	position: absolute;
-	/* has to be the same number as the "line-height" of "nav a" */
-	top: 25px;
-	background: #fff;
-	padding: 10px;
-}
-
-ul.inner-dropdown a:hover {
-	color: #333;
-}
-
-/* Display Dropdowns on Hover */
-nav ul li:hover > ul {
-	display: inherit;
-}
-
-/* Fisrt Tier Dropdown */
-nav ul ul li {
-	width: 160px;
-	float: none;
-	display: list-item;
-	position: relative;
-}
-
-nav ul ul li a {
-	color: #333;
-	padding: 5px 10px;
-	display: block;
-}
-
-/* Second, Third and more Tiers	
- * We move the 2nd and 3rd etc tier dropdowns to the left
- * by the amount of the width of the first tier.
-*/
-nav ul ul ul li {
-	position: relative;
-	top: -60px;
-	/* has to be the same number as the "width" of "nav ul ul li" */
-	left: 170px;
-}
-
-/* Change ' +' in order to change the Dropdown symbol */
-li > a:only-child:after {
-	content: '';
-}
-
-
 .page-w3pvt-inner {
 	background: url(../images/banner7.jpg) no-repeat center; 
 	background-size: cover;
@@ -900,71 +494,161 @@ li > a:only-child:after {
 	-o-background-size: cover;
 	-moz-background-size: cover;
 	min-height: 20em;
-	background-color: gray;
 }
 
-.overlay-innerpage {
-	min-height: 20em;
-	background: rgba(0, 0, 0, 0.44);
+/*********************************
+0. Responsive 
+*********************************/
+
+@media screen and (max-width:1024px) {
+		.grid_sorting_button {
+		height: 40px;
+		min-width: 465px;
+		width: 465px;
+		padding-left: 10px;
+		padding-right: 10px;
+		cursor: pointer;
+		border: solid 1px #ebebeb;
+		font-size: 14px;
+		font-weight: 500;
+		text-transform: uppercase;
+		background: #FFFFFF;
+		border-radius: 3px;
+		margin: 0;
+		float: left;
+		margin-left: -1px;
+		}
+		.product-grid {
+		width: 100%;
+		margin-top: 57px;
+		margin-right: 600px;
+		}
 }
 
-* footer {
-	background: #17181b;
+@media screen and (max-width: 768px) {
+	.grid_sorting_button {
+		height: 40px;
+		min-width: 345px;
+		width: 345px;
+		padding-left: 10px;
+		padding-right: 10px;
+		cursor: pointer;
+		border: solid 1px #ebebeb;
+		font-size: 14px;
+		font-weight: 500;
+		text-transform: uppercase;
+		background: #FFFFFF;
+		border-radius: 3px;
+		margin: 0;
+		float: left;
+		margin-left: -1px;
+		}
+		.product-grid {
+		width: 100%;
+		margin-top: 57px;
+		margin-right: 75px;
+		}
 }
 
-.footer i,li {
-	color: gray;
-}
-
-h2 a.logo {
-	color: #fff;
-}
-
-.footer-text p,
-.footer-text p a,
-.contact-info p {
-	color: #727377;
-	font-size: 15px;
-}
-
-.footer-title h3 {
-	font-size: 24px;
-	color: #f3f3f3;
-	letter-spacing: 1px;
-}
-
-/* form */
-.info-form-right input[type='text'],
-.info-form-right input[type='email'],
-.info-form-right textarea {
-	color: #000;
-	background: #f7f7f7;
-	outline: none;
+@media screen and (max-width: 420px) {
+	.grid_sorting_button {
+	height: 40px;
+	min-width: 190.5px;
+	width: 190.5px;
+	padding-left: 10px;
+	padding-right: 10px;
+	cursor: pointer;
+	border: solid 1px #ebebeb;
 	font-size: 14px;
-	padding: 9px;
-	letter-spacing: 1px;
-	border: none;
-	-webkit-appearance: none;
+	font-weight: 500;
+	text-transform: uppercase;
+	background: #FFFFFF;
+	border-radius: 3px;
+	margin: 0;
+	float: left;
+	margin-left: -1px;
+	}
+	.product-grid {
+	width: 100%;
+	margin-top: 57px;
+	margin-right: 75px;
+	}
 }
 
-.info-form-right textarea {
-	resize: none;
-	min-height: 6em;
+@media screen and (max-width: 375px) {
+		.grid_sorting_button {
+		height: 40px;
+		min-width: 300px;
+		width: 345px;
+		padding-left: 10px;
+		padding-right: 10px;
+		cursor: pointer;
+		border: solid 1px #ebebeb;
+		font-size: 14px;
+		font-weight: 500;
+		text-transform: uppercase;
+		background: #FFFFFF;
+		border-radius: 3px;
+		margin: 0;
+		float: left;
+		margin-left: -1px;
+		}
+		.product-grid {
+		width: 100%;
+		margin-top: 57px;
+		margin-right: 40px;
+		}
 }
 
-button.submit-contact {
-	background: #ce110a;
-	color: #fff;
-	letter-spacing: 1px;
-	padding: 8px 26px;
+@media screen and (max-width: 360px) {
+
+	.grid_sorting_button {
+	height: 40px;
+	min-width: 165.5px;
+	width: 165.5px;
+	padding-left: 10px;
+	padding-right: 10px;
+	cursor: pointer;
+	border: solid 1px #ebebeb;
 	font-size: 14px;
-	display: inherit;
-	margin-top: 1em;
-	border-radius: 4px;
+	font-weight: 500;
+	text-transform: uppercase;
+	background: #FFFFFF;
+	border-radius: 3px;
+	margin: 0;
+	float: left;
+	margin-left: -1px;
+	}
+	.product-grid {
+	width: 100%;
+	margin-top: 57px;
+	margin-right: 30px;
+	}
+
 }
 
-button.submit-contact:hover {
-	opacity: 0.8;
-}
+@media screen and (max-width: 320px) {
 
-/* //form */
+	.grid_sorting_button {
+		height: 40px;
+		min-width: 300px;
+		width: 300px;
+		padding-left: 10px;
+		padding-right: 10px;
+		cursor: pointer;
+		border: solid 1px #ebebeb;
+		font-size: 14px;
+		font-weight: 500;
+		text-transform: uppercase;
+		background: #FFFFFF;
+		border-radius: 3px;
+		margin: 0;
+		float: left;
+		margin-left: -1px;
+		}
+		.product-grid {
+		width: 100%;
+		margin-top: 57px;
+		margin-right: -10px;
+		}
+}

@@ -12,32 +12,32 @@ export default function Prods() {
 		<div>
 			<section className="shipping-wthree">
 				<div className="shiopping-grids d-lg-flex">
-					<div className="col-lg-4 shiopping-w3pvt-gd text-center">
+					<div className="col-lg-4 shiopping-gd text-center">
 						<div className="icon-gd">
 							<span class="fa fa-truck" aria-hidden="true"></span>
 						</div>
 						<div className="icon-gd-info">
-							<h3> STOCK EN VARIADORES ATV930 90KW </h3>
-							<p> </p>
+							<h3> STOCK EN VARIADORES <span>ATV930 90KW</span> </h3>
+							<p> Disponemos de stock en variadores ATV930 90KW de <span> Schneider Electric</span>, comuniquese con nosotros para brindarle la ficha tecnica y/o resolver sus dudas! Su consulta no molesta. </p>
 						</div>
 					</div>
-					<div className="col-lg-4 shiopping-w3pvt-gd sec text-center">
+					<div className="col-lg-4 shiopping-gd sec text-center">
 						<div class="icon-gd">
-							<span class="fa fa-bullhorn" aria-hidden="true"></span>
+							<span class="fa fa-users" aria-hidden="true"></span>
 						</div>
 						<div class="icon-gd-info">
-							<h3> GARANTIA DE 3 MESES </h3>
-							<p> </p>
+							<h3 className="title-second"> SERVICIO DE ASISTENCIA TÉCNICA ONLINE </h3>
+							<p className="desc-second"> A pesar de no poder asistir en forma física a las empresas hemos implementado un servicio de asistencia técnica On line con video llamadas, telefónico y whatsapp para poder asistir a las empresas sin concurrir a las mismas.</p>
 						</div>
 					</div>
-					<div class="col-lg-4 shiopping-w3pvt-gd text-center">
+					<div class="col-lg-4 shiopping-gd text-center">
 						<div class="icon-gd">
 							{' '}
-							<span class="fa fa-gift" aria-hidden="true"></span>
+							<span class="fa fa-plane" aria-hidden="true"></span>
 						</div>
 						<div class="icon-gd-info">
-							<h3> SEGUIMOS IMPORTANDO PRODUCTOS </h3>
-							<p> </p>
+							<h3> SEGUIMOS <span className="import">IMPORTANDO</span>PRODUCTOS </h3>
+							<p> A pesar del <span className="import"> COVID-19 </span>, seguimos importando <span className="import"> productos electricos y electronicos</span> para nuestros clientes. Contactenos para mas informacion, estamos a su disposicion! </p>
 						</div>
 					</div>
 				</div>
@@ -71,6 +71,8 @@ export default function Prods() {
 				</div>
 			</section>
 
+
+		{/*
 			<div className="benefit">
 				<div className="container">
 					<div className="row benefit_row">
@@ -130,6 +132,7 @@ export default function Prods() {
 					</div>
 				</div>
 			</div>
+		*/}
 		</div>
 	);
 }

@@ -1372,27 +1372,57 @@ h4.text-w3pvt {
 }
 
 /*--/shipping-grids--*/
-.shiopping-w3pvt-gd {
-	background: rgb(90, 90, 90);
+.shiopping-gd {
+	background: #e7e7e7;
 	padding: 1em;
 	padding-bottom: 10px;
 }
 
-.shiopping-w3pvt-gd.sec {
-	background: #e61e17;
+.shiopping-gd.sec {
+	background: #f1332c;
 }
 
-.shiopping-w3pvt-gd:hover {
-	background: #333;
+.shiopping-gd span { 
+	color: #45AD3E;
+}
+
+.shiopping-gd span.import {
+	color: #ce110a;
+}
+
+.shiopping-gd h3.title-second {
+	color: white;
+}
+
+.shiopping-gd p.desc-second {
+	color: white;
+}
+
+.shiopping-gd .fa-users {
+	color: white;
+}
+
+.shiopping-gd:hover {
+	background: #F3F3F3;
 	-moz-transition: all 0.25s ease;
 	-o-transition: all 0.25s ease;
 	-webkit-transition: all 0.25s ease;
 	transition: all 0.25s ease;
 }
 
-.shiopping-w3pvt-gd h3 {
+.shiopping-gd:hover .fa-users {
+	color: #000;
+}
+.shiopping-gd:hover h3 {
+	color: #000;
+}
+.shiopping-gd:hover p {
+	color: #000;
+}
+
+.shiopping-gd h3 {
 	font-size: 1.2em;
-	color: #fff;
+	color: #000;
 	margin: 0.5em 0;
 	text-transform: uppercase;
 	font-weight: 600;
@@ -1401,12 +1431,12 @@ h4.text-w3pvt {
 .icon-gd span {
 	font-size: 2em;
 	text-align: center;
-	color: rgb(212, 211, 211);
+	color: #000;
 	margin-bottom: 0.3em;
 }
 
 .shipping-wthree p {
-	color: #fff;
+	color: #000;
 }
 
 /*--//shipping-grids--*/
