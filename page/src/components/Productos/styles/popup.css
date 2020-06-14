@@ -68,7 +68,7 @@
     -webkit-transition: opacity .5s, top .5s;
     -moz-transition: opacity .5s, top .5s;
     -ms-transition: opacity .5s, top .5s;
-    -o-transition: opacity .5s, top .5s;
+    -o-transition: opacity .5s, top .5s; 
     transition: opacity .5s, top .5s;
 }
 .overlay2:target+.popup {
@@ -112,6 +112,54 @@
     color: #ce110a;
 }
 
+@media screen and (max-width: 360px){
+    .popup {
+        width: 300px;
+        height: 500px;
+        background-color: #dfdfe2e0;
+        display: inline-block;
+        left: 50%;
+        opacity: 0;
+        padding: 15px;
+        position: fixed;
+        text-align: justify;
+        top: 40%;
+        visibility: hidden;
+        z-index: 10;
+        }
+        .one-popup {
+			display: none;
+        }
+        
+        .desc-popup {
+            display: none;
+        }
+        .desc-popup2 {
+            color: #ce110a;
+            font-size: 0.6em;
+            margin-top: -25px;
+            margin-left: 13px;
+        }
+        .main_grid_contact input[type='text'],
+        .main_grid_contact input[type='email'],
+        .main_grid_contact textarea {
+            padding: 10px 12px;
+            font-size: 13px;
+        }
+        .main_grid_contact .input-group1 button {
+            outline: none;
+            padding: 13px 10px;
+            font-size: 14px;
+            width: 36%;
+            margin-top: -1em;
+            color: #fff;
+            background: #ce110a;
+            border: none;
+            letter-spacing: 1px;
+            cursor: pointer;
+        }
+}
+
 @media screen and (max-width: 320px) {
     .popup {
         width: 300px;
@@ -132,6 +180,18 @@
         }
         .desc-popup {
             display: none;
+        }
+        .desc-popup2 {
+            color: #ce110a;
+            font-size: 0.6em;
+            margin-top: -25px;
+            margin-left: 13px;
+        }
+        .main_grid_contact input[type='text'],
+        .main_grid_contact input[type='email'],
+        .main_grid_contact textarea {
+            padding: 10px 12px;
+            font-size: 13px;
         }
         .main_grid_contact .input-group1 button {
             outline: none;

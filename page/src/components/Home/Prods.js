@@ -27,7 +27,7 @@ export default function Prods() {
 						</div>
 						<div class="icon-gd-info">
 							<h3 className="title-second"> SERVICIO DE ASISTENCIA TÉCNICA ONLINE </h3>
-							<p className="desc-second"> A pesar de no poder asistir en forma física a las empresas hemos implementado un servicio de asistencia técnica On line con video llamadas, telefónico y whatsapp para poder asistir a las empresas sin concurrir a las mismas.</p>
+							<p className="desc-second">Hemos implementado un servicio de asistencia técnica online con video-llamadas, telefónico y whatsapp para poder asistir a las empresas.</p>
 						</div>
 					</div>
 					<div class="col-lg-4 shiopping-gd text-center">
@@ -37,7 +37,7 @@ export default function Prods() {
 						</div>
 						<div class="icon-gd-info">
 							<h3> SEGUIMOS <span className="import">IMPORTANDO</span>PRODUCTOS </h3>
-							<p> A pesar del <span className="import"> COVID-19 </span>, seguimos importando <span className="import"> productos electricos y electronicos</span> para nuestros clientes. Contactenos para mas informacion, estamos a su disposicion! </p>
+							<p> A pesar del <span className="import"> COVID-19 </span>, seguimos importando <span className="import"> productos electricos y electronicos</span> para nuestros clientes.Estamos a su disposicion, no dude en contactarnos!</p>
 						</div>
 					</div>
 				</div>

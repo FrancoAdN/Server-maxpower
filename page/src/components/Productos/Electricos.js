@@ -195,6 +195,7 @@ function Popup() {
                 <textarea name="message" placeholder="Descripcion" required=""></textarea>
                 </div>
                 <p className="desc-popup">Al realizar su pedido de cotizacion, debe tener en cuenta que, <br></br>el monto minimo de compra debe ser igual o superior a 100 usd.</p>
+                <p className="desc-popup2"> El monto minimo de compra debe ser de 100 usd.</p>
                 <div className="input-group1 text-center">
                 <button className="btn" type="submit">Enviar</button>
                 </div>
