@@ -7,21 +7,17 @@ import HandCrafted from './HandCrafted'
 import Contact from './Contact'
 import Footer from './Footer'
 
-export default function Home() {
-    const ab = useRef(null)
-    const feat = useRef(null)
-    const hand = useRef(null)
-    const contact = useRef(null)
 
+export default function Home() {
 
     return (
         <div>
-            <MainContent about={ab} features={feat} contact={contact} hand={hand} />
-            <About about={ab} />
+            <MainContent />
+            <About />
             <Prods />
-            <Features feat={feat} /> {/*servicios?*/}
-            <HandCrafted handRef={hand} />
-            <Contact contact={contact} />
+            <Features />
+            <HandCrafted />
+            <Contact />
             <Footer />
         </div>
     )

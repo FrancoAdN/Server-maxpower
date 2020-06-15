@@ -1,4 +1,5 @@
-import React, { useState, useRef } from 'react'
+import React, { useState } from 'react'
+import Popup from './Popup'
 import Head from './Head'
 import Footer from '../Home/Footer'
 import gql from 'graphql-tag'
@@ -22,8 +23,8 @@ const CAT_QUERY = gql`
     e_categorias {
       categoria
     }
-}
-`
+}`
+
 const PROD_QUERY = gql`
 query Productos ($categoria: String)
 {
@@ -41,19 +42,19 @@ query Productos ($categoria: String)
 
 
 export default function Electronicos() {
-
-
+    const [cotizacion, setCotizacion] = useState(false)
     return (
         <div>
             <Head />
-            <Body />
+            <Body setCotizacion={setCotizacion} />
+            <Popup cotizacion={cotizacion} setCotizacion={setCotizacion} />
             <Footer />
         </div>
     )
 }
 
 
-function Body() {
+function Body({ setCotizacion }) {
     const [category, setCat] = useState('all')
 
     return (
@@ -101,7 +102,7 @@ function Body() {
                                         return data.electronico.map(elect => (
                                             <Grid item xs={false} key={elect.id_elect}>
                                                 <center>
-                                                    <Card prod={elect} />
+                                                    <Card prod={elect} setCotizacion={setCotizacion} />
                                                 </center>
 
                                             </Grid>
@@ -118,25 +119,24 @@ function Body() {
     )
 }
 
-
-function Card({ prod, addToCot }) {
+function Card({ prod, setCotizacion }) {
     return (
-    <div className="product-grid">
-        <div className="product-item">
-            <div className="product discount product_filter">
-                <div className="product_image">
-                    <img className="img-prod" src={prod.img} alt="Avatar" />
+        <div className="product-grid">
+            <div className="product-item">
+                <div className="product discount product_filter">
+                    <div className="product_image">
+                        <img className="img-prod" src={prod.img} alt="Avatar" />
+                    </div>
+                    <div className="favorite favorite_left"></div>
+                    {/* <div class="product_bubble product_bubble_left product_bubble_green d-flex flex-column align-items-center"><span>new</span></div> */}
+                    <div className="product-info">
+                        <h6 className="product_name">{prod.nombre}</h6>
+                        <div className="product_price">{prod.categoria}<span></span></div>
+                    </div>
                 </div>
-                <div className="favorite favorite_left"></div>
-                <div class="product_bubble product_bubble_left product_bubble_green d-flex flex-column align-items-center"><span>new</span></div>
-                <div className="product-info">
-                    <h6 className="product_name">{prod.nombre}</h6>
-                    <div className="product_price">Codigo:<span></span></div>
-                </div>
-             </div>
-            <div class="red_button add_to_cart_button"><a href="#">Pedir cotizacion</a></div>
+                <div class="red_button add_to_cart_button" onClick={() => setCotizacion(true)}>Pedir cotizacion</div>
+            </div>
         </div>
-     </div>
 
     )
 
@@ -164,3 +164,4 @@ function ListCat({ name, current, change }) {
         </li>
     )
 }
+

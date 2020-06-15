@@ -1,10 +1,13 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import './css/slider.css'
 import './css/style.css'
 import './css/style2.css'
 import './css/font-awesome.css'
+import { refProv } from '../../_useRefHook'
 
-export default function HandCrafted({ handRef }) {
+export default function HandCrafted() {
+    const { handRef } = useContext(refProv)
+
     return (
         <div ref={handRef}>
             <section className="hand-crafted py-5">

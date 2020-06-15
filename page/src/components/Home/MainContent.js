@@ -1,15 +1,18 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import twopng from './images/2.png'
 import { Link } from 'react-router-dom'
 import './css/slider.css'
 import './css/style.css'
 import './css/style2.css'
 import './css/font-awesome.css'
+import { refProv } from '../../_useRefHook'
 
-export default function MainContent({ about, features, contact, hand }) {
+export default function MainContent() {
     const executeScroll = (ref) => {
         window.scrollTo(0, ref.current.offsetTop)
     }
+
+    const { aboutRef, featRef, handRef, contactRef } = useContext(refProv)
     return (
         <div>
             <div className="main-w3-pvt-header-sec" id="home">
@@ -83,8 +86,8 @@ export default function MainContent({ about, features, contact, hand }) {
                                         <input type="checkbox" id="drop" />
                                         <ul className="menu">
                                             <li className="active"><Link to={'/'}>Inicio</Link></li>
-                                            <li><a onClick={() => executeScroll(about)}>Nosotros</a></li>
-                                            <li><a onClick={() => executeScroll(features)}>Servicios</a></li>
+                                            <li><a onClick={() => executeScroll(aboutRef)}>Nosotros</a></li>
+                                            <li><a onClick={() => executeScroll(featRef)}>Servicios</a></li>
                                             <li>
                                                 {/* <!-- First Tier Drop Down --> */}
                                                 <label htmlFor="drop-2" className="toggle toogle-2"
@@ -104,7 +107,7 @@ export default function MainContent({ about, features, contact, hand }) {
                                 <div className="justify-content-center">
                                     {/* <!-- search --> */}
                                     <div className="apply-w3-pvt ml-lg-3">
-                                        <a className="btn read" role="button" onClick={() => executeScroll(contact)}>Contacto</a>
+                                        <a className="btn read" role="button" onClick={() => executeScroll(contactRef)}>Contacto</a>
                                     </div>
                                     {/* <!-- //search --> */}
                                 </div>
@@ -138,8 +141,8 @@ export default function MainContent({ about, features, contact, hand }) {
                                                     </p>
 
                                                     <div className="test-info text-left mt-lg-5 mt-4">
-                                                        <a className="btn mr-2 animate__animated animate__fadeInUp" onClick={() => executeScroll(hand)}>Leer más</a>
-                                                        <a className="btn animate__animated animate__fadeInUp" onClick={() => executeScroll(contact)}>Contactanos</a>
+                                                        <a className="btn mr-2 animate__animated animate__fadeInUp" onClick={() => executeScroll(handRef)}>Leer más</a>
+                                                        <a className="btn animate__animated animate__fadeInUp" onClick={() => executeScroll(contactRef)}>Contactanos</a>
                                                     </div>
 
                                                 </div>
