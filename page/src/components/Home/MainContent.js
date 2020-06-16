@@ -142,7 +142,7 @@ export default function MainContent() {
 
                                                     <div className="test-info text-left mt-lg-5 mt-4">
                                                         <a className="btn mr-2 animate__animated animate__fadeInUp" onClick={() => executeScroll(handRef)}>Leer más</a>
-                                                        <a className="btn animate__animated animate__fadeInUp" onClick={() => executeScroll(contactRef)}>Contactanos</a>
+                                                        <a className="btn animate__animated animate__fadeInUp" onClick={() => executeScroll(contactRef)}>Contactános</a>
                                                     </div>
 
                                                 </div>
@@ -158,11 +158,11 @@ export default function MainContent() {
                                             <div className="banner-info">
                                                 <div className="banner-w3ls-inner">
                                                     <h4> VENTA DE PRODUCTOS Y SERVICIOS </h4>
-                                                    <h3> AUTOMATIZACION INDUSTRIAL </h3>
+                                                    <h3> AUTOMATIZACIÓN INDUSTRIAL </h3>
                                                     <p>
-                                                        Somos distribuidores de productos electricos y electronicos para el sector industrial. 
-                                                        Proporcionamos distintos servicios a las empresas, proporcionando un excelento desempeño
-                                                        y calidad con garantia en nuestro trabajo.
+                                                        Somos distribuidores de productos eléctricos y electrónicos para el sector industrial.
+                                                        Proporcionamos distintos servicios a las empresas, proporcionando un excelente desempeño
+                                                        y calidad con garantía en nuestro trabajo.
                                                     </p>
                                                 </div>
                                             </div>
@@ -176,11 +176,11 @@ export default function MainContent() {
                                         <div className="container">
                                             <div className="banner-info">
                                                 <div className="banner-w3ls-inner">
-                                                    <h4> PRODUCTOS ELECTRICOS Y ELECTRONICOS </h4>
+                                                    <h4> PRODUCTOS ELÉCTRICOS Y ELECTRÓNICOS </h4>
                                                     <h3> SOMOS IMPORTADORES </h3>
                                                     <p>
-                                                    A pesar del COVID-19 , seguimos importando productos electricos y electronicos para nuestros clientes.
-                                                    Estamos a su disposicion, no dude en contactarnos!
+                                                        A pesar del COVID-19, seguimos importando productos eléctricos y electrónicos para nuestros clientes.
+                                                        Estamos a su disposición, no dude en contactárnos!
                                                     </p>
                                                 </div>
                                             </div>

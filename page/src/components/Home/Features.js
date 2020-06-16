@@ -28,15 +28,7 @@ export default function Features() {
                         <Modal
                             isOpen={reparaciones}
                             onRequestClose={() => setReparaciones(false)}
-                            style={{
-                                content: {
-                                    position: 'absolute',
-                                    margin: 'auto',
-                                    width: '400px',
-                                    height: '200px'
-                                }
-
-                            }}
+                            className={"modal-md"}
                         >
                             <h5><span className="fa fa-wrench s2" style={{ marginRight: '5px' }}></span>Reparaciones</h5>
                             <p style={{ marginTop: '10px' }}>Contamos con un laboratorio electrónico especializado en reparaciones para la automatización industrial, ofreciendo reparación de placas electrónicas.</p>
@@ -47,14 +39,7 @@ export default function Features() {
                         <Modal
                             isOpen={diagnostico}
                             onRequestClose={() => setDiagnostico(false)}
-                            style={{
-                                content: {
-                                    position: 'absolute',
-                                    margin: 'auto',
-                                    width: '400px',
-                                    height: '200px'
-                                }
-                            }}
+                            className={"modal-md"}
                         >
                             <h5><span className="fa fa-tachometer s4" style={{ marginRight: '5px' }}></span>Diagnóstico</h5>
                             <p style={{ marginTop: '10px' }}>Contamos también con nuestro servicio de diagnóstico y cotización de equipos sin cargo para nuestros clientes brindando el mejor servicio para ellos.</p>
@@ -65,14 +50,7 @@ export default function Features() {
                         <Modal
                             isOpen={mantenimiento}
                             onRequestClose={() => setMantenimiento(false)}
-                            style={{
-                                content: {
-                                    position: 'absolute',
-                                    margin: 'auto',
-                                    width: '400px',
-                                    height: '200px'
-                                }
-                            }}
+                            className={"modal-md"}
                         >
                             <h5><span className="fa fa-briefcase s3" style={{ marginRight: '5px' }}></span>Mantenimiento</h5>
                             <p style={{ marginTop: '10px' }}>Contamos también con nuestro servicio de diagnóstico y cotización de equipos sin cargo para nuestros clientes brindando el mejor servicio para ellos.</p>
@@ -83,14 +61,7 @@ export default function Features() {
                         <Modal
                             isOpen={capacitacion}
                             onRequestClose={() => setCapacitacion(false)}
-                            style={{
-                                content: {
-                                    position: 'absolute',
-                                    margin: 'auto',
-                                    width: '400px',
-                                    height: '260px'
-                                }
-                            }}
+                            className={"modal-lg"}
                         >
                             <h5><span className="fa fa-address-card-o s5" style={{ marginRight: '5px' }}></span>Capacitaciones</h5>
                             <p style={{ marginTop: '10px' }}>Realizamos capacitaciones en cuanto a la programación y puesta en marcha de variadores de velocidad, arrancadores suaves y PLC. Ademas, se capacita en el armado y construcción de tableros eléctricos, haciendo pruebas de aislación y funcionamiento del mismo.</p>
@@ -101,14 +72,7 @@ export default function Features() {
                         <Modal
                             isOpen={armonicos}
                             onRequestClose={() => setArmonicos(false)}
-                            style={{
-                                content: {
-                                    position: 'absolute',
-                                    margin: 'auto',
-                                    width: '400px',
-                                    height: '260px'
-                                }
-                            }}
+                            className={"modal-lg"}
                         >
                             <h5><span className="fa fa-spinner s6" style={{ marginRight: '5px' }}></span>Medición de armónicos</h5>
                             <p style={{ marginTop: '10px' }}>Realizamos toma de mediciones en diferentes puntos de prueba, y en base a los resultado de la misma se conforma un informe técnico donde se brindaran recomendaciones sobre el sistema eléctrico tratado previamente por nuestro determinado departamento.</p>
@@ -119,14 +83,7 @@ export default function Features() {
                         <Modal
                             isOpen={termografia}
                             onRequestClose={() => setTermografia(false)}
-                            style={{
-                                content: {
-                                    position: 'absolute',
-                                    margin: 'auto',
-                                    width: '400px',
-                                    height: '200px'
-                                }
-                            }}
+                            className={"modal-md"}
                         >
                             <h5><span className="fa fa-podcast s1" style={{ marginRight: '5px' }}></span>Estudios de termografía</h5>
                             <p style={{ marginTop: '10px' }}>Realizamos mediciones termográficas con cámara FLUKE calibrada y entregamos informes de diagnástico con posibles mantenimientos y correcciones a realizar.</p>
@@ -137,14 +94,7 @@ export default function Features() {
                         <Modal
                             isOpen={atencion}
                             onRequestClose={() => setAtencion(false)}
-                            style={{
-                                content: {
-                                    position: 'absolute',
-                                    margin: 'auto',
-                                    width: '400px',
-                                    height: '200px'
-                                }
-                            }}
+                            className={"modal-md"}
                         >
                             <h5><span className="fa fa-handshake-o s7" style={{ marginRight: '5px' }}></span>Atención al cliente</h5>
                             <p style={{ marginTop: '10px' }}>Nos caracterizamos por brindar un excelente servicio y ayuda a nuestros clientes en cuanto a información y gestión resolviendo sus dudas satisfactoriamente.</p>

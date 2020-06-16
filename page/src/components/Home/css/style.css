@@ -2604,3 +2604,38 @@ ul.tic-info li span {
 	-o-box-shadow: 0 15px 38px 0 rgba(0, 0, 0, 0.2);
 	-moz-box-shadow: 0 15px 38px 0 rgba(0, 0, 0, 0.2);
 }
+
+
+.modal-md {
+	width: 400px;
+	height: 200px;
+	position: absolute;
+	background: #fff;
+	overflow: auto;
+	-webkit-overflow-scrolling: touch;
+    border-radius: 4px;
+    outline: none;
+	padding: 20px;
+	border: 1px solid #ccc;
+	top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%)
+}
+
+.modal-lg {
+	width: 400px;
+	height: 260px;
+	position: absolute;
+	background: #fff;
+	overflow: auto;
+	-webkit-overflow-scrolling: touch;
+    border-radius: 4px;
+    outline: none;
+	padding: 20px;
+	border: 1px solid #ccc;
+	top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%)
+}
