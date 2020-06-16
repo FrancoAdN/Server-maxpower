@@ -35,6 +35,7 @@ export default function Features() {
                                     width: '400px',
                                     height: '200px'
                                 }
+
                             }}
                         >
                             <h5><span className="fa fa-wrench s2" style={{ marginRight: '5px' }}></span>Reparaciones</h5>
