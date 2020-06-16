@@ -27,14 +27,15 @@ export default function Popup({ cotizacion, setCotizacion }) {
         <Modal
             isOpen={cotizacion}
             onRequestClose={() => setCotizacion(false)}
-            style={{
-                content: {
-                    position: 'absolute',
-                    margin: 'auto',
-                    width: '520px',
-                    height: '90%'
-                }
-            }}
+            className={"popup-modal"}
+        // style={{
+        //     content: {
+        //         position: 'absolute',
+        //         margin: 'auto',
+        //         width: '520px',
+        //         height: '90%'
+        //     }
+        // }}
         >
             <div className="main_grid_contact">
                 <form onSubmit={(e) => handleOnSubmit(e)}>
