@@ -128,7 +128,7 @@ export default function MainContent() {
 								{/* <!-- //nav --> */}
 								<div className="justify-content-center">
 									{/* <!-- search --> */}
-									<div className="apply-w3-pvt ml-lg-3">
+									<div className="apply-bt-pvt ml-lg-3">
 										<a
 											className="btn read"
 											role="button"
@@ -218,6 +218,20 @@ export default function MainContent() {
 														industrial, siendo asi una empresa líder en el mercado brindando
 														soluciones tecnológicas con valor agregado para nuestros clientes.
 													</p>
+													<div className="test-info text-left mt-lg-5 mt-4">
+														<a
+															className="btn mr-2 animate__animated animate__fadeInUp"
+															onClick={() => executeScroll(handRef)}
+														>
+															Servicios
+														</a>
+														<a
+															className="btn animate__animated animate__fadeInUp"
+															onClick={() => executeScroll(contactRef)}
+														>
+															Contactános
+														</a>
+													</div>
 												</div>
 											</div>
 										</div>
@@ -233,10 +247,24 @@ export default function MainContent() {
 													<h4> PRODUCTOS ELÉCTRICOS Y ELECTRÓNICOS </h4>
 													<h3> IMPORTADORES Y DISTRIBUIDORES </h3>
 													<p>
-														A pesar del COVID-19, seguimos importando productos eléctricos y
-														electrónicos para nuestros clientes. Estamos a su disposición, no
-														dude en contactárnos!
+														A pesar del COVID-19 seguimos importando y distribuyendo productos eléctricos 
+														y electrónicos a nivel nacional para nuestros clientes. Puede realizar su
+												 		consulta en la parte de contacto o por nuestro chat online.
 													</p>
+													<div className="test-info text-left mt-lg-5 mt-4">
+														<a
+															className="btn mr-2 animate__animated animate__fadeInUp"
+															onClick={() => executeScroll(handRef)}
+														>
+															Productos
+														</a>
+														<a
+															className="btn animate__animated animate__fadeInUp"
+															onClick={() => executeScroll(contactRef)}
+														>
+															Contactános
+														</a>
+													</div>
 												</div>
 											</div>
 										</div>

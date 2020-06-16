@@ -301,11 +301,13 @@
 {
 	font-size: 12px;
 	font-weight: 600;
+	color: #fff;
 }
 .product-item:hover .add_to_cart_button
 {
 	visibility: visible;
 	opacity: 1;
+	color: #fff;
 }
 .favorite
 {

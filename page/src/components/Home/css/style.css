@@ -2799,3 +2799,7 @@ ul.tic-info li span {
 		transform: translate(-50%, -50%);
 	}
 }
+
+.apply-bt-pvt a {
+	color: #fff;
+}
