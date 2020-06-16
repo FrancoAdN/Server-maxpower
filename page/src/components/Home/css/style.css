@@ -74,7 +74,7 @@ ul {
 }
 
 .banner-top {
-	background: url(../images/banner4.jpg) no-repeat center;
+	background: url(../images/banner9.jpg) no-repeat center;
 	background-size: cover;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
@@ -796,6 +796,10 @@ h4.loan-vj {
 	margin-bottom: 1em;
 }
 
+.welcome-left p {
+	font-size: 15px;
+}
+
 p.test span {
 	font-size: 2em;
 	color: #ff4c4c;
@@ -1459,7 +1463,7 @@ ul.courses_list.my-3 li {
 	.serve-grid {
 		max-width: 153px;
 		height: 153px;
-		margin:  0 auto;
+		margin: 0 auto;
 	}
 	.serve-gd2 {
 		margin-top: 0em;
@@ -1569,6 +1573,10 @@ hr {
 	color: #ffc107;
 
 	vertical-align: middle;
+}
+
+.footer-content p {
+	color: rgb(161, 159, 159);
 }
 
 .con-gd .form-control {
@@ -1931,9 +1939,7 @@ a.move-top span {
 	.overlay-innerpage {
 		min-height: 14em;
 	}
-	
 }
-
 
 @media screen and (max-width: 767px) {
 	.toggle {
@@ -1969,14 +1975,14 @@ a.move-top span {
 		left: 450px;
 		margin-left: -160px;
 	}
-	
+
 	.top-right-info li span.fa-facebook-f {
 		position: absolute;
 		top: -45px;
 		left: 400px;
 		background: #3b5998;
 	}
-	
+
 	.top-right-info li span.fa-instagram {
 		position: absolute;
 		top: -45px;
@@ -1990,14 +1996,14 @@ a.move-top span {
 			#4e48a8
 		);
 	}
-	
+
 	.top-right-info li span.fa-linkedin {
 		position: absolute;
 		top: -45px;
 		left: 480px;
 		background: #0074af;
 	}
-	
+
 	.top-right-info li span.fa-youtube {
 		position: absolute;
 		top: -45px;
@@ -2009,7 +2015,6 @@ a.move-top span {
 	}
 }
 
-
 @media screen and (max-width: 736px) {
 	.page-w3pvt-inner,
 	.overlay-innerpage {
@@ -2019,7 +2024,6 @@ a.move-top span {
 	h4.loan-vj {
 		font-size: 1.2em;
 	}
-	
 }
 
 @media screen and (max-width: 640px) {
@@ -2051,14 +2055,14 @@ a.move-top span {
 		top: -15px;
 		left: 305px;
 	}
-	
+
 	.top-right-info li span.fa-facebook-f {
 		position: absolute;
 		top: -20px;
 		left: 250px;
 		background: #3b5998;
 	}
-	
+
 	.top-right-info li span.fa-instagram {
 		position: absolute;
 		top: -20px;
@@ -2072,14 +2076,14 @@ a.move-top span {
 			#4e48a8
 		);
 	}
-	
+
 	.top-right-info li span.fa-linkedin {
 		position: absolute;
 		top: -20px;
 		left: 330px;
 		background: #0074af;
 	}
-	
+
 	.top-right-info li span.fa-youtube {
 		position: absolute;
 		top: -20px;
@@ -2255,14 +2259,14 @@ a.move-top span {
 		top: -15px;
 		left: 245px;
 	}
-	
+
 	.top-right-info li span.fa-facebook-f {
 		position: absolute;
 		top: -20px;
 		left: 190px;
 		background: #3b5998;
 	}
-	
+
 	.top-right-info li span.fa-instagram {
 		position: absolute;
 		top: -20px;
@@ -2276,14 +2280,14 @@ a.move-top span {
 			#4e48a8
 		);
 	}
-	
+
 	.top-right-info li span.fa-linkedin {
 		position: absolute;
 		top: -20px;
 		left: 270px;
 		background: #0074af;
 	}
-	
+
 	.top-right-info li span.fa-youtube {
 		position: absolute;
 		top: -20px;
@@ -2328,139 +2332,139 @@ a.move-top span {
 	.prodct1 h4 {
 		font-size: 0.9em;
 	}
-		/* social icons */
-		.top-right-info p {
-			position: absolute;
-			top: -15px;
-			left: 230px;
-		}
-		
-		.top-right-info li span.fa-facebook-f {
-			position: absolute;
-			top: -20px;
-			left: 170px;
-			background: #3b5998;
-		}
-		
-		.top-right-info li span.fa-instagram {
-			position: absolute;
-			top: -20px;
-			left: 210px;
-			background: linear-gradient(
-				#f9da27,
-				#e66b30,
-				#d6263d,
-				#b73980,
-				#a2429c,
-				#4e48a8
-			);
-		}
-		
-		.top-right-info li span.fa-linkedin {
-			position: absolute;
-			top: -20px;
-			left: 250px;
-			background: #0074af;
-		}
-		
-		.top-right-info li span.fa-youtube {
-			position: absolute;
-			top: -20px;
-			left: 290px;
-			background: #ce110a;
-		}
+	/* social icons */
+	.top-right-info p {
+		position: absolute;
+		top: -15px;
+		left: 230px;
+	}
+
+	.top-right-info li span.fa-facebook-f {
+		position: absolute;
+		top: -20px;
+		left: 170px;
+		background: #3b5998;
+	}
+
+	.top-right-info li span.fa-instagram {
+		position: absolute;
+		top: -20px;
+		left: 210px;
+		background: linear-gradient(
+			#f9da27,
+			#e66b30,
+			#d6263d,
+			#b73980,
+			#a2429c,
+			#4e48a8
+		);
+	}
+
+	.top-right-info li span.fa-linkedin {
+		position: absolute;
+		top: -20px;
+		left: 250px;
+		background: #0074af;
+	}
+
+	.top-right-info li span.fa-youtube {
+		position: absolute;
+		top: -20px;
+		left: 290px;
+		background: #ce110a;
+	}
 }
 
 @media screen and (max-width: 360px) {
-			/* social icons */
-			.top-right-info p {
-				position: absolute;
-				top: -15px;
-				left: 220px;
-			}
-			
-			.top-right-info li span.fa-facebook-f {
-				position: absolute;
-				top: -20px;
-				left: 160px;
-				background: #3b5998;
-			}
-			
-			.top-right-info li span.fa-instagram {
-				position: absolute;
-				top: -20px;
-				left: 200px;
-				background: linear-gradient(
-					#f9da27,
-					#e66b30,
-					#d6263d,
-					#b73980,
-					#a2429c,
-					#4e48a8
-				);
-			}
-			
-			.top-right-info li span.fa-linkedin {
-				position: absolute;
-				top: -20px;
-				left: 240px;
-				background: #0074af;
-			}
-			
-			.top-right-info li span.fa-youtube {
-				position: absolute;
-				top: -20px;
-				left: 280px;
-				background: #ce110a;
-			}
-			.img-fluid-2 {
-				margin-top: 20px;
-				margin-left: 150px;
-			}
+	/* social icons */
+	.top-right-info p {
+		position: absolute;
+		top: -15px;
+		left: 220px;
+	}
+
+	.top-right-info li span.fa-facebook-f {
+		position: absolute;
+		top: -20px;
+		left: 160px;
+		background: #3b5998;
+	}
+
+	.top-right-info li span.fa-instagram {
+		position: absolute;
+		top: -20px;
+		left: 200px;
+		background: linear-gradient(
+			#f9da27,
+			#e66b30,
+			#d6263d,
+			#b73980,
+			#a2429c,
+			#4e48a8
+		);
+	}
+
+	.top-right-info li span.fa-linkedin {
+		position: absolute;
+		top: -20px;
+		left: 240px;
+		background: #0074af;
+	}
+
+	.top-right-info li span.fa-youtube {
+		position: absolute;
+		top: -20px;
+		left: 280px;
+		background: #ce110a;
+	}
+	.img-fluid-2 {
+		margin-top: 20px;
+		margin-left: 150px;
+	}
 }
 
 @media screen and (max-width: 320px) {
-			/* social icons */
-			.top-right-info p {
-				position: absolute;
-				top: -15px;
-				left: 205px;
-			}
-			
-			.top-right-info li span.fa-facebook-f {
-				position: absolute;
-				top: -20px;
-				left: 140px;
-				background: #3b5998;
-			}
-			
-			.top-right-info li span.fa-instagram {
-				position: absolute;
-				top: -20px;
-				left: 180px;
-				background: linear-gradient(
-					#f9da27,
-					#e66b30,
-					#d6263d,
-					#b73980,
-					#a2429c,
-					#4e48a8
-				);
-			}
-			
-			.top-right-info li span.fa-linkedin {
-				position: absolute;
-				top: -20px;
-				left: 220px;
-				background: #0074af;
-			}
-			
-			.top-right-info li span.fa-youtube {
-				position: absolute;
-				top: -20px;
-				left: 260px;
-				background: #ce110a;
-			}
+	/* social icons */
+	.top-right-info p {
+		position: absolute;
+		top: -15px;
+		left: 205px;
+	}
+
+	.top-right-info li span.fa-facebook-f {
+		position: absolute;
+		top: -20px;
+		left: 140px;
+		background: #3b5998;
+	}
+
+	.top-right-info li span.fa-instagram {
+		position: absolute;
+		top: -20px;
+		left: 180px;
+		background: linear-gradient(
+			#f9da27,
+			#e66b30,
+			#d6263d,
+			#b73980,
+			#a2429c,
+			#4e48a8
+		);
+	}
+
+	.top-right-info li span.fa-linkedin {
+		position: absolute;
+		top: -20px;
+		left: 220px;
+		background: #0074af;
+	}
+
+	.top-right-info li span.fa-youtube {
+		position: absolute;
+		top: -20px;
+		left: 260px;
+		background: #ce110a;
+	}
 }
 
 /*-- //Responsive design --*/
@@ -2507,7 +2511,6 @@ a.move-top span {
 }
 
 .top-right-info li span.fa-instagram {
-
 	background: linear-gradient(
 		#f9da27,
 		#e66b30,
@@ -2569,6 +2572,10 @@ section.hand-crafted {
 	color: #fff;
 }
 
+.hand-crafted p {
+	color: rgb(161, 159, 159);
+}
+
 ul.tic-info li {
 	line-height: 2.2em;
 	letter-spacing: 1px;
@@ -2605,7 +2612,6 @@ ul.tic-info li span {
 	-moz-box-shadow: 0 15px 38px 0 rgba(0, 0, 0, 0.2);
 }
 
-
 .modal-md {
 	width: 400px;
 	height: 200px;
@@ -2613,14 +2619,14 @@ ul.tic-info li span {
 	background: #fff;
 	overflow: auto;
 	-webkit-overflow-scrolling: touch;
-    border-radius: 4px;
-    outline: none;
+	border-radius: 4px;
+	outline: none;
 	padding: 20px;
 	border: 1px solid #ccc;
 	top: 50%;
-    left: 50%;
-    margin-right: -50%;
-    transform: translate(-50%, -50%)
+	left: 50%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);
 }
 
 .modal-lg {
@@ -2630,12 +2636,12 @@ ul.tic-info li span {
 	background: #fff;
 	overflow: auto;
 	-webkit-overflow-scrolling: touch;
-    border-radius: 4px;
-    outline: none;
+	border-radius: 4px;
+	outline: none;
 	padding: 20px;
 	border: 1px solid #ccc;
 	top: 50%;
-    left: 50%;
-    margin-right: -50%;
-    transform: translate(-50%, -50%)
+	left: 50%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);
 }

@@ -170,8 +170,8 @@
 
 .features-span {
 	color: #ce110a;
+	font-weight: 500;
 }
-
 
 .serve-grid p {
 	font-size: 1em;
@@ -1163,7 +1163,7 @@ h2 a.logo {
 .footer-text p,
 .footer-text p a,
 .contact-info p {
-	color: #727377;
+	color: rgb(161, 159, 159);
 	font-size: 15px;
 }
 
@@ -1387,8 +1387,8 @@ h4.text-w3pvt {
 	background: #f1332c;
 }
 
-.shiopping-gd span { 
-	color: #45AD3E;
+.shiopping-gd span {
+	color: #45ad3e;
 }
 
 .shiopping-gd span.import {
@@ -1408,7 +1408,7 @@ h4.text-w3pvt {
 }
 
 .shiopping-gd:hover {
-	background: #F3F3F3;
+	background: #f3f3f3;
 	-moz-transition: all 0.25s ease;
 	-o-transition: all 0.25s ease;
 	-webkit-transition: all 0.25s ease;

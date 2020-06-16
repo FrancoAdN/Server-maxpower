@@ -9,15 +9,28 @@ import ffff from './images/ffff.jpg';
 export default function Prods() {
 	return (
 		<div>
-			<section className="shipping-wthree" data-aos="zoom-in" data-aos-duration="1500">
+			<section
+				className="shipping-wthree"
+				data-aos="zoom-in"
+				data-aos-duration="1500"
+			>
 				<div className="shiopping-grids d-lg-flex">
 					<div className="col-lg-4 shiopping-gd text-center">
 						<div className="icon-gd">
 							<span className="fa fa-truck" aria-hidden="true"></span>
 						</div>
 						<div className="icon-gd-info">
-							<h3> STOCK EN VARIADORES <span>ATV930 90KW</span> </h3>
-							<p> Disponemos de stock en variadores ATV930 90KW de <span> Schneider Electric</span>, comuniquese con nosotros para brindarle la ficha tecnica y/o resolver sus dudas! Su consulta no molesta. </p>
+							<h3>
+								{' '}
+								STOCK EN VARIADORES <span>ATV930 90KW</span>{' '}
+							</h3>
+							<p>
+								{' '}
+								Disponemos de stock en variadores ATV930 90KW de{' '}
+								<span> Schneider Electric</span>, comuniquese con nosotros para
+								brindarle la ficha tecnica y/o resolver sus dudas! Su consulta no
+								molesta.{' '}
+							</p>
 						</div>
 					</div>
 					<div className="col-lg-4 shiopping-gd sec text-center">
@@ -26,7 +39,10 @@ export default function Prods() {
 						</div>
 						<div className="icon-gd-info">
 							<h3 className="title-second"> SERVICIO DE ASISTENCIA TÉCNICA ONLINE </h3>
-							<p className="desc-second">Hemos implementado un servicio de asistencia técnica online con video-llamadas, telefónico y whatsapp para poder asistir a las empresas.</p>
+							<p className="desc-second">
+								Hemos implementado un servicio de asistencia técnica online con
+								video-llamadas, telefónico y whatsapp para poder asistir a las empresas.
+							</p>
 						</div>
 					</div>
 					<div className="col-lg-4 shiopping-gd text-center">
@@ -35,13 +51,27 @@ export default function Prods() {
 							<span className="fa fa-plane" aria-hidden="true"></span>
 						</div>
 						<div className="icon-gd-info">
-							<h3> SEGUIMOS <span className="import">IMPORTANDO</span>PRODUCTOS </h3>
-							<p> A pesar del <span className="import"> COVID-19 </span>, seguimos importando <span className="import"> productos electricos y electronicos</span> para nuestros clientes.Estamos a su disposicion, no dude en contactarnos!</p>
+							<h3>
+								{' '}
+								SEGUIMOS <span className="import">IMPORTANDO </span>PRODUCTOS{' '}
+							</h3>
+							<p>
+								{' '}
+								A pesar del <span className="import"> COVID-19 </span>, seguimos
+								importando{' '}
+								<span className="import"> productos electricos y electronicos</span>{' '}
+								para nuestros clientes.Estamos a su disposicion, no dude en
+								contactarnos!
+							</p>
 						</div>
 					</div>
 				</div>
 			</section>
-			<section className="mid-section animate__animated animate__zoomIn" data-aos="fade-right" data-aos-duration="1500">
+			<section
+				className="mid-section animate__animated animate__zoomIn"
+				data-aos="fade-right"
+				data-aos-duration="1500"
+			>
 				<div className="d-lg-flex p-0">
 					<div className="col-lg-6 bottom-w3pvt-left p-lg-0">
 						<img src={cccc} className="img-fluid" alt="" />
@@ -69,7 +99,6 @@ export default function Prods() {
 					</div>
 				</div>
 			</section>
-
 
 			{/*
 			<div className="benefit">
