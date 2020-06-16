@@ -14,7 +14,7 @@ export default function Popup({ cotizacion, setCotizacion }) {
     const handleOnSubmit = (e) => {
         e.preventDefault()
         const cot = { name, email, tel, emp, body }
-        axios.post('http://localhost:5000/cotizacion', cot)
+        axios.post('http://api.maxpower-ar.com/cotizacion', cot)
         setName('')
         setEmail('')
         setTel('')

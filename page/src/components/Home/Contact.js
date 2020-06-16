@@ -18,7 +18,7 @@ export default function Contact() {
     const handleOnSubmit = (e) => {
         e.preventDefault()
         const contact = { name, email, tel, emp, body }
-        axios.post('http://localhost:5000/contact', contact)
+        axios.post('http://api.maxpower-ar.com/contact', contact)
         setName('')
         setEmail('')
         setTel('')
