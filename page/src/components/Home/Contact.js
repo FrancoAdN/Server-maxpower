@@ -1,6 +1,5 @@
 import React, { useState, useContext } from 'react'
 import axios from 'axios'
-import './css/slider.css'
 import './css/style.css'
 import './css/style2.css'
 import './css/font-awesome.css'
@@ -28,7 +27,7 @@ export default function Contact() {
     }
 
     return (
-        <div ref={contactRef}>
+        <div ref={contactRef} data-aos="slide-right" data-aos-duration="3000">
             <section className="contact py-5 animate__animated animate__fadeIn" id="contact">
                 <div className="container">
                     <h3 className="title-w3ls text-center text-bl mb-5">Contacto</h3>

@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import axios from 'axios'
 import onepng from './images/1.png'
-import './css/slider.css'
 import './css/style.css'
 import './css/style2.css'
 import './css/font-awesome.css'

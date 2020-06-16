@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './css/slider.css';
 import './css/style.css';
 import './css/style2.css';
 import './css/font-awesome.css';
@@ -10,7 +9,7 @@ import ffff from './images/ffff.jpg';
 export default function Prods() {
 	return (
 		<div>
-			<section className="shipping-wthree">
+			<section className="shipping-wthree" data-aos="zoom-in" data-aos-duration="1500">
 				<div className="shiopping-grids d-lg-flex">
 					<div className="col-lg-4 shiopping-gd text-center">
 						<div className="icon-gd">
@@ -42,7 +41,7 @@ export default function Prods() {
 					</div>
 				</div>
 			</section>
-			<section className="mid-section animate__animated animate__zoomIn">
+			<section className="mid-section animate__animated animate__zoomIn" data-aos="fade-right" data-aos-duration="1500">
 				<div className="d-lg-flex p-0">
 					<div className="col-lg-6 bottom-w3pvt-left p-lg-0">
 						<img src={cccc} className="img-fluid" alt="" />

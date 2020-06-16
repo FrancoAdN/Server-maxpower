@@ -6,7 +6,6 @@ import '../Home/css/style2.css'
 import '../Home/css/font-awesome.css'
 import '../Productos/images/banner5.jpg'
 import { Link, useHistory } from 'react-router-dom'
-import { refProv } from '../../_useRefHook'
 
 export default function Head() {
     const history = useHistory()

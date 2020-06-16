@@ -202,9 +202,11 @@
     -moz-box-sizing: content-box;
     -webkit-box-sizing: content-box;
     box-sizing: content-box;
+    
 }
 
 .csslider > .arrows label {
+    /*display: block;*/
     display: none;
     position: absolute;
     top: -50%;

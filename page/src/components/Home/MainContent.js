@@ -131,9 +131,9 @@ export default function MainContent() {
                                         <div className="container">
                                             <div className="banner-info">
                                                 <div className="banner-w3ls-inner">
-                                                    <h4 className="animate__animated animate__fadeIn">MAXPOWER INDUSTRIAL AUTOMATION</h4>
-                                                    <h3 className="animate__animated animate__fadeInLeft">SOLUCIONES INTEGRALES</h3>
-                                                    <p className="animate__animated animate__fadeInLeft">
+                                                    <h4 className="animate__animated animate__fadeIn" data-aos="fade-left" data-aos-duration="1500">MAXPOWER INDUSTRIAL AUTOMATION</h4>
+                                                    <h3 className="animate__animated animate__fadeInLeft" data-aos="fade-right" data-aos-duration="1500">SOLUCIONES INTEGRALES</h3>
+                                                    <p className="animate__animated animate__fadeInLeft" data-aos="fade-left" data-aos-duration="1500">
                                                         Buscamos a través de un servicio de asistencia en excelencia y
                                                         eficiencia, apoyar el crecimiento y fortalecimiento del sector
                                                         industrial, siendo asi una empresa líder en el mercado brindando

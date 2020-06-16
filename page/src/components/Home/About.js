@@ -1,6 +1,5 @@
 import React, { useContext } from 'react'
 import certificate from './images/certificate.png'
-import './css/slider.css'
 import './css/style.css'
 import './css/style2.css'
 import './css/font-awesome.css'
@@ -9,7 +8,7 @@ import { refProv } from '../../_useRefHook'
 export default function About() {
     const { aboutRef } = useContext(refProv)
     return (
-        <div ref={aboutRef}>
+        <div ref={aboutRef} data-aos="fade-right" data-aos-duration="1500">
             <section className="about py-5 my-md-5 animate__animated animate__slideInUp" id="nosotros">
                 <div className="container">
                     <div className="row about_grids">
