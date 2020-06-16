@@ -74,6 +74,18 @@ ul {
 }
 
 .banner-top {
+	background: url(../images/banner3.jpg) no-repeat center;
+	background-size: cover;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	-moz-background-size: cover;
+	border-bottom-left-radius: 100px;
+	border-bottom-right-radius: 100px;
+	height: 800px;
+}
+
+.banner-top1 {
 	background: url(../images/banner9.jpg) no-repeat center;
 	background-size: cover;
 	-webkit-background-size: cover;
@@ -84,22 +96,15 @@ ul {
 	border-bottom-right-radius: 100px;
 }
 
-.banner-top1 {
-	background: url(../images/banner7.jpg) no-repeat center;
-	background-size: cover;
-	-webkit-background-size: cover;
-	-moz-background-size: cover;
-	-o-background-size: cover;
-	-moz-background-size: cover;
-}
-
 .banner-top2 {
-	background: url(../images/banner5.jpg) no-repeat 0px 0px;
+	background: url(../images/banner19.jpg) no-repeat 0px 0px;
 	background-size: cover;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
 	-moz-background-size: cover;
+	border-bottom-left-radius: 100px;
+	border-bottom-right-radius: 100px;
 }
 
 .banner-info {
@@ -139,16 +144,25 @@ ul {
 .overlay,
 .overlay.sec {
 	min-height: 50em;
+	height: 800px;
 	background: rgba(0, 0, 0, 0.44);
+	border-bottom-left-radius: 100px;
+	border-bottom-right-radius: 100px;
 }
 
 .overlay.sec {
 	background: rgba(0, 0, 0, 0.62);
+	height: 800px;
+	border-bottom-left-radius: 100px;
+	border-bottom-right-radius: 100px;
 }
 
 .overlay1 {
 	min-height: 750px;
+	height: 800px;
 	background: rgba(0, 0, 0, 0.5);
+	border-bottom-left-radius: 100px;
+	border-bottom-right-radius: 100px;
 }
 
 .read {
