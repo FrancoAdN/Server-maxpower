@@ -35,17 +35,43 @@ app.use('/graphql', graphqlHTTP({
 
 
 app.post('/contact', (req, resp) => {
-    console.log(req.body)
 
-})
-
-app.post('/cotizacion', (req, resp) => {
-    console.log(req.body)
+    const { name, email, tel, emp, body } = req.body
     const mailOptions = {
         from: process.env.EMAIL,
         to: process.env.RECEIVER,
         subject: 'Contacto página web',
-        text: ''
+        text: `
+        Nombre: ${name}
+        Emprea: ${emp}
+        Email: ${email}
+        Teléfono: ${tel}
+        \n
+        ${body}`
+    }
+
+    transporter.sendMail(mailOptions, (error, info) => {
+        if (error) resp.sendStatus(400)
+        else resp.sendStatus(200)
+    })
+
+})
+
+app.post('/cotizacion', (req, resp) => {
+
+    const { name, email, tel, emp, body } = req.body
+
+    const mailOptions = {
+        from: process.env.EMAIL,
+        to: process.env.RECEIVER,
+        subject: 'Pedido de cotización web',
+        text: `
+        Nombre: ${name}
+        Emprea: ${emp}
+        Email: ${email}
+        Teléfono: ${tel}
+        \n
+        ${body}`
     }
 
     transporter.sendMail(mailOptions, (error, info) => {
@@ -53,6 +79,23 @@ app.post('/cotizacion', (req, resp) => {
         else resp.sendStatus(200)
     })
 })
+
+app.post('/newsletter', (req, resp) => {
+    const { newsletter } = req.body
+
+    const mailOptions = {
+        from: process.env.EMAIL,
+        to: process.env.RECEIVER,
+        subject: 'Subscripción newsletter',
+        text: `Email: ${newsletter}`
+    }
+
+    transporter.sendMail(mailOptions, (error, info) => {
+        if (error) resp.sendStatus(400)
+        else resp.sendStatus(200)
+    })
+})
+
 
 
 const server = app.listen(PORT, () => console.log(`Server running port: ${PORT}`))

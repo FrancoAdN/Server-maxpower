@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import Popup from './Popup'
 import Head from './Head'
 import Footer from '../Home/Footer'
 import gql from 'graphql-tag'
@@ -7,14 +8,12 @@ import Grid from '@material-ui/core/Grid'
 import Loading from '../Loading/Loading'
 
 
+
 import './plugins/font-awesome-4.7.0/css/font-awesome.min.css'
-import './plugins/OwlCarousel2-2.2.1/owl.carousel.css'
-import './plugins/OwlCarousel2-2.2.1/owl.theme.default.css'
-import './plugins/OwlCarousel2-2.2.1/animate.css'
 import './styles/main_styles.css'
 import './styles/responsive.css'
 import './styles/Product.css'
-import './styles/popup.css'
+
 
 
 
@@ -40,23 +39,20 @@ query Productos ($categoria: String)
 
 
 
-
-
-
-
 export default function Electricos() {
+    const [cotizacion, setCotizacion] = useState(false)
     return (
         <div>
             <Head />
-            <Body />
-            <Popup />
+            <Body setCotizacion={setCotizacion} />
+            <Popup cotizacion={cotizacion} setCotizacion={setCotizacion} />
             <Footer />
         </div>
     )
 }
 
 
-function Body() {
+function Body({ setCotizacion }) {
     const [category, setCat] = useState('all')
 
     return (
@@ -104,7 +100,7 @@ function Body() {
                                         return data.electricos.map(elect => (
                                             <Grid item xs={false} key={elect.id_elec}>
                                                 <center>
-                                                    <Card prod={elect} />
+                                                    <Card prod={elect} setCotizacion={setCotizacion} />
                                                 </center>
 
                                             </Grid>
@@ -122,7 +118,7 @@ function Body() {
 }
 
 
-function Card({ prod, addToCot }) {
+function Card({ prod, setCotizacion }) {
     return (
 
         <div className="product-grid">
@@ -134,10 +130,11 @@ function Card({ prod, addToCot }) {
                     <div className="favorite favorite_left"></div>
                     <div className="product-info">
                         <h6 className="product_name">{prod.nombre}</h6>
-                        <div className="product_price">Codigo:<span></span></div>
+                        <div className="product_price">{prod.categoria}<span></span></div>
                     </div>
                 </div>
-                <div class="red_button add_to_cart_button"><a href="#login_form">Pedir cotizacion</a></div>
+                {/* <div className="red_button add_to_cart_button"><a href="#login_form">Pedir cotizacion</a></div> */}
+                <div className="red_button add_to_cart_button" onClick={() => setCotizacion(true)}>Pedir cotizacion</div>
             </div>
         </div>
 
@@ -157,51 +154,11 @@ function ListCat({ name, current, change }) {
     return (
         <li
             className="grid_sorting_button button d-flex flex-column justify-content-center align-items-center"
-            onClick={
-                () => {
-                    change(name)
-                }
-            }
+            onClick={() => change(name)}
         >
             {name}
         </li>
     )
 }
 
-function Popup() {
-    return (
-        <div>
-            <a href="#x" class="overlay2" id="login_form"></a>
-            <div className="popup">
-            <div className="main_grid_contact">
-            <h4 className="mb-4 sec-title-w3 let-spa text-bl"> SOLICITUD DE COTIZACION: </h4>
-                <p className="one-popup">Los datos ingresados deben ser reales para su posterior contacto.</p>
-                <div className="row">
-                <div className="col-sm-6 form-group pr-sm-1">
-                <input className="form-control" type="text" name="Name" placeholder="Nombre" required/>
-                </div>
-                <div className="col-sm-6 form-group pl-sm-1">
-                <input className="form-control" type="email" name="Email" placeholder="Email"/>
-                </div>
-                </div>
-                <div className="form-group">
-                <input className="form-control" type="text" name="Subject" placeholder="Asunto"/>
-                </div>
-                <div className="form-group">
-                <input className="form-control" type="text" name="Phone Number" placeholder="Teléfono"
-                     required="" />
-                </div>
-                <div className="form-group">
-                <textarea name="message" placeholder="Descripcion" required=""></textarea>
-                </div>
-                <p className="desc-popup">Al realizar su pedido de cotizacion, debe tener en cuenta que, <br></br>el monto minimo de compra debe ser igual o superior a 100 usd.</p>
-                <p className="desc-popup2"> El monto minimo de compra debe ser de 100 usd.</p>
-                <div className="input-group1 text-center">
-                <button className="btn" type="submit">Enviar</button>
-                </div>
-            </div>
-            </div>
-        </div>
-    )
-}
 

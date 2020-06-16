@@ -1,33 +1,33 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import axios from 'axios'
-import './css/slider.css'
 import './css/style.css'
 import './css/style2.css'
 import './css/font-awesome.css'
+import { refProv } from '../../_useRefHook'
 
-export default function Contact({ contact }) {
+export default function Contact() {
 
+    const { contactRef } = useContext(refProv)
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')
-    const [subject, setSubject] = useState('')
     const [emp, setEmp] = useState('')
     const [tel, setTel] = useState('')
     const [body, setBody] = useState('')
 
+
     const handleOnSubmit = (e) => {
         e.preventDefault()
-        const contact = { name, email, subject, tel, body, emp }
+        const contact = { name, email, tel, emp, body }
         axios.post('http://localhost:5000/contact', contact)
         setName('')
         setEmail('')
-        setSubject('')
         setTel('')
         setBody('')
         setEmp('')
     }
 
     return (
-        <div ref={contact}>
+        <div ref={contactRef} data-aos="slide-right" data-aos-duration="3000">
             <section className="contact py-5 animate__animated animate__fadeIn" id="contact">
                 <div className="container">
                     <h3 className="title-w3ls text-center text-bl mb-5">Contacto</h3>
@@ -50,7 +50,6 @@ export default function Contact({ contact }) {
                                             <input className="form-control" type="email" name="Email" placeholder="Email" value={email} required onChange={e => setEmail(e.target.value)} />
                                         </div>
                                     </div>
-
                                     <div className="form-group">
                                         <input className="form-control" type="text" name="Phone Number" placeholder="Empresa" value={emp} required onChange={e => setEmp(e.target.value)} />
                                     </div>

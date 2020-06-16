@@ -1,4 +1,5 @@
-import React, { useRef } from 'react'
+import React, { useEffect } from 'react'
+import AOS from 'aos'
 import MainContent from './MainContent'
 import About from './About'
 import Prods from './Prods'
@@ -6,22 +7,23 @@ import Features from './Features'
 import HandCrafted from './HandCrafted'
 import Contact from './Contact'
 import Footer from './Footer'
+import 'aos/dist/aos.css'
+
+
 
 export default function Home() {
-    const ab = useRef(null)
-    const feat = useRef(null)
-    const hand = useRef(null)
-    const contact = useRef(null)
-
+    useEffect(() => {
+        AOS.init()
+    }, [])
 
     return (
         <div>
-            <MainContent about={ab} features={feat} contact={contact} hand={hand} />
-            <About about={ab} />
+            <MainContent />
+            <About />
             <Prods />
-            <Features feat={feat} /> {/*servicios?*/}
-            <HandCrafted handRef={hand} />
-            <Contact contact={contact} />
+            <Features />
+            <HandCrafted />
+            <Contact />
             <Footer />
         </div>
     )

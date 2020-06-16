@@ -1,21 +1,14 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import twologo from '../Home/images/2.png'
 import '../Home/css/slider.css'
 import '../Home/css/style.css'
 import '../Home/css/style2.css'
 import '../Home/css/font-awesome.css'
-
 import '../Productos/images/banner5.jpg'
 import { Link, useHistory } from 'react-router-dom'
 
 export default function Head() {
     const history = useHistory()
-
-    // const testRed = () => {
-    //     console.log('click')
-    //     history.push('/')
-    //     window.scrollTo(0, 1200)
-    // }
 
     return (
         <div className="main-w3-pvt-header-sec page-w3pvt-inner">
@@ -79,11 +72,11 @@ export default function Head() {
                                         <label htmlFor="drop" className="toggle">Menu</label>
                                         <input type="checkbox" id="drop" />
                                         <ul className="menu">
-                                            <li><Link to={'/'}>Inicio</Link></li>
 
+
+
+                                            <li className="active"><Link to={'/'}>Inicio</Link></li>
                                             <li><Link to={'/'}>Nosotros</Link></li>
-                                            {/* <li><a onClick={() => testRed()}>Inicio</a></li> */}
-                                            <li className="active"><Link to={'/'}>Nosotros</Link></li>
                                             <li><Link to={'/'}>Servicios</Link></li>
                                             <li>
                                                 <label htmlFor="drop-2" className="toggle toogle-2">
