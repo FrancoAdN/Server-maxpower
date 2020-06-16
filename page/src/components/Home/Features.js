@@ -19,7 +19,7 @@ export default function Features() {
 	return (
 		<div ref={featRef}>
 			<div
-				className="welcome py-5 animate__animated animate__slideInUp"
+				className="welcome py-5"
 				id="features"
 				data-aos="slide-left"
 				data-aos-duration="1500"
