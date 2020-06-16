@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import './css/style.css';
+import './css/slider2.css';
 import './css/style2.css';
 import './css/font-awesome.css';
 import { refProv } from '../../_useRefHook';
@@ -61,6 +62,28 @@ export default function HandCrafted() {
 					</div>
 				</div>
 			</section>
+
+<div id="slider">
+  <div className="slides">
+    <div className="slider">
+      <div className="legend"></div>
+      <div className="content">
+      </div>
+      <div className="image">
+        <img src="https://cdn.stocksnap.io/img-thumbs/960w/VVHE6VHMAW.jpg"></img>
+      </div>
+    </div>
+	<div className="slider">
+      <div className="legend"></div>
+      <div className="content">
+      </div>
+      <div className="image">
+        <img src="https://cdn.stocksnap.io/img-thumbs/960w/VVHE6VHMAW.jpg"></img>
+      </div>
+    </div>
+   </div>
+</div>
+			
 		</div>
 	);
 }
