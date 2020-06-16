@@ -168,6 +168,11 @@
 	margin-top: 0em;
 }
 
+.features-span {
+	color: #ce110a;
+}
+
+
 .serve-grid p {
 	font-size: 1em;
 	text-transform: capitalize;
@@ -194,11 +199,11 @@
 }
 
 .s4 {
-	color: #73797a;
+	color: #3195a7;
 }
 
 .s5 {
-	color: #299ebb;
+	color: #bb2966;
 }
 
 .s6 {

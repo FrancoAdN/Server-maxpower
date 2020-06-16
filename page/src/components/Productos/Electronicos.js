@@ -128,7 +128,6 @@ function Card({ prod, addToCot }) {
                     <img className="img-prod" src={prod.img} alt="Avatar" />
                 </div>
                 <div className="favorite favorite_left"></div>
-                <div class="product_bubble product_bubble_left product_bubble_green d-flex flex-column align-items-center"><span>new</span></div>
                 <div className="product-info">
                     <h6 className="product_name">{prod.nombre}</h6>
                     <div className="product_price">Codigo:<span></span></div>
