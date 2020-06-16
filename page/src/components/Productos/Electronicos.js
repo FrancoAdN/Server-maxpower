@@ -118,23 +118,21 @@ function Body({ setCotizacion }) {
 
 function Card({ prod, setCotizacion }) {
     return (
-        <div className="product-grid">
-            <div className="product-item">
-                <div className="product discount product_filter">
-                    <div className="product_image">
-                        <img className="img-prod" src={prod.img} alt="Avatar" />
-                    </div>
-                    <div className="favorite favorite_left"></div>
-                    {/* <div class="product_bubble product_bubble_left product_bubble_green d-flex flex-column align-items-center"><span>new</span></div> */}
-                    <div className="product-info">
-                        <h6 className="product_name">{prod.nombre}</h6>
-                        <div className="product_price">{prod.categoria}<span></span></div>
-                    </div>
+    <div className="product-grid">
+        <div className="product-item">
+            <div className="product discount product_filter">
+                <div className="product_image">
+                    <img className="img-prod" src={prod.img} alt="Avatar" />
+                </div>
+                <div className="favorite favorite_left"></div>
+                <div className="product-info">
+                    <h6 className="product_name">{prod.nombre}</h6>
+                    <div className="product_price">Codigo:<span></span></div>
                 </div>
                 <div class="red_button add_to_cart_button" onClick={() => setCotizacion(true)}>Pedir cotizacion</div>
             </div>
         </div>
-
+    </div>
     )
 
 }

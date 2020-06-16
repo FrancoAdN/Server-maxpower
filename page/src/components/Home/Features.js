@@ -162,6 +162,7 @@ export default function Features() {
                                 Brindamos un excelente desempeño y un trabajo profesional en nuestras
                                 tareas, dando seguridad y confianza a nuestros clientes.
 							</p>
+                            <p className="mt-4 pr-lg-5"> <span className="features-span">¡Conoce mas acerca de nuestros servicos haciendo click en ellos! </span></p>
                         </div>
                         <div className="col-lg-7 welcome-right text-center mt-lg-0 mt-5">
                             <div className="row">

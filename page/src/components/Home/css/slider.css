@@ -207,7 +207,7 @@
 
 .csslider > .arrows label {
     /*display: block;*/
-    display: none;
+    /*display: none;*/
     position: absolute;
     top: -50%;
     padding: 9px;

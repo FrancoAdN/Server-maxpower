@@ -157,11 +157,12 @@ export default function MainContent() {
                                         <div className="container">
                                             <div className="banner-info">
                                                 <div className="banner-w3ls-inner">
-                                                    <h4>EXAMPLE SUBTITLE 1</h4>
-                                                    <h3>EXAMPLE TITLE</h3>
+                                                    <h4> VENTA DE PRODUCTOS Y SERVICIOS </h4>
+                                                    <h3> AUTOMATIZACION INDUSTRIAL </h3>
                                                     <p>
-                                                        Integer sit amet mattis quam, sit amet ultricies velit. Praesent
-                                                        ullamcorper dui turpis.
+                                                        Somos distribuidores de productos electricos y electronicos para el sector industrial. 
+                                                        Proporcionamos distintos servicios a las empresas, proporcionando un excelento desempeño
+                                                        y calidad con garantia en nuestro trabajo.
                                                     </p>
                                                 </div>
                                             </div>
@@ -175,11 +176,11 @@ export default function MainContent() {
                                         <div className="container">
                                             <div className="banner-info">
                                                 <div className="banner-w3ls-inner">
-                                                    <h4>EXAMPLE SUBTITLE 2</h4>
-                                                    <h3>EXAMPLE TITLE 2</h3>
+                                                    <h4> PRODUCTOS ELECTRICOS Y ELECTRONICOS </h4>
+                                                    <h3> SOMOS IMPORTADORES </h3>
                                                     <p>
-                                                        Integer sit amet mattis quam, sit amet ultricies velit. Praesent
-                                                        ullamcorper dui turpis.
+                                                    A pesar del COVID-19 , seguimos importando productos electricos y electronicos para nuestros clientes.
+                                                    Estamos a su disposicion, no dude en contactarnos!
                                                     </p>
                                                 </div>
                                             </div>
