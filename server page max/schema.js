@@ -78,7 +78,7 @@ const RootQuery = new GraphQLObjectType({
                     const sql = `SELECT * FROM electronicos WHERE categoria = '${args.categoria}'`
                     return await querysql(sql)
                 }
-                const sql = 'SELECT * FROM electronicos'
+                const sql = 'SELECT * FROM electronicos ORDER BY categoria'
                 return await querysql(sql)
 
             }
@@ -93,7 +93,7 @@ const RootQuery = new GraphQLObjectType({
                     const sql = `SELECT * FROM electricos WHERE categoria = '${args.categoria}'`
                     return await querysql(sql)
                 }
-                const sql = 'SELECT * FROM electricos'
+                const sql = 'SELECT * FROM electricos ORDER BY categoria'
                 return await querysql(sql)
 
             }
