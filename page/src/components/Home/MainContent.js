@@ -164,24 +164,24 @@ export default function MainContent() {
 														data-aos="fade-left"
 														data-aos-duration="1500"
 													>
-														MAXPOWER INDUSTRIAL AUTOMATION
+														VENTA DE PRODUCTOS Y SERVICIOS
 													</h4>
 													<h3
 														className="animate__animated animate__fadeInLeft"
 														data-aos="fade-right"
 														data-aos-duration="1500"
 													>
-														SOLUCIONES INTEGRALES
+														AUTOMATIZACIÓN INDUSTRIAL
 													</h3>
 													<p
 														className="animate__animated animate__fadeInLeft"
 														data-aos="fade-left"
 														data-aos-duration="1500"
 													>
-														Buscamos a través de un servicio de asistencia en excelencia y
-														eficiencia, apoyar el crecimiento y fortalecimiento del sector
-														industrial, siendo asi una empresa líder en el mercado brindando
-														soluciones tecnológicas con valor agregado para nuestros clientes.
+														Somos distribuidores de productos eléctricos y electrónicos para
+														el sector industrial. Proporcionamos distintos servicios a las
+														empresas, brindando un excelente desempeño y calidad con garantía
+														en nuestro trabajo.
 													</p>
 
 													<div className="test-info text-left mt-lg-5 mt-4">
@@ -210,13 +210,13 @@ export default function MainContent() {
 										<div className="container">
 											<div className="banner-info">
 												<div className="banner-w3ls-inner">
-													<h4> VENTA DE PRODUCTOS Y SERVICIOS </h4>
-													<h3> AUTOMATIZACIÓN INDUSTRIAL </h3>
+													<h4> MAXPOWER INDUSTRIAL AUTOMATION </h4>
+													<h3> SOLUCIONES INTEGRALES </h3>
 													<p>
-														Somos distribuidores de productos eléctricos y electrónicos para
-														el sector industrial. Proporcionamos distintos servicios a las
-														empresas, brindando un excelente desempeño y calidad con garantía
-														en nuestro trabajo.
+														Buscamos a través de un servicio de asistencia en excelencia y
+														eficiencia, apoyar el crecimiento y fortalecimiento del sector
+														industrial, siendo asi una empresa líder en el mercado brindando
+														soluciones tecnológicas con valor agregado para nuestros clientes.
 													</p>
 												</div>
 											</div>
