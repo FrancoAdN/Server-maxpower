@@ -1,17 +1,17 @@
 require('dotenv').config()
-const db = require('mysql2-promise')()
+const dbsys = require('mysql2-promise')()
 
-const config = {
+const config_sys = {
     host: 'localhost',
     user: process.env.DB_USER,
     password: process.env.DB_PWD,
     database: process.env.DBSYS
 }
 
-db.configure(config)
+dbsys.configure(config_sys)
 
 async function system_query(sql) {
-    const result = await db.execute(sql).spread(res => res);
+    const result = await dbsys.execute(sql).spread(res => res);
     return result
 }
 
