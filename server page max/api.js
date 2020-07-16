@@ -7,7 +7,6 @@ const nodemailer = require('nodemailer')
 const bodyParser = require('body-parser')
 const hbs = require('nodemailer-express-handlebars')
 const cors = require('cors')
-const system_query = require('./db_system')
 
 const PORT = process.env.PORT || 5000
 
@@ -43,13 +42,12 @@ app.use('/graphql', graphqlHTTP({
     graphiql: false
 }))
 
-// app.get('/login', (req, resp) => {
-//     const { usr, pwd } = req.query
-//     const sql = `SELECT 1 FROM Empleados WHERE usuario LIKE '${usr}' AND pwd = '${pwd}'`
-//     if (system_query(sql).length == 1) resp.send(true)
-//     else resp.send(false)
+app.get('/login', (req, resp) => {
+    const { usr, pwd } = req.query
+    const sql = `SELECT 1 FROM Empleados WHERE usuario LIKE '${usr}' AND pwd = '${pwd}'`
 
-// })
+
+})
 
 app.post('/contact', (req, resp) => {
 
