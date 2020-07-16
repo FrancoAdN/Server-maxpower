@@ -7,6 +7,7 @@ const nodemailer = require('nodemailer')
 const bodyParser = require('body-parser')
 const hbs = require('nodemailer-express-handlebars')
 const cors = require('cors')
+const axios = require('axios')
 
 const PORT = process.env.PORT || 5000
 
@@ -42,9 +43,18 @@ app.use('/graphql', graphqlHTTP({
     graphiql: false
 }))
 
-app.get('/login', (req, resp) => {
+app.get('/login', async (req, resp) => {
     const { usr, pwd } = req.query
-    const sql = `SELECT 1 FROM Empleados WHERE usuario LIKE '${usr}' AND pwd = '${pwd}'`
+    const url = `http://system.maxpower-ar.com/login?usr=${usr}&&pwd=${pwd}`
+    try {
+        const login = await axios.get(url)
+        console.log(login.data)
+        if (login.data.length == 1) resp.send(true)
+        else resp.send(false)
+    } catch (error) {
+        console.error(error)
+        resp.send(false)
+    }
 
 
 })
