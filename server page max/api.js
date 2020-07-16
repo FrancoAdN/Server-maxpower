@@ -48,11 +48,10 @@ app.get('/login', async (req, resp) => {
     const url = `http://system.maxpower-ar.com/login?usr=${usr}&&pwd=${pwd}`
     try {
         const login = await axios.get(url)
-        console.log(login.data)
         if (login.data.length == 1) resp.send(true)
         else resp.send(false)
     } catch (error) {
-        console.error(error)
+        console.log('error at login')
         resp.send(false)
     }
 
