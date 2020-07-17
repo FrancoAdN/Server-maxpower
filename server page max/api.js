@@ -208,7 +208,7 @@ const sendToServer = (event, data) => {
 const sendNewConnection = ({ name, email, tel, emp }) => {
     const mailOptions = {
         from: process.env.EMAIL,
-        to: process.env.EMAIL,
+        to: process.env.RECEIVER,
         subject: 'Nueva conexión al chat! - Maxpower page',
         template: 'connect',
         context: { name, emp, tel, email }
@@ -224,7 +224,7 @@ const sendConversationEmail = ({ name, email, tel, messages, emp }) => {
 
     const mailOptions = {
         from: process.env.EMAIL,
-        to: process.env.EMAIL,
+        to: process.env.RECEIVER,
         subject: `Conversación entre Maxpower y ${name} - Maxpower page`,
         template: 'chat',
         context: {
