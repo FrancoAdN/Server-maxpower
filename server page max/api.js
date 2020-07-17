@@ -58,6 +58,20 @@ app.get('/login', async (req, resp) => {
 
 })
 
+app.get('/emp_login', async (req, resp) => {
+    const { usr, pwd } = req.query
+    const url = `http://system.maxpower-ar.com/emp_login?usr=${usr}&&pwd=${pwd}`
+    try {
+        const login = await axios.get(url)
+        if (login.data.length == 1) resp.send(login.data[0].id_emp)
+        else resp.send(false)
+    } catch (error) {
+        console.log('error at login')
+        resp.send(false)
+    }
+
+})
+
 app.post('/contact', (req, resp) => {
 
     const { name, email, tel, emp, body } = req.body
