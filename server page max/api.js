@@ -192,6 +192,7 @@ io.sockets.on('connection', (socket) => {
             if (sock == socket.id) {
                 conn_clients.splice(i, 1)
                 found = true
+                console.log('client disconnected ' + socket.id)
                 sendToServer('client_disconnected', socket.id)
                 break
             }
@@ -201,6 +202,7 @@ io.sockets.on('connection', (socket) => {
             for (let [i, sock] of conn_server.entries()) {
                 if (sock == socket.id) {
                     conn_server.splice(i, 1)
+                    console.log('Server disconnected ' + sock)
                     break
                 }
             }
