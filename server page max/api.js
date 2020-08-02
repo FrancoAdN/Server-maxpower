@@ -49,7 +49,7 @@ app.get('/login', async (req, resp) => {
     const sql = `SELECT * FROM empleados WHERE usuario LIKE '${usr}' AND pwd = '${pwd}'`
     try {
         resp.send(await query_system(sql))
-    } catch {
+    } catch (error) {
         console.log('error')
     }
     // const url = `http://system.maxpower-ar.com/login?usr=${usr}&&pwd=${pwd}`
