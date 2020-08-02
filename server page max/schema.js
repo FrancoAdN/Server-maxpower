@@ -46,9 +46,7 @@ const CategoriaType = new GraphQLObjectType({
     })
 })
 
-// const VentaProdType = new GraphQLObjectType({
 
-// })
 
 
 

@@ -8,6 +8,7 @@ const bodyParser = require('body-parser')
 const hbs = require('nodemailer-express-handlebars')
 const cors = require('cors')
 const axios = require('axios')
+const query_system = require('./db_system')
 
 const PORT = process.env.PORT || 5000
 
@@ -45,32 +46,38 @@ app.use('/graphql', graphqlHTTP({
 
 app.get('/login', async (req, resp) => {
     const { usr, pwd } = req.query
-    const url = `http://system.maxpower-ar.com/login?usr=${usr}&&pwd=${pwd}`
+    const sql = `SELECT * FROM empleados WHERE usuario LIKE '${usr}' AND pwd = '${pwd}'`
     try {
-        const login = await axios.get(url)
-        if (login.data.length == 1) resp.send(true)
-        else resp.send(false)
-    } catch (error) {
-        console.log('error at login')
-        resp.send(false)
+        resp.send(await query_system(sql))
+    } catch {
+        console.log('error')
     }
+    // const url = `http://system.maxpower-ar.com/login?usr=${usr}&&pwd=${pwd}`
+    // try {
+    //     const login = await axios.get(url)
+    //     if (login.data.length == 1) resp.send(true)
+    //     else resp.send(false)
+    // } catch (error) {
+    //     console.log('error at login')
+    //     resp.send(false)
+    // }
 
 
 })
 
-app.get('/emp_login', async (req, resp) => {
-    const { usr, pwd } = req.query
-    const url = `http://system.maxpower-ar.com/emp_login?usr=${usr}&&pwd=${pwd}`
-    try {
-        const login = await axios.get(url)
-        if (login.data) resp.send(login.data)
-        else resp.send(false)
-    } catch (error) {
-        console.log('error at login')
-        resp.send(false)
-    }
+// app.get('/emp_login', async (req, resp) => {
+//     const { usr, pwd } = req.query
+//     const url = `http://system.maxpower-ar.com/emp_login?usr=${usr}&&pwd=${pwd}`
+//     try {
+//         const login = await axios.get(url)
+//         if (login.data) resp.send(login.data)
+//         else resp.send(false)
+//     } catch (error) {
+//         console.log('error at login')
+//         resp.send(false)
+//     }
 
-})
+// })
 
 app.post('/contact', (req, resp) => {
 
