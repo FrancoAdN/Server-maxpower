@@ -5,7 +5,8 @@
   "main": "api.js",
   "scripts": {
     "start": "nodemon api.js",
-    "deploy": "nohup node api.js &"
+    "deploy": "nohup node api.js &",
+    "watch": "watch cat nohup.out"
   },
   "author": "Franco di Nápoli",
   "license": "MIT",
