@@ -32,7 +32,7 @@ const CategoriaType = new GraphQLObjectType({
     })
 })
 
-const ElectricoType = new GraphQLObjectType({
+const IndustrialesType = new GraphQLObjectType({
     name: 'Industriales',
     fields: () => ({
         id_industrial: { type: GraphQLID },
@@ -103,7 +103,7 @@ const RootQuery = new GraphQLObjectType({
             }
         },
         industriales: {
-            type: new GraphQLList(ElectricoType),
+            type: new GraphQLList(IndustrialesType),
             args: {
                 categoria: { type: GraphQLString }
             },
