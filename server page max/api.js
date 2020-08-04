@@ -55,15 +55,6 @@ app.get('/login', async (req, resp) => {
     } catch (error) {
         console.log('error')
     }
-    // const url = `http://system.maxpower-ar.com/login?usr=${usr}&&pwd=${pwd}`
-    // try {
-    //     const login = await axios.get(url)
-    //     if (login.data.length == 1) resp.send(true)
-    //     else resp.send(false)
-    // } catch (error) {
-    //     console.log('error at login')
-    //     resp.send(false)
-    // }
 
 
 })
@@ -151,7 +142,6 @@ let conn_clients = []
 
 io.sockets.on('connection', (socket) => {
 
-    console.log('new connection ' + socket.id)
 
     socket.on('server_conn', () => {
         conn_server.push(socket.id)
