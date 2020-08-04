@@ -1,20 +1,6 @@
 const { GraphQLObjectType, GraphQLID, GraphQLString, GraphQLList, GraphQLSchema } = require('graphql')
 const querysql = require('./database')
-const axios = require('axios')
 
-
-const SeguridadType = new GraphQLObjectType({
-    name: 'Seguridad',
-    fields: () => ({
-        id_seg: { type: GraphQLID },
-        nombre: { type: GraphQLString },
-        modelo: { type: GraphQLString },
-        marca: { type: GraphQLString },
-        descripcion: { type: GraphQLString },
-        categoria: { type: GraphQLString },
-        img: { type: GraphQLString }
-    })
-})
 
 const ElectronicoType = new GraphQLObjectType({
     name: 'Electronica',
@@ -46,6 +32,15 @@ const CategoriaType = new GraphQLObjectType({
     })
 })
 
+const ElectricoType = new GraphQLObjectType({
+    name: 'Industriales',
+    fields: () => ({
+        id_industrial: { type: GraphQLID },
+        nombre: { type: GraphQLString },
+        categoria: { type: GraphQLString },
+        img: { type: GraphQLString }
+    })
+})
 
 
 
@@ -67,6 +62,13 @@ const RootQuery = new GraphQLObjectType({
             type: new GraphQLList(CategoriaType),
             resolve: async (parent, args) => {
                 const sql = 'SELECT DISTINCT categoria FROM electronicos'
+                return await querysql(sql)
+            }
+        },
+        i_categorias: {
+            type: new GraphQLList(CategoriaType),
+            resolve: async (parent, args) => {
+                const sql = 'SELECT DISTINCT categoria FROM industriales'
                 return await querysql(sql)
             }
         },
@@ -99,7 +101,22 @@ const RootQuery = new GraphQLObjectType({
                 return await querysql(sql)
 
             }
-        }
+        },
+        industriales: {
+            type: new GraphQLList(ElectricoType),
+            args: {
+                categoria: { type: GraphQLString }
+            },
+            resolve: async (parent, args) => {
+                if (args.categoria != 'all') {
+                    const sql = `SELECT * FROM industriales WHERE categoria = '${args.categoria}'`
+                    return await querysql(sql)
+                }
+                const sql = 'SELECT * FROM industriales ORDER BY categoria'
+                return await querysql(sql)
+
+            }
+        },
 
 
     }

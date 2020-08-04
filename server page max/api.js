@@ -48,7 +48,10 @@ app.get('/login', async (req, resp) => {
     const { usr, pwd } = req.query
     const sql = `SELECT * FROM empleados WHERE usuario LIKE '${usr}' AND pwd = '${pwd}'`
     try {
-        resp.send(await query_system(sql))
+        const re = await query_system(sql)
+        if (re.length === 1) resp.send(true)
+        else resp.send(false)
+
     } catch (error) {
         console.log('error')
     }
