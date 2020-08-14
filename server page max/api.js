@@ -140,8 +140,10 @@ const io = socket(server)
 let conn_server = []
 let conn_clients = []
 
+//192.168.0.11
 io.sockets.on('connection', (socket) => {
 
+    console.log(`NEW SOCKET CONNECTION ${socket.id}`)
 
     socket.on('server_conn', () => {
         conn_server.push(socket.id)
@@ -224,7 +226,7 @@ const sendToServer = (event, data) => {
 const sendNewConnection = ({ name, email, tel, emp }) => {
     const mailOptions = {
         from: process.env.EMAIL,
-        to: process.env.RECEIVER,
+        to: process.env.EMAIL,
         subject: 'Nueva conexión al chat! - Maxpower page',
         template: 'connect',
         context: { name, emp, tel, email }
@@ -240,7 +242,7 @@ const sendConversationEmail = ({ name, email, tel, messages, emp }) => {
 
     const mailOptions = {
         from: process.env.EMAIL,
-        to: process.env.RECEIVER,
+        to: process.env.EMAIL,
         subject: `Conversación entre Maxpower y ${name} - Maxpower page`,
         template: 'chat',
         context: {
