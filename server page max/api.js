@@ -143,7 +143,6 @@ let conn_clients = []
 //192.168.0.11
 io.sockets.on('connection', (socket) => {
 
-    console.log(`NEW SOCKET CONNECTION ${socket.id}`)
 
     socket.on('server_conn', () => {
         conn_server.push(socket.id)
