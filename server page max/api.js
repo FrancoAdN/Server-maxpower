@@ -143,6 +143,7 @@ let conn_clients = []
 //192.168.0.11
 io.sockets.on('connection', (socket) => {
 
+    setInterval(() => sendToServer('ping'), 500);
 
     socket.on('server_conn', () => {
         conn_server.push(socket.id)
