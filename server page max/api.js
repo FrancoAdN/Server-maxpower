@@ -158,7 +158,9 @@ io.sockets.on('connection', (socket) => {
         }
     })
 
-    socket.on('ping_receive', () => console.log(`Ping receive ${socket.id}`))
+    socket.on('ping_receive', () => {
+        // console.log(`Ping receive ${socket.id}`)
+    })
 
     socket.on('client_conn', (data) => {
 
