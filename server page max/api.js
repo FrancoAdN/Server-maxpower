@@ -144,7 +144,6 @@ let conn_clients = []
 io.sockets.on('connection', (socket) => {
 
     setInterval(() => {
-        console.log('sending ping to: ' + conn_server.length)
         for (let sock of conn_server)
             io.to(sock).emit('ping')
     }, 500);
@@ -158,6 +157,8 @@ io.sockets.on('connection', (socket) => {
 
         }
     })
+
+    socket.on('ping_receive', () => console.log(`Ping receive ${socket.id}`))
 
     socket.on('client_conn', (data) => {
 
