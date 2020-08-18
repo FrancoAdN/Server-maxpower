@@ -143,7 +143,11 @@ let conn_clients = []
 //192.168.0.11
 io.sockets.on('connection', (socket) => {
 
-    setInterval(() => sendToServer('ping'), 500);
+    setInterval(() => {
+        console.log('sending ping to: ' + conn_server.length)
+        for (let sock of conn_server)
+            io.to(sock).emit('ping')
+    }, 500);
 
     socket.on('server_conn', () => {
         conn_server.push(socket.id)
