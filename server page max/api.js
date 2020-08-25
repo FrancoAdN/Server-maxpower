@@ -168,8 +168,10 @@ io.sockets.on('connection', (socket) => {
     socket.on('client_message', ({ msg }) => {
         const client_msg = { from: socket.id, msg }
         sendToServer('client_message', client_msg)
-        msg['time'] = new Date().getTime()
-        addMessageToClient(msg, socket.id)
+        const message = {
+            from: 1, msg, time: new Date().getTime()
+        }
+        addMessageToClient(message, socket.id)
 
     })
 
@@ -197,7 +199,7 @@ io.sockets.on('connection', (socket) => {
                 found = true
                 console.log('client disconnected ' + socket.id)
                 sendToServer('client_disconnected', socket.id)
-                removeClient(socket.id)
+                currentClientsConnected.splice(i, 1)
                 break
             }
         }
@@ -290,11 +292,3 @@ const addMessageToClient = (message, id) => {
     }
 }
 
-const removeClient = (id) => {
-    for (let [i, clients] of currentClientsConnected.entries()) {
-        if (clients.socket_id == socket.id) {
-            currentClientsConnected.splice(i, 1)
-            break
-        }
-    }
-}
