@@ -180,7 +180,7 @@ io.sockets.on('connection', (socket) => {
         sendToServer('new_client_conn', data)
     })
 
-    socket.on('client_conversation', (data) => sendConversationEmail(data))
+    //socket.on('client_conversation', (data) => sendConversationEmail(data))
 
     socket.on('server_message', (data) => {
         const message = { from: 0, msg: data.text }
@@ -199,6 +199,7 @@ io.sockets.on('connection', (socket) => {
                 found = true
                 console.log('client disconnected ' + socket.id)
                 sendToServer('client_disconnected', socket.id)
+                sendConversationEmail(currentClientsConnected[i])
                 currentClientsConnected.splice(i, 1)
                 break
             }
