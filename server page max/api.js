@@ -9,6 +9,7 @@ const hbs = require('nodemailer-express-handlebars')
 const cors = require('cors')
 const axios = require('axios')
 const query_system = require('./db_system')
+const Notification = require('./notification')
 
 const PORT = process.env.PORT || 5000
 
@@ -59,19 +60,6 @@ app.get('/login', async (req, resp) => {
 
 })
 
-// app.get('/emp_login', async (req, resp) => {
-//     const { usr, pwd } = req.query
-//     const url = `http://system.maxpower-ar.com/emp_login?usr=${usr}&&pwd=${pwd}`
-//     try {
-//         const login = await axios.get(url)
-//         if (login.data) resp.send(login.data)
-//         else resp.send(false)
-//     } catch (error) {
-//         console.log('error at login')
-//         resp.send(false)
-//     }
-
-// })
 
 app.post('/contact', (req, resp) => {
 
@@ -140,27 +128,22 @@ const io = socket(server)
 let conn_server = []
 let conn_clients = []
 
+let currentClientsConnected = []
+
 //192.168.0.11
 io.sockets.on('connection', (socket) => {
 
-    setInterval(() => {
-        for (let sock of conn_server)
-            io.to(sock).emit('ping')
-    }, 500);
 
     socket.on('server_conn', () => {
         conn_server.push(socket.id)
         console.log(`New server connection ${socket.id}`)
         if (conn_clients.length != 0) {
-            for (const c of conn_clients)
-                io.to(c).emit('existing_conv')
-
+            /*for (const c of conn_clients)
+                io.to(c).emit('existing_conv')*/
+            io.to(socket.id).emit('existing_clients', currentClientsConnected)
         }
     })
 
-    socket.on('ping_receive', () => {
-        // console.log(`Ping receive ${socket.id}`)
-    })
 
     socket.on('client_conn', (data) => {
 
@@ -169,8 +152,14 @@ io.sockets.on('connection', (socket) => {
         if (conn_server.length != 0 || checkVirtualServer()) {
             data['socket_id'] = socket.id
             data['messages'] = [{ from: 0, msg: 'Bienvenido al chat!', time: new Date().getTime() }]
+            currentClientsConnected.push(data)
             conn_clients.push(socket.id)
             sendToServer('new_client_conn', data)
+            const notify = {
+                title: 'Maxpower Chat',
+                body: `${data.name} se ha conectado al chat`
+            }
+            SendNotificiationToDevices(notify)
         } else
             io.to(socket.id).emit('server_disconnected')
 
@@ -179,6 +168,9 @@ io.sockets.on('connection', (socket) => {
     socket.on('client_message', ({ msg }) => {
         const client_msg = { from: socket.id, msg }
         sendToServer('client_message', client_msg)
+        msg['time'] = new Date().getTime()
+        addMessageToClient(msg, socket.id)
+
     })
 
     socket.on('client_existing_conv', (data) => {
@@ -191,6 +183,8 @@ io.sockets.on('connection', (socket) => {
     socket.on('server_message', (data) => {
         const message = { from: 0, msg: data.text }
         io.to(data.to).emit('server_message', message)
+        message['time'] = new Date().getTime()
+        addMessageToClient(message, data.to)
     })
 
 
@@ -203,6 +197,7 @@ io.sockets.on('connection', (socket) => {
                 found = true
                 console.log('client disconnected ' + socket.id)
                 sendToServer('client_disconnected', socket.id)
+                removeClient(socket.id)
                 break
             }
         }
@@ -272,4 +267,34 @@ function checkVirtualServer() {
         return true
     return false
 
+}
+
+const SendNotificiationToDevices = (notify) => {
+    Notification.sendMessage(notify)
+}
+
+const addMessageToClient = (message, id) => {
+
+    for (let client of currentClientsConnected) {
+        if (client.socket_id === id) {
+            client.messages.push(message)
+            if (message.from) {
+                const notify = {
+                    title: 'Maxpower chat',
+                    body: `${client.name}: ${message.msg}`
+                }
+                SendNotificiationToDevices(notify)
+            }
+            break
+        }
+    }
+}
+
+const removeClient = (id) => {
+    for (let [i, clients] of currentClientsConnected.entries()) {
+        if (clients.socket_id == socket.id) {
+            currentClientsConnected.splice(i, 1)
+            break
+        }
+    }
 }
