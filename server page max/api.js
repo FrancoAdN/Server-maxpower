@@ -137,11 +137,7 @@ io.sockets.on('connection', (socket) => {
     socket.on('server_conn', () => {
         conn_server.push(socket.id)
         console.log(`New server connection ${socket.id}`)
-        if (conn_clients.length != 0) {
-            /*for (const c of conn_clients)
-                io.to(c).emit('existing_conv')*/
-            io.to(socket.id).emit('existing_clients', currentClientsConnected)
-        }
+        io.to(socket.id).emit('existing_clients', currentClientsConnected)
     })
 
 
