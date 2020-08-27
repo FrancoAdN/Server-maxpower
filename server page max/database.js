@@ -15,6 +15,13 @@ async function querysql(sql) {
     return result
 }
 
-const sql = 'SELECT token FROM Devices'
-console.log(querysql(sql))
+
+async function test() {
+    const sql = 'SELECT token FROM Devices'
+    console.log(await querysql(sql))
+
+}
+
+test()
+
 module.exports = querysql
