@@ -138,6 +138,7 @@ io.sockets.on('connection', (socket) => {
         conn_server.push(socket.id)
         console.log(`New server connection ${socket.id}`)
         io.to(socket.id).emit('existing_clients', currentClientsConnected)
+        console.log(currentClientsConnected)
     })
 
 
