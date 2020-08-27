@@ -16,17 +16,4 @@ async function querysql(sql) {
 }
 
 
-async function test() {
-    const sql = 'SELECT token FROM Devices'
-    const res = await querysql(sql)
-    const response = []
-    for (let tok of res) {
-        response.push(tok.token)
-    }
-    console.log(response)
-
-}
-
-test()
-
 module.exports = querysql

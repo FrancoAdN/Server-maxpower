@@ -7,8 +7,8 @@ const nodemailer = require('nodemailer')
 const bodyParser = require('body-parser')
 const hbs = require('nodemailer-express-handlebars')
 const cors = require('cors')
-const axios = require('axios')
 const query_system = require('./db_system')
+const querysql = require('./database')
 const Notification = require('./notification')
 
 const PORT = process.env.PORT || 5000
@@ -118,6 +118,14 @@ app.post('/newsletter', (req, resp) => {
         if (error) resp.sendStatus(400)
         else resp.sendStatus(200)
     })
+})
+
+app.post('/device', async (req, resp) => {
+    const { token } = req.body
+    const sql = `INSERT INTO Devices(token) VALUES ("${token}")`
+    const re = await querysql(sql)
+    console.log(re)
+
 })
 
 

@@ -1,28 +1,34 @@
 const admin = require('firebase-admin')
 const serviceAccount = require('./firebase-key.json')
+const querysql = require('./database')
+
 admin.initializeApp({
     credential: admin.credential.cert(serviceAccount)
 })
 
-const tokenId = "dbSruR0xSMeaPlwnGwEQgx:APA91bE5OASUiMjwKGq2p7Wh3DwB6Zra8M06mvTFQBm1RuoDyQHzjxGyiPv63tfxStTK9J7BdgP8tEzqZrPapU5gIpOl5IS95KonDseB_Mq_Q14At-zxuCrhtUSmdKia165EUQ-ZDg1n"
 
-function sendMessage({ title, body }) {
+async function sendMessage({ title, body }) {
+    const tokens = []
+    const sql = 'SELECT token FROM Devices'
+    const res = await querysql(sql)
+    for (let t of res)
+        tokens.push(t.token)
+
+
+
     const payload = {
         notification: {
             title, body
         },
-        data: {}
+        data: {},
+        tokens
+
     }
-    const options = {
-        priority: 'high'
-    }
-    admin.messaging().sendToDevice(tokenId, payload, options)
-        .then((resp) => {
-            //console.log('Success ', resp)
-        })
-        .catch((err) => {
-            console.log('Error sending', err)
-        })
+
+    admin.messaging().sendMulticast(payload)
+        .then(() => { })
+        .catch((err) => console.log("Error sending", err))
+
 }
 
 
