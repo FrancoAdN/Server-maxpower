@@ -138,7 +138,6 @@ io.sockets.on('connection', (socket) => {
         conn_server.push(socket.id)
         console.log(`New server connection ${socket.id}`)
         io.to(socket.id).emit('existing_clients', currentClientsConnected)
-        console.log(currentClientsConnected)
     })
 
 
@@ -194,7 +193,7 @@ io.sockets.on('connection', (socket) => {
             if (sock == socket.id) {
                 conn_clients.splice(i, 1)
                 found = true
-                console.log('client disconnected ' + socket.id)
+                console.log('Client disconnected ' + socket.id)
                 sendToServer('client_disconnected', socket.id)
                 sendConversationEmail(currentClientsConnected[i])
                 currentClientsConnected.splice(i, 1)
