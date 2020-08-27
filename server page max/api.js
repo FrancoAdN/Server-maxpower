@@ -123,8 +123,10 @@ app.post('/newsletter', (req, resp) => {
 app.post('/device', async (req, resp) => {
     const { token } = req.body
     const sql = `INSERT INTO Devices(token) VALUES ("${token}")`
-    const re = await querysql(sql)
-    console.log(re)
+    try {
+        const re = await querysql(sql)
+    } catch (error) { }
+
 
 })
 
