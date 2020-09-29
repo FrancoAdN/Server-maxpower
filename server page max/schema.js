@@ -220,6 +220,7 @@ function get_cotizaciones(cotizaciones) {
         }
         cotis.push(aux_cot)
     }
+
     return cotis
 }
 
@@ -299,7 +300,7 @@ const RootQuery = new GraphQLObjectType({
             type: new GraphQLList(CotizacionesType),
             resolve: async (parent, args) => {
                 const sql = `SELECT * FROM Cotizaciones c, Estados_coti ec, Detalle_coti dc, Empleados emp WHERE c.orden_coti = ec.orden_coti AND ec.orden_coti = dc.orden_coti AND emp.id_empleado = c.id_empleado;`
-                return (await query_third_db(sql))
+                return get_cotizaciones(await query_third_db(sql))
 
             }
         }
