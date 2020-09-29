@@ -424,7 +424,7 @@ const RootQuery = new GraphQLObjectType({
                 id_empresa: { type: GraphQLID }
             },
             resolve: async (parent, args) => {
-                const sql = `SELECT * FROM Empresas e, Contactos_empresa contemp, Cotizaciones c, Estados_coti ec, Detalle_coti dc, Empleados emp WHERE e.id_empresa=contemp.id_empresa AND c.id_empresa=e.id_empresa AND c.orden_coti=ec.orden_coti AND ec.orden_coti=dc.orden_coti AND emp.id_empleado=c.id_empleado AND emp.id_empresa=${args.id_empresa};`
+                const sql = `SELECT * FROM Empresas e, Contactos_empresa contemp, Cotizaciones c, Estados_coti ec, Detalle_coti dc, Empleados emp WHERE e.id_empresa=contemp.id_empresa AND c.id_empresa=e.id_empresa AND c.orden_coti=ec.orden_coti AND ec.orden_coti=dc.orden_coti AND emp.id_empleado=c.id_empleado AND e.id_empresa=${args.id_empresa};`
                 return get_empresas(await query_third_db(sql))
             }
         }
