@@ -173,6 +173,7 @@ function extraer(array) {
 }
 
 function separar_cotizaciones(array) {
+    console.log(array)
     let matriz = []
     let cotizacion = [array[0]]
     let ord_compare = array[0].orden_coti
@@ -182,13 +183,14 @@ function separar_cotizaciones(array) {
             cotizacion.push(element)
         } else {
             matriz.push(cotizacion)
+            console.log(cotizacion)
             cotizacion = []
             ord_compare = element.orden_coti
             cotizacion.push(element)
         }
     }
     matriz.push(cotizacion)
-
+    console.log(cotizacion)
     return matriz
 }
 
@@ -269,9 +271,8 @@ const RootQuery = new GraphQLObjectType({
             resolve: async (parent, args) => {
                 const sql = `SELECT * FROM Cotizaciones c, Estados_coti ec, Detalle_coti dc, Empleados emp WHERE c.orden_coti = ec.orden_coti AND ec.orden_coti = dc.orden_coti AND emp.id_empleado = c.id_empleado;`
                 let cotizaciones = await query_third_db(sql)
-                console.log(cotizaciones)
                 cotizaciones = separar_cotizaciones(cotizaciones)
-                console.log(cotizaciones)
+
                 for (let cot of cotizaciones) {
                     console.log(cot)
                     const { estados, detalles } = extraer(cot)
