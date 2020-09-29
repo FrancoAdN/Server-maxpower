@@ -94,7 +94,7 @@ const CotizacionesType = new GraphQLObjectType({
         id_empresa: { type: GraphQLID },
         tipo_coti: { type: GraphQLString },
         precio_total_coti: { type: GraphQLFloat },
-        moneda_coti: { type: GraphQLFloat },
+        moneda_coti: { type: GraphQLString },
         cotizacion_usd: { type: GraphQLFloat },
         condicion_de_pago: { type: GraphQLString },
         validez_orden: { type: GraphQLInt },
@@ -270,7 +270,7 @@ const RootQuery = new GraphQLObjectType({
                 const sql = `SELECT * FROM Cotizaciones c, Estados_coti ec, Detalle_coti dc, Empleados emp WHERE c.orden_coti = ec.orden_coti AND ec.orden_coti = dc.orden_coti AND emp.id_empleado = c.id_empleado;`
                 let cotizaciones = await query_third_db(sql)
                 cotizaciones = separar_cotizaciones(cotizaciones)
-                let rtn = []
+                let cotis = []
                 for (let cot of cotizaciones) {
                     const { estados, detalles } = extraer(cot)
                     const empleado = {
@@ -294,11 +294,9 @@ const RootQuery = new GraphQLObjectType({
                         estados,
                         detalles
                     }
-                    cot = aux_cot
-                    rtn.push(aux_cot)
+                    cotis.push(aux_cot)
                 }
-                console.log(rtn)
-                return rtn
+                return cotis
 
             }
         }
