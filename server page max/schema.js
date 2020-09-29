@@ -277,7 +277,8 @@ const RootQuery = new GraphQLObjectType({
                         id_empleado: cot[0].id_empleado,
                         nombre_empleado: cot[0].nombre_empleado,
                         email_empleado: cot[0].email_empleado,
-                        telefono_empleado: cot[0].telefono_empleado
+                        telefono_empleado: cot[0].telefono_empleado,
+                        puesto_empleado: cot[0].puesto_empleado
                     }
                     const aux_cot = {
                         orden_coti: cot[0].orden_coti,
@@ -293,10 +294,9 @@ const RootQuery = new GraphQLObjectType({
                         estados,
                         detalles
                     }
-                    console.log(aux_cot)
                     cot = aux_cot
                 }
-
+                console.log(cotizaciones)
                 return cotizaciones
 
             }
