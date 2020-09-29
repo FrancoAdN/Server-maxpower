@@ -272,7 +272,6 @@ const RootQuery = new GraphQLObjectType({
                 cotizaciones = separar_cotizaciones(cotizaciones)
 
                 for (let cot of cotizaciones) {
-                    console.log('Cot:', cot)
                     const { estados, detalles } = extraer(cot)
                     const empleado = {
                         id_empleado: cot[0].id_empleado,
@@ -294,6 +293,7 @@ const RootQuery = new GraphQLObjectType({
                         estados,
                         detalles
                     }
+                    console.log(aux_cot)
                     cot = aux_cot
                 }
 
