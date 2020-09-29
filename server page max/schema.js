@@ -122,6 +122,24 @@ const EmpresaType = new GraphQLObjectType({
 })
 
 
+function separar_empresas(array) {
+    let matriz = []
+    let empresas = [array[0]]
+    let id_compare = array[0].id_empresa
+    for (let i = 1; i < array.length - 1; i++) {
+        const element = array[i]
+        if (element.id_empresa === id_compare) {
+            empresas.push(element)
+        } else {
+            matriz.push(empresas)
+            empresas = []
+            id_compare = element.id_empresa
+            empresas.push(element)
+        }
+    }
+    matriz.push(empresas)
+    return matriz
+}
 
 function extraer(array) {
     let estados = []
@@ -191,6 +209,61 @@ function separar_cotizaciones(array) {
     return matriz
 }
 
+function extraer_empresas(array) {
+    let cotizaciones = []
+    let contactos = []
+    for (let i = 0; i < array.length; i++) {
+        const element = array[i]
+        const aux_cot = {
+            orden_coti: element.orden_coti,
+            id_empresa: element.id_empresa,
+            tipo_coti: element.tipo_coti,
+            precio_total_coti: element.precio_total_coti,
+            moneda_coti: element.moneda_coti,
+            cotizacion_usd: element.cotizacion_usd,
+            condicion_de_pago: element.condicion_de_pago,
+            validez_orden: element.validez_orden,
+            plazo_maximo_entrega: element.plazo_maximo_entrega,
+            id_empleado: element.id_empleado,
+            id_estado: element.id_estado,
+            fecha_estado: element.fecha_estado,
+            estado: element.estado,
+            id_detalle: element.id_detalle,
+            cantidad: element.cantidad,
+            descripcion: element.descripcion,
+            precio: element.precio,
+            nombre_empleado: element.nombre_empleado,
+            email_empleado: element.email_empleado,
+            telefono_empleado: element.telefono_empleado,
+            puesto_empleado: element.puesto_empleado
+
+        }
+        cotizaciones.push(aux_cot)
+        const aux_contacto = {
+            id_contacto: element.id_contacto,
+            id_empresa: element.id_empresa,
+            nombre_contacto: element.nombre_contacto,
+            email_contacto: element.email_contacto,
+            telefono_contacto: element.telefono_contacto,
+            posicion_contacto: element.posicion_contacto
+        }
+        let found_contacto = false
+        for (let cont of contactos) {
+            if (cont.id_contacto === aux_contacto.id_contacto) {
+                found_contacto = true
+                break
+            }
+        }
+
+        if (!found_contacto)
+            contactos.push(aux_contacto)
+
+    }
+    return {
+        cotizaciones, contactos
+    }
+}
+
 function get_cotizaciones(cotizaciones) {
     cotizaciones = separar_cotizaciones(cotizaciones)
     let cotis = []
@@ -221,6 +294,31 @@ function get_cotizaciones(cotizaciones) {
     }
 
     return cotis
+}
+
+function get_empresas(empresas) {
+    empresas = separar_empresas(empresas)
+    let empresas_aux = []
+    for (let emp of empresas) {
+        const { cotizaciones, contactos } = extraer_empresas(emp)
+
+        const aux_empresa = {
+            id_empresa: emp[0].id_empresa,
+            nombre_emp: emp[0].nombre_emp,
+            cuit_emp: emp[0].cuit_emp,
+            localidad_emp: emp[0].localidad_emp,
+            direccion_emp: emp[0].direccion_emp,
+            webpage_emp: emp[0].webpage_emp,
+            telefono_comercial_emp: emp[0].telefono_comercial_emp,
+            rubro_emp: emp[0].rubro_emp,
+            contactos,
+            cotizaciones: get_cotizaciones(cotizaciones)
+        }
+
+        empresas_aux.push(aux_empresa)
+    }
+
+    return empresas_aux
 }
 
 
@@ -311,6 +409,13 @@ const RootQuery = new GraphQLObjectType({
             resolve: async (parent, args) => {
                 const sql = `SELECT * FROM Cotizaciones c, Estados_coti ec, Detalle_coti dc, Empleados emp WHERE c.id_empresa = ${args.id_empresa} AND c.orden_coti = ec.orden_coti AND ec.orden_coti = dc.orden_coti AND emp.id_empleado = c.id_empleado;`
                 return get_cotizaciones(await query_third_db(sql))
+            }
+        },
+        empresas: {
+            type: new GraphQLList(EmpresaType),
+            resolve: async () => {
+                const sql = `SELECT * FROM Empresas e, Contactos_empresa contemp, Cotizaciones c, Estados_coti ec, Detalle_coti dc, Empleados emp WHERE e.id_empresa=contemp.id_empresa AND c.id_empresa=e.id_empresa AND c.orden_coti=ec.orden_coti AND ec.orden_coti=dc.orden_coti AND emp.id_empleado=c.id_empleado;`
+                return get_empresas(await query_third_db(sql))
             }
         }
 
