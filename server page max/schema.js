@@ -51,7 +51,7 @@ const ContactosType = new GraphQLObjectType({
         id_empresa: { type: GraphQLID },
         nombre_contacto: { type: GraphQLString },
         email_contacto: { type: GraphQLString },
-        telefono_contaco: { type: GraphQLString },
+        telefono_contacto: { type: GraphQLString },
         posicion_contacto: { type: GraphQLString }
     })
 })
