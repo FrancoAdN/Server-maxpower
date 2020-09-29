@@ -173,7 +173,6 @@ function extraer(array) {
 }
 
 function separar_cotizaciones(array) {
-    console.log(array)
     let matriz = []
     let cotizacion = [array[0]]
     let ord_compare = array[0].orden_coti
@@ -183,14 +182,14 @@ function separar_cotizaciones(array) {
             cotizacion.push(element)
         } else {
             matriz.push(cotizacion)
-            console.log(cotizacion)
+            console.log('Cotizacion: ', cotizacion)
             cotizacion = []
             ord_compare = element.orden_coti
             cotizacion.push(element)
         }
     }
     matriz.push(cotizacion)
-    console.log(cotizacion)
+    console.log('Cotizacion: ', cotizacion)
     return matriz
 }
 
@@ -274,7 +273,7 @@ const RootQuery = new GraphQLObjectType({
                 cotizaciones = separar_cotizaciones(cotizaciones)
 
                 for (let cot of cotizaciones) {
-                    console.log(cot)
+                    console.log('Cot:', cot)
                     const { estados, detalles } = extraer(cot)
                     const empleado = {
                         id_empleado: cot[0].id_empleado,
