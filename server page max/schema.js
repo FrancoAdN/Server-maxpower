@@ -126,7 +126,7 @@ const EmpresaType = new GraphQLObjectType({
 function extraer(array) {
     let estados = []
     let detalles = []
-    for (let i = 0; i < array.lenght; i++) {
+    for (let i = 0; i < array.length; i++) {
         const element = array[i]
         const aux_estado = {
             id_estado: element.id_estado,
@@ -176,7 +176,7 @@ function separar_cotizaciones(array) {
     let matriz = []
     let cotizacion = [array[0]]
     let ord_compare = array[0].orden_coti
-    for (let i = 1; i < array.lenght - 1; i++) {
+    for (let i = 1; i < array.length - 1; i++) {
         const element = array[i]
         if (element.orden_coti === ord_compare) {
             cotizacion.push(element)
