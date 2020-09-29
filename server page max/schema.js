@@ -167,6 +167,7 @@ function extraer(array) {
             detalles.push(aux_detalle)
     }
 
+    console.log({ estados, detalles })
     return {
         estados, detalles
     }
@@ -182,14 +183,12 @@ function separar_cotizaciones(array) {
             cotizacion.push(element)
         } else {
             matriz.push(cotizacion)
-            console.log('Cotizacion: ', cotizacion)
             cotizacion = []
             ord_compare = element.orden_coti
             cotizacion.push(element)
         }
     }
     matriz.push(cotizacion)
-    console.log('Cotizacion: ', cotizacion)
     return matriz
 }
 
@@ -297,7 +296,7 @@ const RootQuery = new GraphQLObjectType({
                     }
                     cot = aux_cot
                 }
-                console.log(cotizaciones)
+
                 return cotizaciones
 
             }
