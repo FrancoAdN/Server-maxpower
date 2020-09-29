@@ -167,7 +167,6 @@ function extraer(array) {
             detalles.push(aux_detalle)
     }
 
-    console.log({ estados, detalles })
     return {
         estados, detalles
     }
@@ -303,7 +302,18 @@ const RootQuery = new GraphQLObjectType({
                 return get_cotizaciones(await query_third_db(sql))
 
             }
+        },
+        cotizaciones_por_empresa: {
+            type: new GraphQLList(CotizacionesType),
+            args: {
+                id_empresa: { type: GraphQLID }
+            },
+            resolve: async (parent, args) => {
+                const sql = `SELECT * FROM Cotizaciones c, Estados_coti ec, Detalle_coti dc, Empleados emp WHERE c.id_empresa = ${args.id_empresa} AND c.orden_coti = ec.orden_coti AND ec.orden_coti = dc.orden_coti AND emp.id_empleado = c.id_empleado;`
+                return get_cotizaciones(await query_third_db(sql))
+            }
         }
+
 
 
 
