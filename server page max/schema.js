@@ -269,10 +269,18 @@ const RootQuery = new GraphQLObjectType({
             resolve: async (parent, args) => {
                 const sql = `SELECT * FROM Cotizaciones c, Estados_coti ec, Detalle_coti dc, Empleados emp WHERE c.orden_coti = ec.orden_coti AND ec.orden_coti = dc.orden_coti AND emp.id_empleado = c.id_empleado;`
                 let cotizaciones = await query_third_db(sql)
+                console.log(cotizaciones)
                 cotizaciones = separar_cotizaciones(cotizaciones)
+                console.log(cotizaciones)
                 for (let cot of cotizaciones) {
+                    console.log(cot)
                     const { estados, detalles } = extraer(cot)
-                    const empleado = {}
+                    const empleado = {
+                        id_empleado: cot[0].id_empleado,
+                        nombre_empleado: cot[0].nombre_empleado,
+                        email_empleado: cot[0].email_empleado,
+                        telefono_empleado: cot[0].telefono_empleado
+                    }
                     const aux_cot = {
                         orden_coti: cot[0].orden_coti,
                         id_empresa: cot[0].id_empresa,
@@ -289,7 +297,7 @@ const RootQuery = new GraphQLObjectType({
                     }
                     cot = aux_cot
                 }
-
+                console.log(cotizaciones)
                 return cotizaciones
 
             }
