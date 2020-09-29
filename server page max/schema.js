@@ -57,7 +57,7 @@ const ContactosType = new GraphQLObjectType({
 })
 
 const EstadosCotType = new GraphQLObjectType({
-    name: 'Estados coti',
+    name: 'Estados_coti',
     fields: () => ({
         id_estado: { type: GraphQLID },
         orden_coti: { type: GraphQLString },
@@ -72,7 +72,6 @@ const EmpleadoType = new GraphQLObjectType({
         nombre_empleado: { type: GraphQLString },
         email_empleado: { type: GraphQLString },
         telefono_empleado: { type: GraphQLString },
-        contraseña: { type: GraphQLString },
         puesto_empleado: { type: GraphQLString }
     })
 })
@@ -89,7 +88,7 @@ const DetalleType = new GraphQLObjectType({
 })
 
 const CotizacionesType = new GraphQLObjectType({
-    name: 'Estados',
+    name: 'Cotizaciones',
     fields: () => ({
         orden_coti: { type: GraphQLString },
         id_empresa: { type: GraphQLID },
