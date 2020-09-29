@@ -192,6 +192,37 @@ function separar_cotizaciones(array) {
     return matriz
 }
 
+function get_cotizaciones(cotizaciones) {
+    cotizaciones = separar_cotizaciones(cotizaciones)
+    let cotis = []
+    for (let cot of cotizaciones) {
+        const { estados, detalles } = extraer(cot)
+        const empleado = {
+            id_empleado: cot[0].id_empleado,
+            nombre_empleado: cot[0].nombre_empleado,
+            email_empleado: cot[0].email_empleado,
+            telefono_empleado: cot[0].telefono_empleado,
+            puesto_empleado: cot[0].puesto_empleado
+        }
+        const aux_cot = {
+            orden_coti: cot[0].orden_coti,
+            id_empresa: cot[0].id_empresa,
+            tipo_coti: cot[0].tipo_coti,
+            precio_total_coti: cot[0].precio_total_coti,
+            moneda_coti: cot[0].moneda_coti,
+            cotizacion_usd: cot[0].cotizacion_usd,
+            condicion_de_pago: cot[0].condicion_de_pago,
+            validez_orden: cot[0].validez_orden,
+            plazo_maximo_entrega: cot[0].plazo_maximo_entrega,
+            empleado,
+            estados,
+            detalles
+        }
+        cotis.push(aux_cot)
+    }
+    return cotis
+}
+
 
 
 
@@ -268,35 +299,7 @@ const RootQuery = new GraphQLObjectType({
             type: new GraphQLList(CotizacionesType),
             resolve: async (parent, args) => {
                 const sql = `SELECT * FROM Cotizaciones c, Estados_coti ec, Detalle_coti dc, Empleados emp WHERE c.orden_coti = ec.orden_coti AND ec.orden_coti = dc.orden_coti AND emp.id_empleado = c.id_empleado;`
-                let cotizaciones = await query_third_db(sql)
-                cotizaciones = separar_cotizaciones(cotizaciones)
-                let cotis = []
-                for (let cot of cotizaciones) {
-                    const { estados, detalles } = extraer(cot)
-                    const empleado = {
-                        id_empleado: cot[0].id_empleado,
-                        nombre_empleado: cot[0].nombre_empleado,
-                        email_empleado: cot[0].email_empleado,
-                        telefono_empleado: cot[0].telefono_empleado,
-                        puesto_empleado: cot[0].puesto_empleado
-                    }
-                    const aux_cot = {
-                        orden_coti: cot[0].orden_coti,
-                        id_empresa: cot[0].id_empresa,
-                        tipo_coti: cot[0].tipo_coti,
-                        precio_total_coti: cot[0].precio_total_coti,
-                        moneda_coti: cot[0].moneda_coti,
-                        cotizacion_usd: cot[0].cotizacion_usd,
-                        condicion_de_pago: cot[0].condicion_de_pago,
-                        validez_orden: cot[0].validez_orden,
-                        plazo_maximo_entrega: cot[0].plazo_maximo_entrega,
-                        empleado,
-                        estados,
-                        detalles
-                    }
-                    cotis.push(aux_cot)
-                }
-                return cotis
+                return (await query_third_db(sql))
 
             }
         }
