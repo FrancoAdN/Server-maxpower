@@ -1,5 +1,6 @@
-const { GraphQLObjectType, GraphQLID, GraphQLString, GraphQLList, GraphQLSchema } = require('graphql')
+const { GraphQLObjectType, GraphQLID, GraphQLString, GraphQLList, GraphQLSchema, GraphQLFloat, GraphQLInt } = require('graphql')
 const querysql = require('./database')
+const query_third_db = require('./third_db')
 
 
 const ElectronicoType = new GraphQLObjectType({
@@ -43,7 +44,154 @@ const IndustrialesType = new GraphQLObjectType({
 })
 
 
+const ContactosType = new GraphQLObjectType({
+    name: 'Contactos',
+    fields: () => ({
+        id_contacto: { type: GraphQLID },
+        id_empresa: { type: GraphQLID },
+        nombre_contacto: { type: GraphQLString },
+        email_contacto: { type: GraphQLString },
+        telefono_contaco: { type: GraphQLString },
+        posicion_contacto: { type: GraphQLString }
+    })
+})
 
+const EstadosCotType = new GraphQLObjectType({
+    name: 'Estados coti',
+    fields: () => ({
+        id_estado: { type: GraphQLID },
+        orden_coti: { type: GraphQLString },
+        fecha_estado: { type: GraphQLString },
+        estado: { type: GraphQLString }
+    })
+})
+const EmpleadoType = new GraphQLObjectType({
+    name: 'Empleado',
+    fields: () => ({
+        id_empleado: { type: GraphQLID },
+        nombre_empleado: { type: GraphQLString },
+        email_empleado: { type: GraphQLString },
+        telefono_empleado: { type: GraphQLString },
+        contraseña: { type: GraphQLString },
+        puesto_empleado: { type: GraphQLString }
+    })
+})
+
+const DetalleType = new GraphQLObjectType({
+    name: 'Detalle',
+    fields: () => ({
+        id_detalle: { type: GraphQLID },
+        orden_coti: { type: GraphQLString },
+        cantidad: { type: GraphQLInt },
+        descripcion: { type: GraphQLString },
+        precio: { type: GraphQLFloat }
+    })
+})
+
+const CotizacionesType = new GraphQLObjectType({
+    name: 'Estados',
+    fields: () => ({
+        orden_coti: { type: GraphQLString },
+        id_empresa: { type: GraphQLID },
+        tipo_coti: { type: GraphQLString },
+        precio_total_coti: { type: GraphQLFloat },
+        moneda_coti: { type: GraphQLFloat },
+        cotizacion_usd: { type: GraphQLFloat },
+        condicion_de_pago: { type: GraphQLString },
+        validez_orden: { type: GraphQLInt },
+        plazo_maximo_entrega: { type: GraphQLInt },
+        empleado: { type: EmpleadoType },
+        estados: { type: new GraphQLList(EstadosCotType) },
+        detalles: { type: new GraphQLList(DetalleType) }
+    })
+})
+
+const EmpresaType = new GraphQLObjectType({
+    name: 'Empresa',
+    fields: () => ({
+        id_empresa: { type: GraphQLID },
+        nombre_emp: { type: GraphQLString },
+        cuit_emp: { type: GraphQLString },
+        localidad_emp: { type: GraphQLString },
+        direccion_emp: { type: GraphQLString },
+        webpage_emp: { type: GraphQLString },
+        telefono_comercial_emp: { type: GraphQLString },
+        rubro_emp: { type: GraphQLString },
+        contactos: { type: new GraphQLList(ContactosType) },
+        cotizaciones: { type: new GraphQLList(CotizacionesType) }
+    })
+})
+
+
+
+function extraer(array) {
+    let estados = []
+    let detalles = []
+    for (let i = 0; i < array.lenght; i++) {
+        const element = array[i]
+        const aux_estado = {
+            id_estado: element.id_estado,
+            orden_coti: element.orden_coti,
+            fecha_estado: element.fecha_estado,
+            estado: element.estado
+        }
+        const aux_detalle = {
+            id_detalle: element.id_detalle,
+            orden_coti: element.orden_coti,
+            cantidad: element.cantidad,
+            descripcion: element.descripcion,
+            precio: element.precio
+        }
+
+        let found_detalle = false
+        let found_estado = false
+
+        for (let est of estados) {
+            if (est.id_estado === aux_estado.id_estado) {
+                found_estado = true
+                break
+            }
+        }
+
+        if (!found_estado)
+            estados.push(aux_estado)
+
+
+        for (let det of detalles) {
+            if (det.id_detalle === aux_detalle.id_detalle) {
+                found_detalle = true
+                break
+            }
+        }
+
+        if (!found_detalle)
+            detalles.push(aux_detalle)
+    }
+
+    return {
+        estados, detalles
+    }
+}
+
+function separar_cotizaciones(array) {
+    let matriz = []
+    let cotizacion = [array[0]]
+    let ord_compare = array[0].orden_coti
+    for (let i = 1; i < array.lenght - 1; i++) {
+        const element = array[i]
+        if (element.orden_coti === ord_compare) {
+            cotizacion.push(element)
+        } else {
+            matriz.push(cotizacion)
+            cotizacion = []
+            ord_compare = element.orden_coti
+            cotizacion.push(element)
+        }
+    }
+    matriz.push(cotizacion)
+
+    return matriz
+}
 
 
 
@@ -117,6 +265,37 @@ const RootQuery = new GraphQLObjectType({
 
             }
         },
+        cotizaciones: {
+            type: new GraphQLList(CotizacionesType),
+            resolve: async (parent, args) => {
+                const sql = `SELECT * FROM Cotizaciones c, Estados_coti ec, Detalle_coti dc, Empleados emp WHERE c.orden_coti = ec.orden_coti AND ec.orden_coti = dc.orden_coti AND emp.id_empleado = c.id_empleado;`
+                let cotizaciones = await query_third_db(sql)
+                cotizaciones = separar_cotizaciones(cotizaciones)
+                for (let cot of cotizaciones) {
+                    const { estados, detalles } = extraer(cot)
+                    const empleado = {}
+                    const aux_cot = {
+                        orden_coti: cot[0].orden_coti,
+                        id_empresa: cot[0].id_empresa,
+                        tipo_coti: cot[0].tipo_coti,
+                        precio_total_coti: cot[0].precio_total_coti,
+                        moneda_coti: cot[0].moneda_coti,
+                        cotizacion_usd: cot[0].cotizacion_usd,
+                        condicion_de_pago: cot[0].condicion_de_pago,
+                        validez_orden: cot[0].validez_orden,
+                        plazo_maximo_entrega: cot[0].plazo_maximo_entrega,
+                        empleado,
+                        estados,
+                        detalles
+                    }
+                    cot = aux_cot
+                }
+
+                return cotizaciones
+
+            }
+        }
+
 
 
     }
