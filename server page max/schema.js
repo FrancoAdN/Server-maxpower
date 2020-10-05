@@ -428,6 +428,7 @@ const RootQuery = new GraphQLObjectType({
                 return get_empresas(await query_third_db(sql))
             }
         }
+        // reactor.com.ar
 
 
 

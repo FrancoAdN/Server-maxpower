@@ -7,6 +7,7 @@ const nodemailer = require('nodemailer')
 const bodyParser = require('body-parser')
 const hbs = require('nodemailer-express-handlebars')
 const cors = require('cors')
+const query_third_db = require('./third_db')
 const query_system = require('./db_system')
 const querysql = require('./database')
 const Notification = require('./notification')
@@ -127,6 +128,16 @@ app.post('/device', async (req, resp) => {
         const re = await querysql(sql)
     } catch (error) { }
 
+})
+
+app.post('/login_contact', async (req, resp) => {
+    const { email, password } = req.body
+    const sql = `SELECT id_contacto, id_empresa, posicion_contacto FROM Contactos_empresa WHERE email_contacto='${email}' AND pass_contacto='${password}'`
+    const user = await query_third_db(sql)
+    if (user.length === 1)
+        resp.send(user[0])
+    else
+        resp.send(false)
 
 })
 
