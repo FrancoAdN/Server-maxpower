@@ -140,6 +140,7 @@ const TicketType = new GraphQLObjectType({
         Asunto: { type: GraphQLString },
         Fecha: { type: GraphQLString },
         Estado: { type: GraphQLString },
+        Cuerpo: { type: GraphQLString },
         De: { type: GraphQLString },
         Id_empleado: { type: GraphQLID },
         Id_contacto: { type: GraphQLID },
