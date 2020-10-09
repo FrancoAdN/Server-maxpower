@@ -393,6 +393,7 @@ function extraer_respuestas(tick) {
     let ticket = {
         Id_ticket: tick[0].Id_ticket,
         Asunto: tick[0].Asunto,
+        Cuerpo: tick[0].Cuerpo,
         Fecha: tick[0].Fecha,
         Estado: tick[0].Estado,
         De: tick[0].De,
