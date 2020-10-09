@@ -142,7 +142,7 @@ app.post('/login_contact', async (req, resp) => {
 })
 
 app.get('/ticket', async (req, resp) => {
-    const sql = 'select * from Ticket t, Respuesta_ticket rt WHERE t.Id_ticket = rt.Id_ticket and t.Id_empresa = 1;SELECT * FROM Ticket WHERE Id_empleado = null OR Id_contacto = null; '
+    const sql = 'select * from Ticket t, Respuesta_ticket rt WHERE t.Id_ticket = rt.Id_ticket and t.Id_empresa = 1; SELECT * FROM Ticket WHERE (Id_empleado is NULL OR Id_contacto is NULL) AND Id_empresa = 1; '
     resp.send(await query_third_db(sql))
 })
 
