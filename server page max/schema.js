@@ -125,25 +125,25 @@ const EmpresaType = new GraphQLObjectType({
 const RespuestTicket = new GraphQLObjectType({
     name: 'RespuestaTicket',
     fields: () => ({
-        id_respuesta: { type: GraphQLID },
-        cuerpo_respuesta: { type: GraphQLString },
-        fecha: { type: GraphQLString },
-        de: { type: GraphQLString },
-        id_ticket: { type: GraphQLID }
+        Id_respuesta: { type: GraphQLID },
+        Cuerpo: { type: GraphQLString },
+        Fecha: { type: GraphQLString },
+        De: { type: GraphQLString },
+        Id_ticket: { type: GraphQLID }
     })
 })
 
 const TicketType = new GraphQLObjectType({
     name: 'Ticket',
     fields: () => ({
-        id_ticket: { type: GraphQLID },
-        asunto: { type: GraphQLString },
-        fecha: { type: GraphQLString },
-        estado: { type: GraphQLString },
-        de: { type: GraphQLString },
-        id_empleado: { type: GraphQLID },
-        id_contacto: { type: GraphQLID },
-        respuestas: { type: new GraphQLList(RespuestTicket) }
+        Id_ticket: { type: GraphQLID },
+        Asunto: { type: GraphQLString },
+        Fecha: { type: GraphQLString },
+        Estado: { type: GraphQLString },
+        De: { type: GraphQLString },
+        Id_empleado: { type: GraphQLID },
+        Id_contacto: { type: GraphQLID },
+        Respuestas: { type: new GraphQLList(RespuestTicket) }
 
     })
 })
@@ -348,6 +348,73 @@ function get_empresas(empresas) {
     return empresas_aux
 }
 
+function get_tickets(tickets) {
+    const aux_tickets = []
+    let tick_with_resp = separar_tickets[0]
+
+    for (let tick of tick_with_resp)
+        aux_tickets.push(extraer_respuestas(tick))
+
+    for (let tick of tickets[1]) {
+        tick["Respuestas"] = []
+        aux_tickets.push(tick)
+
+    }
+
+    return aux_tickets
+
+
+}
+
+function separar_tickets(array) {
+    let matriz = []
+    let ticket = [array[0]]
+    let ticket_id = array[0].Id_ticket
+    for (let i = 1; i < array.length - 1; i++) {
+        const element = array[i]
+
+        if (element.Id_ticket === ticket_id)
+            ticket.push(element)
+        else {
+            matriz.push(ticket)
+            ticket = []
+            ticket_id = element.Id_ticket
+            ticket.push(element)
+        }
+    }
+    matriz.push(ticket)
+    return matriz
+
+}
+
+function extraer_respuestas(tick) {
+
+    let ticket = {
+        Id_ticket: tick[0].Id_ticket,
+        Asunto: tick[0].Asunto,
+        Fecha: tick[0].Fecha,
+        Estado: tick[0].Estado,
+        De: tick[0].De,
+        Id_empleado: tick[0].Id_empleado,
+        Id_empresa: tick[0].Id_empresa,
+        Id_contacto: tick[0].Id_contacto,
+        Respuestas: []
+    }
+
+    for (const t of tick) {
+
+        const resp = {
+            Id_respuesta: t.Id_respuesta,
+            Cuerpo: t.Cuerpo_respuesta,
+            Fecha: t.Fecha_respuesta,
+            De: t.De_respuesta,
+            Id_ticket: t.Id_ticket
+        }
+        ticket.Respuestas.push(resp)
+    }
+
+    return ticket
+}
 
 
 
@@ -461,7 +528,13 @@ const RootQuery = new GraphQLObjectType({
                 id_empresa: { type: GraphQLID }
             },
             resolve: async (parent, args) => {
+                const matx = []
                 const sql = `SELECT * FROM Ticket t, Respuesta_ticket rt WHERE t.Id_ticket = rt.Id_ticket AND t.Id_empresa = ${args.id_empresa}`
+                const sql2 = `SELECT * FROM Ticket WHERE (Id_empleado is NULL OR Id_contacto is NULL) AND Id_empresa = ${args.id_empresa}`
+                matx.push(await query_third_db(sql)) // matx[0] = ticket con respuestas
+                matx.push(await query_third_db(sql2)) // matx[1] = ticket sin respuestas
+                return get_tickets(matx)
+
             }
         }
         // reactor.com.ar
