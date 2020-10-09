@@ -154,7 +154,7 @@ function separar_empresas(array) {
     let matriz = []
     let empresas = [array[0]]
     let id_compare = array[0].id_empresa
-    for (let i = 1; i < array.length - 1; i++) {
+    for (let i = 1; i < array.length; i++) {
         const element = array[i]
         if (element.id_empresa === id_compare) {
             empresas.push(element)
@@ -222,7 +222,7 @@ function separar_cotizaciones(array) {
     let matriz = []
     let cotizacion = [array[0]]
     let ord_compare = array[0].orden_coti
-    for (let i = 1; i < array.length - 1; i++) {
+    for (let i = 1; i < array.length; i++) {
         const element = array[i]
         if (element.orden_coti === ord_compare) {
             cotizacion.push(element)
@@ -352,7 +352,6 @@ function get_empresas(empresas) {
 function get_tickets(tickets) {
     const aux_tickets = []
     let tick_with_resp = separar_tickets(tickets[0])
-    console.log(tick_with_resp)
 
     for (let tick of tick_with_resp)
         aux_tickets.push(extraer_respuestas(tick))

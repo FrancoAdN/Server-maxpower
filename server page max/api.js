@@ -141,14 +141,7 @@ app.post('/login_contact', async (req, resp) => {
 
 })
 
-app.get('/ticket', async (req, resp) => {
-    const response = []
-    const sql = 'select * from Ticket t, Respuesta_ticket rt WHERE t.Id_ticket = rt.Id_ticket and t.Id_empresa = 1'
-    const sql2 = 'SELECT * FROM Ticket WHERE (Id_empleado is NULL OR Id_contacto is NULL) AND Id_empresa = 1'
-    response.push(await query_third_db(sql))
-    response.push(await query_third_db(sql2))
-    resp.send(response)
-})
+
 
 
 const server = app.listen(PORT, () => console.log(`Server running port: ${PORT}`))
