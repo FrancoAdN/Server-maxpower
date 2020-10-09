@@ -454,6 +454,15 @@ const RootQuery = new GraphQLObjectType({
                 const sql = `SELECT * FROM Empresas e, Contactos_empresa contemp, Cotizaciones c, Estados_coti ec, Detalle_coti dc, Empleados emp WHERE e.id_empresa=contemp.id_empresa AND c.id_empresa=e.id_empresa AND c.orden_coti=ec.orden_coti AND ec.orden_coti=dc.orden_coti AND emp.id_empleado=c.id_empleado AND e.id_empresa=${args.id_empresa};`
                 return get_empresas(await query_third_db(sql))
             }
+        },
+        tickets_por_empresa: {
+            type: new GraphQLList(TicketType),
+            args: {
+                id_empresa: { type: GraphQLID }
+            },
+            resolve: async (parent, args) => {
+                const sql = `SELECT * FROM Ticket t, Respuesta_ticket rt WHERE t.Id_ticket = rt.Id_ticket AND t.Id_empresa = ${args.id_empresa}`
+            }
         }
         // reactor.com.ar
 
