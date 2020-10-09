@@ -352,6 +352,7 @@ function get_empresas(empresas) {
 function get_tickets(tickets) {
     const aux_tickets = []
     let tick_with_resp = separar_tickets(tickets[0])
+    console.log(tick_with_resp)
 
     for (let tick of tick_with_resp)
         aux_tickets.push(extraer_respuestas(tick))
@@ -533,7 +534,6 @@ const RootQuery = new GraphQLObjectType({
                 const sql2 = `SELECT * FROM Ticket WHERE (Id_empleado is NULL OR Id_contacto is NULL) AND Id_empresa = ${args.id_empresa}`
                 matx.push(await query_third_db(sql)) // matx[0] = ticket con respuestas
                 matx.push(await query_third_db(sql2)) // matx[1] = ticket sin respuestas
-                console.log(matx[0])
                 return get_tickets(matx)
 
             }
