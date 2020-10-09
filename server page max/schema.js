@@ -384,12 +384,13 @@ function separar_tickets(array) {
         }
     }
     matriz.push(ticket)
+    console.log(matriz)
     return matriz
 
 }
 
 function extraer_respuestas(tick) {
-
+    console.log(tick)
     let ticket = {
         Id_ticket: tick[0].Id_ticket,
         Asunto: tick[0].Asunto,
