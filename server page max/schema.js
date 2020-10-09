@@ -143,6 +143,7 @@ const TicketType = new GraphQLObjectType({
         De: { type: GraphQLString },
         Id_empleado: { type: GraphQLID },
         Id_contacto: { type: GraphQLID },
+        Id_empresa: { type: GraphQLID },
         Respuestas: { type: new GraphQLList(RespuestTicket) }
 
     })
@@ -350,7 +351,7 @@ function get_empresas(empresas) {
 
 function get_tickets(tickets) {
     const aux_tickets = []
-    let tick_with_resp = separar_tickets[0]
+    let tick_with_resp = separar_tickets(tickets[0])
 
     for (let tick of tick_with_resp)
         aux_tickets.push(extraer_respuestas(tick))
