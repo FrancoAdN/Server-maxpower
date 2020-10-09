@@ -126,7 +126,7 @@ const RespuestTicket = new GraphQLObjectType({
     name: 'RespuestaTicket',
     fields: () => ({
         id_respuesta: { type: GraphQLID },
-        cuerpo: { type: GraphQLString },
+        cuerpo_respuesta: { type: GraphQLString },
         fecha: { type: GraphQLString },
         de: { type: GraphQLString },
         id_ticket: { type: GraphQLID }
