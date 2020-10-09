@@ -142,7 +142,7 @@ app.post('/login_contact', async (req, resp) => {
 })
 
 app.get('/ticket', async (req, resp) => {
-    const sql = 'select * from Ticket t, Respuesta_ticket rt WHERE t.Id_ticket = rt.Id_ticket and t.Id_empresa = 1'
+    const sql = 'select t.*, rt.* from Ticket t, Respuesta_ticket rt WHERE t.Id_ticket = rt.Id_ticket and t.Id_empresa = 1'
     resp.send(await query_third_db(sql))
 })
 
