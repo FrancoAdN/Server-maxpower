@@ -65,6 +65,7 @@ const EstadosCotType = new GraphQLObjectType({
         estado: { type: GraphQLString }
     })
 })
+
 const EmpleadoType = new GraphQLObjectType({
     name: 'Empleado',
     fields: () => ({
@@ -118,6 +119,32 @@ const EmpresaType = new GraphQLObjectType({
         rubro_emp: { type: GraphQLString },
         contactos: { type: new GraphQLList(ContactosType) },
         cotizaciones: { type: new GraphQLList(CotizacionesType) }
+    })
+})
+
+const RespuestTicket = new GraphQLObjectType({
+    name: 'RespuestaTicket',
+    fields: () => ({
+        id_respuesta: { type: GraphQLID },
+        cuerpo: { type: GraphQLString },
+        fecha: { type: GraphQLString },
+        de: { type: GraphQLString },
+        id_ticket: { type: GraphQLID }
+    })
+})
+
+const TicketType = new GraphQLObjectType({
+    name: 'Ticket',
+    fields: () => ({
+        id_ticket: { type: GraphQLID },
+        asunto: { type: GraphQLString },
+        fecha: { type: GraphQLString },
+        estado: { type: GraphQLString },
+        de: { type: GraphQLString },
+        id_empleado: { type: GraphQLID },
+        id_contacto: { type: GraphQLID },
+        respuestas: { type: new GraphQLList(RespuestTicket) }
+
     })
 })
 
