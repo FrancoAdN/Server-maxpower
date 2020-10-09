@@ -372,7 +372,7 @@ function separar_tickets(array) {
     let matriz = []
     let ticket = [array[0]]
     let ticket_id = array[0].Id_ticket
-    for (let i = 1; i < array.length - 1; i++) {
+    for (let i = 1; i < array.length; i++) {
         const element = array[i]
 
         if (element.Id_ticket === ticket_id)
