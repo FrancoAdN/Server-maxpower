@@ -384,13 +384,11 @@ function separar_tickets(array) {
         }
     }
     matriz.push(ticket)
-    console.log(matriz)
     return matriz
 
 }
 
 function extraer_respuestas(tick) {
-    console.log(tick)
     let ticket = {
         Id_ticket: tick[0].Id_ticket,
         Asunto: tick[0].Asunto,
@@ -535,6 +533,7 @@ const RootQuery = new GraphQLObjectType({
                 const sql2 = `SELECT * FROM Ticket WHERE (Id_empleado is NULL OR Id_contacto is NULL) AND Id_empresa = ${args.id_empresa}`
                 matx.push(await query_third_db(sql)) // matx[0] = ticket con respuestas
                 matx.push(await query_third_db(sql2)) // matx[1] = ticket sin respuestas
+                console.log(matx[0])
                 return get_tickets(matx)
 
             }
