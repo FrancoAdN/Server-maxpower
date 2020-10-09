@@ -141,6 +141,18 @@ app.post('/login_contact', async (req, resp) => {
 
 })
 
+app.post('/new-ticket-contact', async (req, resp) => {
+    const { asunto, cuerpo, de, id_contacto, estado, fecha, id_empresa } = req.body
+    const err = false
+    const sql = `INSERT INTO Ticket (Asunto, Cuerpo, Fecha, Estado, De, Id_empleado, Id_contacto, Id_empresa) VALUES ('${asunto}', '${cuerpo}', '${fecha}', '${estado}', '${de}',${null}, ${id_contacto}, ${id_empresa})`
+    try {
+        const re = await query_third_db(sql)
+    } catch (error) {
+        resp.sendStatus(400)
+        err = true
+    }
+    if (!err) resp.sendStatus(200)
+})
 
 
 
