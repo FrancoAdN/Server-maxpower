@@ -6,6 +6,9 @@ const schema = require('./schema')
 const nodemailer = require('nodemailer')
 const bodyParser = require('body-parser')
 const hbs = require('nodemailer-express-handlebars')
+const csv = require('csv-parser')
+const createCsvWriter = require('csv-writer').createObjectCsvWriter;
+const fs = require('fs')
 const cors = require('cors')
 const query_third_db = require('./third_db')
 const query_system = require('./db_system')
@@ -65,6 +68,8 @@ app.get('/login', async (req, resp) => {
 app.post('/contact', (req, resp) => {
 
     const { name, email, tel, emp, body } = req.body
+
+    contactCSV(req.body)
     const mailOptions = {
         from: process.env.EMAIL,
         to: process.env.RECEIVER,
@@ -86,7 +91,7 @@ app.post('/contact', (req, resp) => {
 app.post('/cotizacion', (req, resp) => {
 
     const { name, email, tel, emp, body } = req.body
-
+    contactCSV(req.body)
     const mailOptions = {
         from: process.env.EMAIL,
         to: process.env.RECEIVER,
@@ -106,7 +111,7 @@ app.post('/cotizacion', (req, resp) => {
 
 app.post('/newsletter', (req, resp) => {
     const { newsletter } = req.body
-
+    newsletterCSV(newsletter)
     const mailOptions = {
         from: process.env.EMAIL,
         to: process.env.RECEIVER,
@@ -324,3 +329,49 @@ const addMessageToClient = (message, id) => {
     }
 }
 
+
+
+function contactCSV({ name, email, tel, emp }) {
+
+    const csvWriter = createCsvWriter({
+        path: './csv/contact.csv',
+        header: [
+            { id: 'Nombre', title: 'Nombre' },
+            { id: 'Email', title: 'Email' },
+            { id: 'Telefono', title: 'Telefono' },
+            { id: 'Empresa', title: 'Empresa' },
+        ]
+    });
+
+    const results = [];
+
+    fs.createReadStream('./csv/contact.csv')
+        .pipe(csv())
+        .on('data', (data) => results.push(data))
+        .on('end', () => {
+            results.push({ Nombre: name, Email: email, Telefono: tel, Empresa: emp })
+            csvWriter
+                .writeRecords(results)
+        });
+}
+
+function newsletterCSV(email) {
+
+    const csvWriter = createCsvWriter({
+        path: './csv/newsletter.csv',
+        header: [
+            { id: 'Newsletter', title: 'Newsletter' },
+        ]
+    });
+
+    const results = [];
+
+    fs.createReadStream('./csv/newsletter.csv')
+        .pipe(csv())
+        .on('data', (data) => results.push(data))
+        .on('end', () => {
+            results.push({ Newsletter: email })
+            csvWriter
+                .writeRecords(results)
+        });
+}
