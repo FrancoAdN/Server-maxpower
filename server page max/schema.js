@@ -43,6 +43,16 @@ const IndustrialesType = new GraphQLObjectType({
     })
 })
 
+const DomoticaType = new GraphQLObjectType({
+    name: 'Domotica',
+    fields: () => ({
+        id_dom: { type: GraphQLID },
+        nombre: { type: GraphQLString },
+        categoria: { type: GraphQLString },
+        img: { type: GraphQLString }
+    })
+})
+
 
 const ContactosType = new GraphQLObjectType({
     name: 'Contactos',
@@ -444,6 +454,15 @@ const RootQuery = new GraphQLObjectType({
                 return await querysql(sql)
             }
         },
+        d_categorias: {
+            type: new GraphQLList(CategoriaType),
+            resolve: async (parent, args) => {
+                const sql = 'SELECT DISTINCT categoria FROM domotica'
+                return await querysql(sql)
+            }
+        },
+
+
         electronico: {
             type: new GraphQLList(ElectronicoType),
             args: {
@@ -489,6 +508,22 @@ const RootQuery = new GraphQLObjectType({
 
             }
         },
+        domotica: {
+            type: new GraphQLList(DomoticaType),
+            args: {
+                categoria: { type: GraphQLString }
+            },
+            resolve: async (parent, args) => {
+                if (args.categoria != 'all') {
+                    const sql = `SELECT * FROM domotica WHERE categoria = '${args.categoria}'`
+                    return await querysql(sql)
+                }
+                const sql = 'SELECT * FROM domotica ORDER BY categoria'
+                return await querysql(sql)
+
+            }
+        },
+
         cotizaciones: {
             type: new GraphQLList(CotizacionesType),
             resolve: async (parent, args) => {
