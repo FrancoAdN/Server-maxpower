@@ -46,7 +46,7 @@ app.use(express.static('public'))
 
 app.use('/graphql', graphqlHTTP({
     schema,
-    graphiql: false
+    graphiql: true
 }))
 
 app.get('/login', async (req, resp) => {
